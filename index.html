@@ -41,16 +41,16 @@
       position:sticky;
       top:0;
       z-index:20;
-      backdrop-filter:blur(12px);
-      background:rgba(255,255,255,.92);
+      background:#fff;
       border-bottom:1px solid var(--line);
+      box-shadow:0 10px 24px rgba(15,23,42,.06);
     }
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:18px;
-      padding:14px 0;
+      gap:24px;
+      padding:16px 0;
     }
     .brand{
       display:flex;
@@ -58,26 +58,43 @@
       gap:12px;
       font-weight:800;
       font-size:18px;
-      letter-spacing:-0.03em;
+      letter-spacing:-0.02em;
+      color:#0f1d46;
     }
-    .brand img{width:150px;height:auto}
+    .brand img{width:42px;height:auto}
     .nav-links{
       display:flex;
       align-items:center;
-      gap:18px;
-      color:#334155;
-      font-weight:600;
-      font-size:13px;
+      justify-content:center;
+      gap:28px;
+      color:#1e293b;
+      font-weight:700;
+      font-size:14px;
+      flex:1;
     }
-    .lang{color:#94a3b8;font-weight:700;}
-    .lang strong{color:var(--text)}
-    .nav-actions{display:flex;align-items:center;gap:10px;}
-    .pill{height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;gap:8px;box-shadow:0 12px 22px rgba(15,23,42,.06);}
-    .pill .dot{width:8px;height:8px;border-radius:999px;background:#f97316;display:inline-block;}
-    .btn{height:38px;padding:0 16px;border-radius:999px;border:none;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:.2s box-shadow,.2s transform,.2s background-color;}
-    .btn.primary{background:var(--green);color:#fff;box-shadow:0 14px 28px rgba(15,106,58,.25);}
-    .btn.primary:hover{background:var(--green-dark);transform:translateY(-1px);}
-    .btn.ghost{background:#fff;border:1px solid var(--line);color:var(--text);}
+    .nav-links a{transition:color .2s ease;}
+    .nav-links a:hover{color:#0f1d46;}
+    .nav-actions{display:flex;align-items:center;gap:12px;}
+    .lang-select{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      height:36px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      font-size:13px;
+      color:#1e293b;
+      cursor:pointer;
+      box-shadow:0 10px 20px rgba(15,23,42,.05);
+    }
+    .flag{font-size:14px;}
+    .btn{height:38px;padding:0 16px;border-radius:999px;border:1px solid transparent;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:.2s box-shadow,.2s transform,.2s background-color;}
+    .btn.primary{background:linear-gradient(120deg,#0c142f 0%,#182b54 100%);color:#fff;box-shadow:0 16px 32px rgba(12,20,47,.25);}
+    .btn.primary:hover{transform:translateY(-1px);}
+    .btn.ghost{background:#fff;border:1px solid var(--line);color:#0f1d46;font-weight:800;}
 
     /* HERO */
     .hero{padding:22px 0 36px;}
@@ -155,19 +172,23 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="logo.png" alt="Facture.mu logo">
+        <img src="Grupo 4930.png" alt="Logo Facture.mu">
+        <span>Facture.mu</span>
       </div>
-      <nav class="nav-links">
-        <a href="#">14 jours d'essai</a>
-        <a href="#">Lire une démo vidéo</a>
+      <nav class="nav-links" aria-label="Navigation principale">
         <a href="#">Fonctionnalités</a>
+        <a href="#">Commercialiser et vendre</a>
+        <a href="#">Tarifs</a>
+        <a href="#">FAQ</a>
       </nav>
       <div class="nav-actions">
-        <span class="lang"><strong>Fr</strong> / En</span>
-        <a class="pill" href="#"><span class="dot"></span>Google Play</a>
-        <a class="pill" href="#"><span class="dot"></span>App Store</a>
-        <button class="btn ghost">Connecter</button>
-        <button class="btn primary">Commencer</button>
+        <button class="lang-select" aria-label="Choisir la langue">
+          <span class="flag" aria-hidden="true">🇫🇷</span>
+          <span>Français</span>
+          <span class="chev" aria-hidden="true">▾</span>
+        </button>
+        <button class="btn ghost"><span aria-hidden="true">👤</span>Se connecter</button>
+        <button class="btn primary">Obtenir accompagnement <span class="chev" aria-hidden="true">→</span></button>
       </div>
     </div>
   </header>
