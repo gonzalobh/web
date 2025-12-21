@@ -97,17 +97,23 @@
     .btn.ghost{background:#fff;border:1px solid var(--line);color:#0f1d46;font-weight:800;}
 
     /* HERO */
-    .hero{padding:22px 0 36px;}
-    .hero-card{background:var(--accent);border-radius:28px;padding:28px 30px;box-shadow:var(--shadow-strong);position:relative;overflow:hidden;}
-    .hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
-    .hero-copy{flex:1;text-align:left;}
-    .hero h1{margin:0 0 10px;font-size:42px;line-height:1.05;font-weight:900;letter-spacing:-0.035em;}
-    .hero p{margin:0 0 16px;font-size:15px;max-width:640px;}
-    .hero-actions{display:flex;align-items:center;gap:14px;margin:10px 0 18px;flex-wrap:wrap;}
-    .btn-lg{height:44px;padding:0 20px;font-size:14px;border-radius:999px;}
-    .video-link{display:flex;align-items:center;gap:10px;font-weight:800;font-size:14px;color:var(--text);}    
-    .hero-image{margin-top:14px;display:flex;justify-content:center;}
-    .hero-image img{max-width:760px;width:100%;border-radius:22px;box-shadow:0 18px 38px rgba(0,0,0,.22);}
+    .hero{padding:40px 0 56px;}
+    .hero-card{
+      background:#eeb84d;
+      border-radius:26px;
+      padding:38px 42px 48px;
+      box-shadow:var(--shadow-strong);
+      overflow:hidden;
+    }
+    .hero-top{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;}
+    .hero-copy{flex:1;text-align:left;min-width:280px;}
+    .hero h1{margin:0 0 12px;font-size:44px;line-height:1.08;font-weight:900;letter-spacing:-0.03em;color:#0f172a;max-width:640px;}
+    .hero p{margin:0 0 20px;font-size:16px;max-width:540px;color:#0f172a;font-weight:600;}
+    .hero-actions{display:flex;align-items:center;gap:14px;margin:12px 0 0;flex-wrap:wrap;}
+    .btn-lg{height:46px;padding:0 22px;font-size:14px;border-radius:999px;}
+    .btn.primary.hero-cta{background:linear-gradient(120deg,#177d3f 0%,#0f6a3a 100%);color:#fff;box-shadow:0 16px 32px rgba(15,106,58,.25);}
+    .hero-image{margin-top:22px;display:flex;justify-content:center;}
+    .hero-image img{max-width:880px;width:100%;border-radius:24px;box-shadow:0 18px 38px rgba(0,0,0,.22);}
 
     /* WHITE CARD SECTION */
     .panel{background:#fff;border-radius:22px;padding:26px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;}
@@ -199,23 +205,15 @@
         <div class="hero-card">
           <div class="hero-top">
             <div class="hero-copy">
-              <h1>Facturation simplifiée pour les entreprises opérant à Maurice</h1>
-              <p>En quelques minutes, créez vos devis, factures et reçus pour vos clients à Maurice ou à l'international. Faites vous payer plus rapidement.</p>
+              <h1>Facturation simplifiée pour les entreprises qui grandissent à Maurice</h1>
+              <p>Créez, envoyez et suivez vos factures en quelques clics. Professionnel, multilingue, multi-devises.</p>
               <div class="hero-actions">
-                <button class="btn primary btn-lg">14 jours d'essai</button>
-                <button class="btn ghost btn-lg">Je découvre les fonctionnalités</button>
-                <a class="video-link" href="#">▸ Lire une démo vidéo</a>
+                <button class="btn primary btn-lg hero-cta">Essai 15j gratuits</button>
               </div>
-            </div>
-            <div class="hero-badges" style="text-align:right;min-width:120px;">
-              <div style="font-weight:800;font-size:14px;">Prix de l'audience 2022</div>
-              <div style="color:#0ea5e9;font-weight:800;font-size:13px;">Winner</div>
-              <div style="margin-top:12px;font-weight:800;font-size:22px;">4.9</div>
-              <div style="color:var(--muted);font-size:13px;">de reviews</div>
             </div>
           </div>
           <div class="hero-image" aria-label="Aperçu application">
-            <img src="Grupo 4948.png" alt="Captures Facture.mu">
+            <img src="facture.png" alt="Captures Facture.mu">
           </div>
         </div>
       </div>
