@@ -99,6 +99,66 @@
       min-width: 260px;
     }
 
+    .menu-toggle{
+      display:none;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor:pointer;
+      min-width: 48px;
+      min-height: 44px;
+    }
+
+    .menu-toggle span{
+      display:block;
+      width:20px;
+      height:2px;
+      background:#0b1220;
+      border-radius:999px;
+    }
+
+    @media (max-width: 900px){
+      .topbar{flex-wrap:wrap;}
+
+      nav,
+      .actions{
+        display:none;
+        width:100%;
+      }
+
+      nav{
+        order: 3;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:flex-start;
+        gap:16px;
+        padding: 8px 0 4px;
+      }
+
+      .actions{
+        order: 4;
+        flex-direction:column;
+        align-items:stretch;
+        justify-content:flex-start;
+        gap:10px;
+        min-width: 0;
+      }
+
+      .actions .link-btn,
+      .actions .btn{width:100%;text-align:center;}
+
+      .lang{width:100%;justify-content:space-between;}
+
+      header.open nav,
+      header.open .actions{display:flex;}
+
+      .menu-toggle{display:inline-flex;}
+    }
+
     .lang{
       display:flex;
       align-items:center;
@@ -1031,11 +1091,14 @@
   <div class="container">
     <div class="topbar">
       <div class="brand">
-<div class="brand">
-  <img src="logo.png" alt="Facture.mu" style="height:42px;">
-</div>
-
+        <img src="logo.png" alt="Facture.mu" style="height:42px;">
       </div>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
       <nav aria-label="Navigation">
         <a href="#">Fonctionnalités</a>
@@ -1436,6 +1499,14 @@
       item.classList.add('active');
       image.src = item.dataset.image;
     });
+  });
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const header = document.querySelector('header');
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = header.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
   });
 </script>
 
