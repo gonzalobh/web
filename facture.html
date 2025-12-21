@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Facture.mu – Landing</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+      --soft:#f3f4f6;
+      --card:#f8fafc;
+
+      --yellow:#f5b400;   /* hero + CTA */
+      --green:#0f6a3a;    /* main button */
+      --green2:#0b5c33;
+
+      --radius:18px;
+      --shadow: 0 12px 30px rgba(15,23,42,.08);
+      --shadow2: 0 10px 24px rgba(15,23,42,.10);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+
+    .container{
+      width:min(1120px, calc(100% - 32px));
+      margin-inline:auto;
+    }
+
+    /* Topbar */
+    .nav{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--line);
+      z-index:50;
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      letter-spacing:-0.02em;
+    }
+    .brand img{width:26px; height:26px}
+    .brand span{font-size:18px}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      color:#334155;
+      font-weight:500;
+      font-size:14px;
+    }
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .select, .btn, .btn-outline{
+      height:36px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      padding:0 12px;
+      font-size:13px;
+      font-weight:600;
+      color:#0f172a;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .select{
+      padding-right:10px;
+    }
+    .btn{
+      background:var(--green);
+      border-color:transparent;
+      color:white;
+      box-shadow: 0 10px 18px rgba(15,106,58,.18);
+    }
+    .btn:hover{background:var(--green2)}
+    .btn-outline:hover{background:#f8fafc}
+
+    .burger{
+      display:none;
+      width:40px;
+      height:36px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:#fff;
+      align-items:center;
+      justify-content:center;
+    }
+    .burger span{
+      width:18px; height:2px; background:#0f172a; position:relative; display:block;
+    }
+    .burger span::before,.burger span::after{
+      content:""; position:absolute; left:0; width:18px; height:2px; background:#0f172a;
+    }
+    .burger span::before{top:-6px}
+    .burger span::after{top:6px}
+
+    /* Hero */
+    .hero{
+      padding:22px 0 28px;
+    }
+    .hero-card{
+      background:var(--yellow);
+      border-radius:26px;
+      padding:46px 34px;
+      position:relative;
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:30px;
+      align-items:center;
+    }
+    .hero h1{
+      margin:0 0 12px;
+      font-size:40px;
+      line-height:1.08;
+      letter-spacing:-0.03em;
+      font-weight:900;
+      text-align:center;
+    }
+    .hero p{
+      margin:0 0 22px;
+      color:#0f172a;
+      opacity:.9;
+      text-align:center;
+      font-size:14px;
+      line-height:1.5;
+      max-width:520px;
+      margin-inline:auto;
+    }
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:10px;
+    }
+    .btn-lg{
+      height:44px;
+      padding:0 18px;
+      font-size:14px;
+    }
+
+    .hero-mockups{
+      position:relative;
+      min-height:320px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .mock-dashboard{
+      width:min(520px, 100%);
+      border-radius:16px;
+      box-shadow: 0 18px 34px rgba(0,0,0,.18);
+      border:3px solid rgba(255,255,255,.75);
+      background:#fff;
+    }
+    .mock-invoice{
+      position:absolute;
+      right:8%;
+      bottom:-10px;
+      width:min(250px, 46%);
+      border-radius:12px;
+      box-shadow: 0 16px 28px rgba(0,0,0,.18);
+      border:3px solid rgba(255,255,255,.8);
+      background:#fff;
+    }
+    .mock-phone{
+      position:absolute;
+      left:3%;
+      bottom:-22px;
+      width:min(150px, 30%);
+      border-radius:22px;
+      box-shadow: 0 16px 28px rgba(0,0,0,.18);
+      border:3px solid rgba(255,255,255,.8);
+      background:#fff;
+    }
+    .mini-bubble{
+      position:absolute;
+      right:16px;
+      bottom:16px;
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:#0f172a;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      font-weight:800;
+      box-shadow: 0 16px 24px rgba(0,0,0,.25);
+    }
+
+    /* Under hero */
+    .subline{
+      padding:16px 0 6px;
+      text-align:center;
+      color:#0f172a;
+      font-size:12px;
+    }
+    .sub-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      padding:10px 0 24px;
+    }
+    .pill{
+      height:34px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      font-size:12px;
+      color:#0f6a3a;
+    }
+    .rating{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      padding:8px 0 4px;
+      color:#0f172a;
+      font-size:12px;
+    }
+    .stars{
+      letter-spacing:2px;
+      font-size:14px;
+    }
+
+    /* Section titles */
+    .section{
+      padding:42px 0;
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin-bottom:14px;
+    }
+    .section-title img{width:22px; height:22px}
+    .section h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:-0.02em;
+      font-weight:900;
+      text-align:center;
+    }
+    .section .lead{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin:0 auto 22px;
+      max-width:680px;
+      line-height:1.55;
+    }
+
+    /* Features quick grid */
+    .quick{
+      background: #f6f7f9;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .quick-item{
+      background:rgba(255,255,255,.6);
+      border:1px solid rgba(229,231,235,.8);
+      border-radius:16px;
+      padding:16px;
+      text-align:center;
+      min-height:92px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:8px;
+    }
+    .qi-ico{
+      width:34px;height:34px;
+      margin:0 auto;
+      border-radius:12px;
+      background:#fff;
+      border:1px solid rgba(229,231,235,.9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      color:#0f172a;
+    }
+    .quick-item b{font-size:12px}
+    .quick-item span{font-size:12px; color:var(--muted)}
+
+    /* Big features (left menu + image) */
+    .feature-panel{
+      border-radius:20px;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:grid;
+      grid-template-columns: 280px 1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .side{
+      background:#e9f0ff;
+      border-radius:16px;
+      padding:14px;
+      border:1px solid rgba(59,130,246,.15);
+    }
+    .side .side-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 10px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:12px;
+      color:#0f172a;
+      cursor:pointer;
+    }
+    .side .side-item:hover{background:rgba(255,255,255,.5)}
+    .dot{
+      width:18px;height:18px;border-radius:6px;
+      background:#ffffff;
+      border:1px solid rgba(148,163,184,.8);
+    }
+    .feature-main{
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#f8fafc;
+      padding:16px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    .feature-illustration{
+      border-radius:16px;
+      border:1px dashed rgba(148,163,184,.6);
+      background:#ffffff;
+      padding:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:260px;
+      overflow:hidden;
+    }
+    .feature-caption{
+      color:#0f172a;
+      font-weight:900;
+      font-size:14px;
+      margin:0;
+    }
+    .feature-text{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+      max-width:720px;
+    }
+
+    /* Activity */
+    .activity{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#f8fafc;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:center;
+    }
+    .activity h3{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-0.02em;
+    }
+    .activity p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+      max-width:520px;
+    }
+    .activity .btn{height:40px}
+    .photo{
+      border-radius:16px;
+      border:1px dashed rgba(148,163,184,.7);
+      overflow:hidden;
+      background:#fff;
+      min-height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* Testimonials */
+    .testi-grid{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#f8fafc;
+      padding:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .testi{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:190px;
+    }
+    .testi .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .testi .logo img{
+      width:40px;height:40px;border-radius:12px;border:1px solid var(--line);
+      object-fit:cover;
+    }
+    .testi .stars{font-size:13px}
+    .testi p{
+      margin:0;
+      color:#334155;
+      font-size:12px;
+      line-height:1.6;
+      flex:1;
+    }
+    .testi a{
+      font-size:12px;
+      color:#0f6a3a;
+      font-weight:800;
+    }
+
+    /* CTA */
+    .cta{
+      padding:46px 0 10px;
+    }
+    .cta-box{
+      background:var(--yellow);
+      border-radius:22px;
+      padding:40px 22px;
+      text-align:center;
+      box-shadow: var(--shadow2);
+    }
+    .cta-box h3{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:1000;
+      letter-spacing:-0.02em;
+    }
+    .cta-box p{
+      margin:0 0 18px;
+      font-size:12px;
+      color:#0f172a;
+      opacity:.9;
+    }
+
+    /* FAQ */
+    .faq{
+      padding:34px 0 52px;
+    }
+    .faq-list{
+      margin-top:10px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#f8fafc;
+      overflow:hidden;
+    }
+    .faq-q{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 14px;
+      background:transparent;
+      border:0;
+      cursor:pointer;
+      font-weight:800;
+      font-size:12px;
+      color:#0f172a;
+      text-align:left;
+    }
+    .faq-q .chev{
+      width:22px;height:22px;
+      border-radius:8px;
+      background:#fff;
+      border:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+    }
+    .faq-a{
+      padding:0 14px 14px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+      display:none;
+    }
+    .faq-item.open .faq-a{display:block}
+    .faq-item.open .faq-q .chev{transform:rotate(180deg)}
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--line);
+      background:#fff;
+      padding:26px 0;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .foot-brand{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .foot-brand img{width:26px;height:26px}
+    .foot-brand b{display:block; font-size:16px; letter-spacing:-0.02em}
+    .foot-brand small{color:var(--muted); font-size:12px; display:block; margin-top:4px}
+    .foot-col h4{
+      margin:0 0 10px;
+      font-size:12px;
+      font-weight:900;
+      color:#0f172a;
+    }
+    .foot-col a{
+      display:block;
+      color:#334155;
+      font-size:12px;
+      padding:6px 0;
+    }
+    .foot-col a:hover{color:#0f172a}
+    .copyright{
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:11px;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
+      .hero-mockups{min-height:300px}
+      .feature-panel{grid-template-columns:1fr}
+      .activity{grid-template-columns:1fr}
+      .quick{grid-template-columns:1fr}
+      .testi-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 760px){
+      .nav-links{display:none}
+      .nav-right{display:none}
+      .burger{display:flex}
+      .hero-card{padding:34px 18px}
+      .sub-actions{flex-direction:column; align-items:center}
+      .pill{width:min(280px, 100%)}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#">
+          <img src="imagen1.png" alt="Logo">
+          <span>Facture.mu</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navigation">
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#comment">Comment ça marche</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-right">
+          <select class="select" aria-label="Langue">
+            <option>FR</option>
+            <option>EN</option>
+            <option>MU</option>
+          </select>
+          <a class="btn-outline" href="#">Se connecter</a>
+          <a class="btn" href="#">Créer un compte</a>
+        </div>
+
+        <button class="burger" aria-label="Menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <h1>Facturation simplifiée pour les entreprises qui grandissent à Maurice</h1>
+              <p>
+                Créez, envoyez et suivez vos factures en quelques clics.
+                Professionnel, multilingue, multi-devises.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-lg" href="#">Essai 15j gratuits</a>
+              </div>
+            </div>
+
+            <div class="hero-mockups" aria-label="Aperçu produit">
+              <img class="mock-dashboard" src="imagen2.png" alt="Aperçu dashboard">
+              <img class="mock-phone" src="imagen3.png" alt="Aperçu mobile">
+              <img class="mock-invoice" src="imagen4.png" alt="Aperçu facture">
+              <div class="mini-bubble">Snap<br/>5 min</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subline">Conçu pour les entreprises qui opèrent à Maurice et au-delà</div>
+
+        <div class="sub-actions">
+          <button class="pill">Voir la Démo</button>
+          <button class="pill">Voir les fonctionnalités</button>
+        </div>
+
+        <div class="rating" aria-label="Note">
+          <div class="stars">★★★★★</div>
+          <div>87% des utilisateurs disent : “Je ne recule plus en arrière”.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK FEATURES -->
+    <section class="section" id="comment">
+      <div class="container">
+        <div class="section-title">
+          <img src="imagen1.png" alt="">
+          <h2>Tout ce dont vous avez besoin pour facturer sereinement</h2>
+        </div>
+        <p class="lead">Une plateforme moderne pensée pour l’écosystème business mauricien et international</p>
+
+        <div class="quick">
+          <div class="quick-item">
+            <div class="qi-ico">🧾</div>
+            <b>Devis &amp; Factures</b>
+            <span>en 2 minutes</span>
+          </div>
+          <div class="quick-item">
+            <div class="qi-ico">🎨</div>
+            <b>Personnalisez</b>
+            <span>avec votre logo</span>
+          </div>
+          <div class="quick-item">
+            <div class="qi-ico">💬</div>
+            <b>Envoi par email</b>
+            <span>et WhatsApp</span>
+          </div>
+          <div class="quick-item">
+            <div class="qi-ico">💱</div>
+            <b>+160 devises</b>
+            <span>multi-devises</span>
+          </div>
+          <div class="quick-item">
+            <div class="qi-ico">🌍</div>
+            <b>Multi-langue</b>
+            <span>FR / EN / MU</span>
+          </div>
+          <div class="quick-item">
+            <div class="qi-ico">📨</div>
+            <b>Relances</b>
+            <span>automatiques</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG FEATURES -->
+    <section class="section" id="fonctionnalites">
+      <div class="container">
+        <div class="section-title">
+          <img src="imagen1.png" alt="">
+          <h2>Fonctionnalités</h2>
+        </div>
+        <p class="lead">Une plateforme moderne pensée pour l’écosystème business mauricien et international</p>
+
+        <div class="feature-panel">
+          <aside class="side" aria-label="Menu fonctionnalités">
+            <div class="side-item"><span class="dot"></span> Personnaliser factures</div>
+            <div class="side-item"><span class="dot"></span> Créer factures</div>
+            <div class="side-item"><span class="dot"></span> Superviser factures</div>
+            <div class="side-item"><span class="dot"></span> Envoyer factures</div>
+            <div class="side-item"><span class="dot"></span> Contrôler état factures</div>
+            <div class="side-item"><span class="dot"></span> Télécharger factures PDF</div>
+            <div class="side-item"><span class="dot"></span> Connecter factures gestion</div>
+            <div class="side-item"><span class="dot"></span> Factures depuis le mobile</div>
+          </aside>
+
+          <div class="feature-main">
+            <div class="feature-illustration">
+              <img src="imagen5.png" alt="Illustration fonctionnalités">
+            </div>
+            <p class="feature-caption">Descarga tus facturas en PDF o Excel</p>
+            <p class="feature-text">
+              Descarga tus facturas en Excel y PDF en un clic de manera masiva o caso por caso,
+              y gestiona la facturación desde la vista de cada una de ellas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <img src="imagen1.png" alt="">
+          <h2>Pour votre activité</h2>
+        </div>
+        <p class="lead">Une plateforme moderne pensée pour l’écosystème business mauricien et international</p>
+
+        <div class="activity">
+          <div>
+            <h3>Freelances, consultants, indépendants, petites entreprises : logiciel de facturation gratuit</h3>
+            <p>
+              Facturation pour freelances et petites entreprises.
+              Impressionnez vos clients avec des factures au design professionnel,
+              en accord avec votre marque. Automatisez les relances et suivez vos paiements.
+            </p>
+            <a class="btn btn-lg" href="#">Essai 15j gratuits</a>
+          </div>
+
+          <div class="photo">
+            <img src="imagen6.png" alt="Photo activité">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <img src="imagen1.png" alt="">
+          <h2>Témoignages</h2>
+        </div>
+        <p class="lead">Plus de 20 000 entreprises font confiance à la solution</p>
+
+        <div class="testi-grid">
+          <article class="testi">
+            <div class="logo">
+              <img src="imagen7.png" alt="Logo 1">
+              <div>
+                <div class="stars">★★★★★</div>
+                <div style="font-size:11px;color:var(--muted);font-weight:700;">cavallis.mu</div>
+              </div>
+            </div>
+            <p>
+              Facture.mu est un outil de facturation clair et simple.
+              Je gagne du temps et mes clients sont mieux suivis.
+            </p>
+            <a href="#">cavallis.mu</a>
+          </article>
+
+          <article class="testi">
+            <div class="logo">
+              <img src="imagen8.png" alt="Logo 2">
+              <div>
+                <div class="stars">★★★★★</div>
+                <div style="font-size:11px;color:var(--muted);font-weight:700;">nouzanimo.mu</div>
+              </div>
+            </div>
+            <p>
+              Nous avons gagné en professionnalisme.
+              Les relances automatiques et le suivi des paiements sont top.
+            </p>
+            <a href="#">nouzanimo.mu</a>
+          </article>
+
+          <article class="testi">
+            <div class="logo">
+              <img src="imagen9.png" alt="Logo 3">
+              <div>
+                <div class="stars">★★★★★</div>
+                <div style="font-size:11px;color:var(--muted);font-weight:700;">vanillart.mu</div>
+              </div>
+            </div>
+            <p>
+              Un excellent outil pour gérer les devis et factures.
+              Très simple à prendre en main, même pour une petite équipe.
+            </p>
+            <a href="#">vanillart.mu</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <img src="imagen1.png" alt="" style="width:26px;height:26px;margin:0 auto 10px;">
+          <h3>Commencez à facturer dès aujourd’hui !</h3>
+          <p>Facturez vos clients, suivez vos paiements.</p>
+          <a class="btn btn-lg" href="#">Essai 15j gratuits</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <img src="imagen1.png" alt="">
+          <h2>Questions fréquentes</h2>
+        </div>
+        <p class="lead">Posez-nous vos questions</p>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-q" type="button">
+              Mon entreprise n’est pas enregistrée à Maurice, puis-je utiliser Facture.mu ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Oui. Vous pouvez créer des devis et factures pour des clients partout dans le monde, et gérer plusieurs devises.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Comment gérez-vous les différentes devises (USD, EUR, MUR, etc.) ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              La plateforme gère la facturation multi-devises et vous aide à suivre vos montants selon vos besoins.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Puis-je importer mes données depuis mon système actuel ? puis-je utiliser Facture.mu ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Oui, selon le format (CSV/Excel). Vous pourrez ensuite créer et envoyer vos documents depuis Facture.mu.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Quelle est la politique de confidentialité des données ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Vos données restent privées. Nous appliquons des mesures de sécurité pour protéger l’accès et le stockage.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Puis-je utiliser mon logo et mes couleurs ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Oui. Vous pouvez personnaliser vos documents pour qu’ils correspondent à votre marque.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Puis-je exporter mes données ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Oui, vous pouvez exporter des éléments clés (factures, clients, produits) selon les options disponibles.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Est-ce adapté aux équipes ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Oui, c’est adapté aux petites équipes et aux entreprises qui grandissent.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" type="button">
+              Y a-t-il un support ?
+              <span class="chev">⌄</span>
+            </button>
+            <div class="faq-a">
+              Oui. Vous pouvez contacter le support pour toute question ou besoin d’aide.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="foot-brand">
+          <img src="imagen1.png" alt="">
+          <div>
+            <b>Facture.mu</b>
+            <small>El dorado de la facturation</small>
+          </div>
+        </div>
+
+        <div class="foot-col">
+          <h4>Produit</h4>
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#comment">Comment ça marche</a>
+          <a href="#tarifs">Tarifs</a>
+        </div>
+
+        <div class="foot-col">
+          <h4>Société</h4>
+          <a href="#">Contact</a>
+          <a href="#">Conditions</a>
+          <a href="#">Partenaires</a>
+        </div>
+
+        <div class="foot-col">
+          <h4>Support</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#">Centre d’aide</a>
+          <a href="#">État du système</a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div>© Facture.mu – Tous droits réservés.</div>
+        <div>Mentions légales · CGV · Cookies</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-item .faq-q').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(x => x.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
