@@ -1,1 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facture.mu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #fdf4e7 65%, #ffffff 100%);
+      color: #1f2937;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrapper {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+    .decor-circle {
+      position: absolute;
+      z-index: 0;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+    .decor-circle.large {
+      width: 620px;
+      height: auto;
+      left: -240px;
+      top: -220px;
+    }
+    .decor-circle.small {
+      width: 420px;
+      height: auto;
+      right: -120px;
+      top: 120px;
+    }
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 28px 48px;
+    }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 22px;
+      color: #0b8f6f;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #1f2937;
+      font-weight: 500;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-weight: 600;
+    }
+    .button {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid #0b8f6f;
+      background: #0b8f6f;
+      color: #fff;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+      box-shadow: 0 14px 30px rgba(11,143,111,0.24);
+    }
+    .button:hover { transform: translateY(-1px); }
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 30px auto 0;
+      padding: 0 48px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      align-items: center;
+      gap: 48px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #e8f4f0;
+      color: #0b8f6f;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(32px, 4vw, 42px);
+      margin: 8px 0 12px;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .lead {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #4b5563;
+      margin-bottom: 22px;
+    }
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .cta-secondary {
+      color: #0b8f6f;
+      font-weight: 600;
+    }
+    .hero-media {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .screenshot {
+      max-width: 640px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 28px 60px rgba(17,24,39,0.18);
+      background: #fff;
+    }
+    .logos {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+      padding: 28px 48px 14px;
+    }
+    .logos-row {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .logos-row img { height: 40px; width: auto; opacity: 0.9; }
+    .section-title {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 50px auto 24px;
+      font-size: 26px;
+      color: #0f172a;
+      font-weight: 700;
+      padding: 0 24px;
+    }
+    .cards {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: #fdf3dc;
+      border-radius: 20px;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 18px 28px rgba(212,164,92,0.18);
+    }
+    .card img { width: 80px; height: auto; }
+    .card-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .card-text {
+      color: #374151;
+      line-height: 1.5;
+    }
+    .testimonial {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 780px;
+      margin: 20px auto 70px;
+      padding: 0 24px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+    .testimonial strong { color: #0b8f6f; }
+    @media (max-width: 768px) {
+      header { padding: 22px 24px; }
+      .hero { padding: 0 24px 60px; }
+      .logos { padding: 22px 24px 10px; }
+      .cards { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <img src="Grupo 4930.png" alt="Décor cercle" class="decor-circle large">
+    <img src="Grupo 4948.png" alt="Décor cercle" class="decor-circle small">
 
+    <header>
+      <nav class="nav">
+        <div class="brand">
+          <img src="logo.png" alt="Facture.mu" width="38" height="38">
+          Facture.mu
+        </div>
+        <div class="nav-links">
+          <a href="#">Fonctionnalités</a>
+          <a href="#">Comment ça marche</a>
+          <a href="#">Tarifs</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="nav-actions">
+          <a href="#">Se connecter</a>
+          <a class="button" href="#">Créer un compte</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <img src="Componente 1 – 21.png" alt="Badge" width="20" height="20">
+            Facture.mu
+          </div>
+          <h1>Facturation simplifiée pour les entreprises qui grandissent à Maurice</h1>
+          <p class="lead">Créez, envoyez et suivez vos factures en quelques clics. Professionnel, multilingue, multi-devices.</p>
+          <div class="cta-row">
+            <a class="button" href="#">Essai 15j gratuit</a>
+            <a class="cta-secondary" href="#">Assistance dans la prise en main</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="facture.png" alt="Aperçu de l'application" class="screenshot">
+        </div>
+      </section>
+
+      <section class="logos">
+        <div class="logos-row">
+          <img src="Imagen 85.png" alt="Logo partenaire 1">
+          <img src="Imagen 86.png" alt="Logo partenaire 2">
+          <img src="Imagen 87.png" alt="Logo partenaire 3">
+          <img src="Imagen 88.png" alt="Logo partenaire 4">
+          <img src="Imagen 89.png" alt="Logo partenaire 5">
+        </div>
+      </section>
+
+      <h2 class="section-title">Conçu pour les entreprises qui opèrent à Maurice et au-delà</h2>
+
+      <section class="cards">
+        <article class="card">
+          <img src="Componente 1 – 25.png" alt="Calculatrice">
+          <div>
+            <div class="card-title">Faire des économies</div>
+            <div class="card-text">Moins cher qu'un comptable; l'encodage des factures de vente est compris dans nos abonnements.</div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="Componente 1 – 22.png" alt="Ordinateur">
+          <div>
+            <div class="card-title">Simplicité d’utilisation</div>
+            <div class="card-text">Interface simple, pensée pour mettre le focus sur les tâches qui comptent pour votre business.</div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="Componente 1 – 26.png" alt="Facture">
+          <div>
+            <div class="card-title">Augmenter la qualité</div>
+            <div class="card-text">90% des utilisateurs passent aux factures numériques et n'utilisent plus Excel</div>
+          </div>
+        </article>
+      </section>
+
+      <p class="testimonial"><strong>«85% des entreprises qui passent à la facturation en ligne constatent une amélioration de leur trésorerie dans les trois premiers mois.»</strong> La facture est l'un des documents les plus importants de votre business. Présentez-vous comme l'entreprise sérieuse et professionnelle que vous êtes.</p>
+    </main>
+  </div>
+</body>
+</html>
