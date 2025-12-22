@@ -218,14 +218,57 @@
     }
 
     .lang{
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 13px;
+      color:#374151;
+    }
+    .lang-toggle{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius: 999px;
+      padding: 8px 12px;
       display:flex;
       align-items:center;
       gap:8px;
+      cursor:pointer;
+      min-width: 120px;
+    }
+    .lang-toggle:focus{outline:2px solid #d1d5db; outline-offset:2px;}
+    .lang-menu{
+      position:absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background:#fff;
       border:1px solid var(--border);
-      border-radius: 999px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      display:none;
+      flex-direction:column;
+      padding: 6px;
+      min-width: 160px;
+      z-index: 30;
+    }
+    .lang:focus-within .lang-menu,
+    .lang:hover .lang-menu{display:flex;}
+    .lang-option{
+      border:0;
+      background: transparent;
+      display:flex;
+      align-items:center;
+      gap:10px;
       padding: 8px 10px;
-      font-size: 13px;
-      color:#374151;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight:600;
+      color:#111827;
+    }
+    .lang-option:hover{background:#f3f4f6;}
+    .lang-option.is-active{
+      background:#eef2ff;
+      color:#1f2937;
     }
     .flag{
       width:18px;height:18px;border-radius:50%;
@@ -234,7 +277,7 @@
     }
     .caret{
       width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid #6b7280;
-      margin-left:2px;
+      margin-left:auto;
     }
 
     .link-btn{
@@ -438,6 +481,8 @@
       font-weight:700;
       font-size:14px;
       min-width: 190px;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .rating{
@@ -1168,11 +1213,26 @@
       </nav>
 
       <div class="actions">
-        <div class="lang" role="button" tabindex="0" aria-label="Langue">
-          <span class="flag">🇫🇷</span>
-          <span class="flag">🇬🇧</span>
-          <span class="flag">🇲🇺</span>
-          <span class="caret" aria-hidden="true"></span>
+        <div class="lang" aria-label="Langue">
+          <button class="lang-toggle" type="button">
+            <span class="flag" aria-hidden="true">🇫🇷</span>
+            <span>Français</span>
+            <span class="caret" aria-hidden="true"></span>
+          </button>
+          <div class="lang-menu" role="menu">
+            <button class="lang-option is-active" type="button" role="menuitem">
+              <span class="flag" aria-hidden="true">🇫🇷</span>
+              <span>Français</span>
+            </button>
+            <button class="lang-option" type="button" role="menuitem">
+              <span class="flag" aria-hidden="true">🇬🇧</span>
+              <span>English</span>
+            </button>
+            <button class="lang-option" type="button" role="menuitem">
+              <span class="flag" aria-hidden="true">🇲🇺</span>
+              <span>Créole</span>
+            </button>
+          </div>
         </div>
 
         <a class="link-btn" href="https://app.facture.mu/" target="_blank" rel="noopener noreferrer">Se connecter</a>
