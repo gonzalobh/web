@@ -91,12 +91,13 @@
       display:block;
       opacity: 0;
       transform: translateX(-66px);
-      animation: lottieEntrance .9s ease-out forwards;
+      animation: lottieEntrance 1.1s ease-out forwards;
     }
 
     @keyframes lottieEntrance{
-      from{opacity:0; transform: translateX(-66px);}
-      to{opacity:1; transform: translateX(0);}
+      0%{opacity:0; transform: translateX(-66px);}
+      70%{opacity:1; transform: translateX(18px);}
+      100%{opacity:1; transform: translateX(0);}
     }
 
     .brand .name{
@@ -1846,4 +1847,3 @@
 
 </body>
 </html>
-
