@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Facture.mu favicon">
+  <defs>
+    <linearGradient id="shadow" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#ffffff" stop-opacity="1" offset="0" />
+      <stop stop-color="#f2f5f8" stop-opacity="1" offset="1" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="18" fill="url(#shadow)" />
+  <g fill="none" stroke-linecap="round" stroke-width="14" transform="translate(18 14)">
+    <path d="M18 54c0-22 16.5-40 36.8-40 9.8 0 18.7 4.3 25.8 11.7" stroke="#1b764d" />
+    <path d="M18 54c0-15.2 11.5-28 26.7-28 12.7 0 22.9 7.7 28.5 18" stroke="#f2bc00" />
+    <path d="M18 54c0-8.6 7-16 15.6-16 8 0 14.7 4.5 17.8 11.4" stroke="#df2327" />
+  </g>
+  <text x="46" y="106" font-family="'Arial Rounded MT Bold', 'Arial Rounded Bold', Arial, sans-serif" font-size="62" font-weight="700" fill="#0d2341">F</text>
+</svg>
