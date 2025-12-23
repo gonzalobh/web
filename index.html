@@ -540,8 +540,15 @@
       .hero{border-width: 8px}
       .hero h1{font-size: 28px;}
       .hero p{font-size: 14px;}
-      .pill-row{justify-content:center;}
+      .pill-row{
+        justify-content:center;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
       .pill{min-width: unset; width: 100%;}
+      .cta{width: 100%;}
       .rating{min-width: unset; width: 100%;}
       .mra{display:none;} /* en móvil suele estorbar */
     }
