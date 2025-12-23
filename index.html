@@ -170,6 +170,10 @@
     .menu-toggle.is-active span:nth-child(3){top: 25px; transform: rotate(-45deg);}
 
     @media (max-width: 900px){
+      header .container{
+        width: min(var(--max), calc(100% - 32px));
+      }
+
       .topbar{flex-wrap:nowrap;}
 
       .brand{min-width:0;}
