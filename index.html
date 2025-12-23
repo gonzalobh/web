@@ -89,6 +89,14 @@
     .logo-animation{
       height:52px;
       display:block;
+      opacity: 0;
+      transform: translateX(-26px);
+      animation: lottieEntrance .9s ease-out forwards;
+    }
+
+    @keyframes lottieEntrance{
+      from{opacity:0; transform: translateX(-26px);}
+      to{opacity:1; transform: translateX(0);}
     }
 
     .brand .name{
