@@ -1732,21 +1732,36 @@
   // ======================
   // ARREGLOS
   // ======================
-  const ARRIVAL_SPEED = 0.9;
-  const RETURN_SPEED  = 0.6;
+  const ARRIVAL_SPEED = 1;
+  const RETURN_SPEED  = 0.8;
   const TURN_FRAME    = 70;
   const HOLD_TIME     = 400;
-
+    
+let hasReturned = false;
+    
   animation.addEventListener('DOMLoaded', () => {
     animation.setSpeed(ARRIVAL_SPEED);
     animation.playSegments([0, TURN_FRAME], true);
   });
 
-  animation.addEventListener('complete', () => {
-    if (animation.playDirection === -1) {
-      animation.goToAndStop(0, true);
-      return;
-    }
+animation.addEventListener('complete', () => {
+  // ⛔ Si le retour est déjà fait, on arrête tout
+  if (hasReturned) {
+    animation.goToAndStop(0, true);
+    animation.removeEventListener('complete');
+    return;
+  }
+
+  // ▶️ Lancer le retour UNE SEULE FOIS
+  hasReturned = true;
+
+  setTimeout(() => {
+    animation.setSpeed(RETURN_SPEED);
+    animation.setDirection(-1);
+    animation.playSegments([TURN_FRAME, 0], true);
+  }, HOLD_TIME);
+});
+
 
     setTimeout(() => {
       animation.setSpeed(RETURN_SPEED);
