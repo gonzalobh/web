@@ -1347,7 +1347,7 @@
 
     <div class="hero-content">
       <h1>
-        xxFacturation simplifiée pour les<br>
+        xzFacturation simplifiée pour les<br>
         entreprises qui grandissent à Maurice
       </h1>
 
@@ -1730,7 +1730,7 @@ if (window.lottie) {
   });
 
   // ======================
-  // PARAMÈTRES
+  // PARAMETROS
   // ======================
   const ARRIVAL_SPEED = 1;
   const RETURN_SPEED  = 0.8;
@@ -1749,7 +1749,7 @@ animation.addEventListener('DOMLoaded', () => {
 animation.addEventListener('enterFrame', () => {
   const frame = Math.round(animation.currentFrame);
 
-  // ▶️ demi-tour précis
+  // ▶️ vuelt preciso
   if (!hasReturned && frame >= TURN_FRAME) {
     hasReturned = true;
     isReturning = true;
@@ -1763,12 +1763,13 @@ animation.addEventListener('enterFrame', () => {
     }, HOLD_TIME);
   }
 
-  // ⛔ arrêt définitif
-  if (isReturning && frame <= 0) {
-    animation.pause();
-    animation.goToAndStop(0, true);
-    animation.removeEventListener('enterFrame');
-  }
+  // ⛔ stop définitivo
+if (isReturning && frame <= 0) {
+  animation.pause();
+  animation.setDirection(1);   // 🔑 RESET DIRECTION
+  animation.goToAndStop(0, true);
+  animation.removeEventListener('enterFrame');
+}
 });
 
 }
