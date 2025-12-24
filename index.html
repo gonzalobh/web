@@ -1347,7 +1347,7 @@
 
     <div class="hero-content">
       <h1>
-        xxFacturation simplifiée pour les<br>
+        xFacturation simplifiée pour les<br>
         entreprises qui grandissent à Maurice
       </h1>
 
@@ -1714,7 +1714,7 @@
 <script>
  // inicio code ANDRES
   document.addEventListener('DOMContentLoaded', () => {
-  if (window.lottie) {
+if (window.lottie) {
   const container = document.querySelector('.logo-animation');
   if (!container) return;
 
@@ -1730,38 +1730,30 @@
   });
 
   // ======================
-  // ARREGLOS
+  // PARAMÈTRES
   // ======================
   const ARRIVAL_SPEED = 1;
   const RETURN_SPEED  = 0.8;
   const TURN_FRAME    = 70;
   const HOLD_TIME     = 400;
-    
-let hasReturned = false;
-    
+
+  let hasReturned = false;
+
+  // ▶️ AUTOPLAY À L’ARRIVÉE
   animation.addEventListener('DOMLoaded', () => {
+    animation.setDirection(1);
     animation.setSpeed(ARRIVAL_SPEED);
     animation.playSegments([0, TURN_FRAME], true);
   });
 
-animation.addEventListener('complete', () => {
-  // ⛔ Si le retour est déjà fait, on arrête tout
-  if (hasReturned) {
-    animation.goToAndStop(0, true);
-    animation.removeEventListener('complete');
-    return;
-  }
+  // ◀️ RETOUR UNIQUE + STOP FINAL
+  animation.addEventListener('complete', () => {
+    if (hasReturned) {
+      animation.goToAndStop(0, true);
+      return;
+    }
 
-  // ▶️ Lancer le retour UNE SEULE FOIS
-  hasReturned = true;
-
-  setTimeout(() => {
-    animation.setSpeed(RETURN_SPEED);
-    animation.setDirection(-1);
-    animation.playSegments([TURN_FRAME, 0], true);
-  }, HOLD_TIME);
-});
-
+    hasReturned = true;
 
     setTimeout(() => {
       animation.setSpeed(RETURN_SPEED);
@@ -1770,6 +1762,7 @@ animation.addEventListener('complete', () => {
     }, HOLD_TIME);
   });
 }
+
 // fin code ANDRES
 
     
