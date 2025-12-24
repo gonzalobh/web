@@ -1347,7 +1347,7 @@
 
     <div class="hero-content">
       <h1>
-        xFacturation simplifiée pour les<br>
+        xxFacturation simplifiée pour les<br>
         entreprises qui grandissent à Maurice
       </h1>
 
@@ -1737,30 +1737,40 @@ if (window.lottie) {
   const TURN_FRAME    = 70;
   const HOLD_TIME     = 400;
 
-  let hasReturned = false;
+let hasReturned = false;
+let isReturning = false;
 
-  // ▶️ AUTOPLAY À L’ARRIVÉE
-  animation.addEventListener('DOMLoaded', () => {
-    animation.setDirection(1);
-    animation.setSpeed(ARRIVAL_SPEED);
-    animation.playSegments([0, TURN_FRAME], true);
-  });
+animation.addEventListener('DOMLoaded', () => {
+  animation.setDirection(1);
+  animation.setSpeed(ARRIVAL_SPEED);
+  animation.play();
+});
 
-  // ◀️ RETOUR UNIQUE + STOP FINAL
-  animation.addEventListener('complete', () => {
-    if (hasReturned) {
-      animation.goToAndStop(0, true);
-      return;
-    }
+animation.addEventListener('enterFrame', () => {
+  const frame = Math.round(animation.currentFrame);
 
+  // ▶️ demi-tour précis
+  if (!hasReturned && frame >= TURN_FRAME) {
     hasReturned = true;
+    isReturning = true;
+
+    animation.pause();
 
     setTimeout(() => {
       animation.setSpeed(RETURN_SPEED);
       animation.setDirection(-1);
-      animation.playSegments([TURN_FRAME, 0], true);
+      animation.play();
     }, HOLD_TIME);
-  });
+  }
+
+  // ⛔ arrêt définitif
+  if (isReturning && frame <= 0) {
+    animation.pause();
+    animation.goToAndStop(0, true);
+    animation.removeEventListener('enterFrame');
+  }
+});
+
 }
 
 // fin code ANDRES
