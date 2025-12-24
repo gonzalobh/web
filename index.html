@@ -1712,22 +1712,52 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 <script>
+ // inicio code ANDRES
   document.addEventListener('DOMContentLoaded', () => {
-    if (window.lottie) {
-      const logoAnimations = document.querySelectorAll('.logo-animation');
-      logoAnimations.forEach(container => {
-        window.lottie.loadAnimation({
-          container,
-          renderer: 'svg',
-          loop: false,
-          autoplay: true,
-          path: container.dataset.animation || '2.json',
-          rendererSettings: {
-            preserveAspectRatio: 'xMidYMid meet'
-          }
-        });
-      });
+  if (window.lottie) {
+  const container = document.querySelector('.logo-animation');
+  if (!container) return;
+
+  const animation = lottie.loadAnimation({
+    container,
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: container.dataset.animation || '2.json',
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid meet'
     }
+  });
+
+  // ======================
+  // ARREGLOS
+  // ======================
+  const ARRIVAL_SPEED = 0.9;
+  const RETURN_SPEED  = 0.6;
+  const TURN_FRAME    = 70;
+  const HOLD_TIME     = 400;
+
+  animation.addEventListener('DOMLoaded', () => {
+    animation.setSpeed(ARRIVAL_SPEED);
+    animation.playSegments([0, TURN_FRAME], true);
+  });
+
+  animation.addEventListener('complete', () => {
+    if (animation.playDirection === -1) {
+      animation.goToAndStop(0, true);
+      return;
+    }
+
+    setTimeout(() => {
+      animation.setSpeed(RETURN_SPEED);
+      animation.setDirection(-1);
+      animation.playSegments([TURN_FRAME, 0], true);
+    }, HOLD_TIME);
+  });
+}
+// fin code ANDRES
+
+    
 
     const items = document.querySelectorAll('.func-item');
     const image = document.getElementById('func-image');
