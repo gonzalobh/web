@@ -1347,7 +1347,7 @@
 
     <div class="hero-content">
       <h1>
-        xzFacturation simplifiée pour les<br>
+        xxFacturation simplifiée pour les<br>
         entreprises qui grandissent à Maurice
       </h1>
 
@@ -1736,42 +1736,30 @@ if (window.lottie) {
   const RETURN_SPEED  = 0.8;
   const TURN_FRAME    = 70;
   const HOLD_TIME     = 400;
-
-let hasReturned = false;
-let isReturning = false;
+  const FINAL_FRAME   = 5;
 
 animation.addEventListener('DOMLoaded', () => {
-  animation.setDirection(1);
   animation.setSpeed(ARRIVAL_SPEED);
-  animation.play();
-});
-
-animation.addEventListener('enterFrame', () => {
-  const frame = Math.round(animation.currentFrame);
-
-  // ▶️ vuelt preciso
-  if (!hasReturned && frame >= TURN_FRAME) {
-    hasReturned = true;
-    isReturning = true;
-
-    animation.pause();
-
+  animation.playSegments([0, TURN_FRAME], true);
+  });
+  
+  let hasPlayedReturn = false;
+  
+  animation.addEventListener('complete', () => {
+    // 🔒 empêcher double déclenchement
+    if (hasPlayedReturn) {
+      animation.goToAndStop(FINAL_FRAME, true);
+      return;
+    }
+  
+    hasPlayedReturn = true;
+  
+    // pausa luego retorno
     setTimeout(() => {
       animation.setSpeed(RETURN_SPEED);
-      animation.setDirection(-1);
-      animation.play();
+      animation.playSegments([TURN_FRAME, FINAL_FRAME], true);
     }, HOLD_TIME);
-  }
-
-  // ⛔ stop définitivo
-if (isReturning && frame <= 0) {
-  animation.pause();
-  animation.setDirection(1);   // 🔑 RESET DIRECTION
-  animation.goToAndStop(0, true);
-  animation.removeEventListener('enterFrame');
-}
-});
-
+  });
 }
 
 // fin code ANDRES
