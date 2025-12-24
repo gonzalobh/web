@@ -693,17 +693,40 @@
   justify-content: center;
 }
 
-.func-preview img{
+.func-preview img,
+.func-mobile-preview img{
   max-width: 100%;
   height: auto;
   border-radius: 14px;
   box-shadow: 0 20px 40px rgba(0,0,0,.08);
 }
 
+.func-mobile-preview{
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .3s ease, opacity .3s ease;
+}
+
+.func-mobile-preview.is-open{
+  opacity: 1;
+}
+
+.func-mobile-inner{
+  background: #f8fafc;
+  border-radius: 22px;
+  padding: 20px;
+  margin-top: 12px;
+}
+
 /* Responsive */
 @media (max-width: 900px){
   .functionalities-box{
     grid-template-columns: 1fr;
+  }
+
+  .func-preview{
+    display: none;
   }
 }
 .activity-section{
@@ -1768,14 +1791,106 @@ animation.addEventListener('DOMLoaded', () => {
 
     const items = document.querySelectorAll('.func-item');
     const image = document.getElementById('func-image');
+    const funcPreview = document.querySelector('.func-preview');
+    const mobileQuery = window.matchMedia('(max-width: 900px)');
+    let mobilePreview = null;
+    let currentMobileItem = null;
+
+    const updateActiveItem = item => {
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    };
+
+    const collapseMobilePreview = (preview, moveImageBack = false) => {
+      if (!preview) return;
+      preview.classList.remove('is-open');
+      preview.style.maxHeight = '0px';
+      setTimeout(() => {
+        if (moveImageBack && funcPreview && !funcPreview.contains(image)) {
+          funcPreview.appendChild(image);
+        }
+        preview.remove();
+      }, 300);
+    };
+
+    const openMobilePreview = item => {
+      if (!item) return;
+      updateActiveItem(item);
+      currentMobileItem = item;
+      image.src = item.dataset.image;
+
+      const previousPreview = mobilePreview;
+      mobilePreview = document.createElement('div');
+      mobilePreview.className = 'func-mobile-preview';
+      const inner = document.createElement('div');
+      inner.className = 'func-mobile-inner';
+      inner.appendChild(image);
+      mobilePreview.appendChild(inner);
+      item.insertAdjacentElement('afterend', mobilePreview);
+
+      requestAnimationFrame(() => {
+        mobilePreview.classList.add('is-open');
+        mobilePreview.style.maxHeight = `${mobilePreview.scrollHeight}px`;
+      });
+
+      image.addEventListener('load', () => {
+        if (mobilePreview) {
+          mobilePreview.style.maxHeight = `${mobilePreview.scrollHeight}px`;
+        }
+      }, { once: true });
+
+      if (previousPreview) {
+        collapseMobilePreview(previousPreview);
+      }
+    };
+
+    const closeMobilePreview = () => {
+      if (!mobilePreview) return;
+      const previewToClose = mobilePreview;
+      mobilePreview = null;
+      currentMobileItem = null;
+      collapseMobilePreview(previewToClose, true);
+    };
+
+    const syncToViewport = () => {
+      if (mobileQuery.matches) {
+        const activeItem = document.querySelector('.func-item.active') || items[0];
+        if (activeItem) {
+          openMobilePreview(activeItem);
+        }
+      } else {
+        if (mobilePreview) {
+          closeMobilePreview();
+        }
+        const activeItem = document.querySelector('.func-item.active') || items[0];
+        if (activeItem) {
+          updateActiveItem(activeItem);
+          image.src = activeItem.dataset.image;
+        }
+        if (funcPreview && !funcPreview.contains(image)) {
+          funcPreview.appendChild(image);
+        }
+      }
+    };
 
     items.forEach(item => {
       item.addEventListener('click', () => {
-        items.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
+        if (mobileQuery.matches) {
+          if (currentMobileItem === item && mobilePreview) {
+            item.classList.remove('active');
+            closeMobilePreview();
+            return;
+          }
+          openMobilePreview(item);
+          return;
+        }
+        updateActiveItem(item);
         image.src = item.dataset.image;
       });
     });
+
+    syncToViewport();
+    mobileQuery.addEventListener('change', syncToViewport);
 
     const menuToggle = document.querySelector('.menu-toggle');
     const header = document.querySelector('header');
