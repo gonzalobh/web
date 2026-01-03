@@ -690,6 +690,31 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 18px 0;
+      --feature-col: 260px;
+      --col-gap: 18px;
+      --plan-col-width: calc((100% - var(--feature-col) - (var(--col-gap) * 3)) / 3);
+      background-image:
+        linear-gradient(#e5e7eb, #e5e7eb),
+        linear-gradient(#0ea5e9, #0ea5e9),
+        linear-gradient(#22c55e, #22c55e),
+        linear-gradient(#e5e7eb, #e5e7eb),
+        linear-gradient(#0ea5e9, #0ea5e9),
+        linear-gradient(#22c55e, #22c55e);
+      background-repeat: no-repeat;
+      background-size:
+        var(--plan-col-width) 2px,
+        var(--plan-col-width) 2px,
+        var(--plan-col-width) 2px,
+        var(--plan-col-width) 2px,
+        var(--plan-col-width) 2px,
+        var(--plan-col-width) 2px;
+      background-position:
+        calc(var(--feature-col) + var(--col-gap)) top,
+        calc(var(--feature-col) + (var(--col-gap) * 2) + var(--plan-col-width)) top,
+        calc(var(--feature-col) + (var(--col-gap) * 3) + (var(--plan-col-width) * 2)) top,
+        calc(var(--feature-col) + var(--col-gap)) bottom,
+        calc(var(--feature-col) + (var(--col-gap) * 2) + var(--plan-col-width)) bottom,
+        calc(var(--feature-col) + (var(--col-gap) * 3) + (var(--plan-col-width) * 2)) bottom;
     }
 
     .comparison-grid th,
@@ -728,9 +753,6 @@
     }
 
     .comparison-plan{
-      --plan-border: #e5e7eb;
-      border-left: 1px solid var(--plan-border);
-      border-right: 1px solid var(--plan-border);
       background: #fff;
       font-size: 12px;
       font-weight: 700;
@@ -738,35 +760,21 @@
     }
 
     .comparison-plan--free{
-      --plan-border: #e5e7eb;
       background: #f8fafc;
     }
 
     .comparison-plan--pro{
-      --plan-border: #0ea5e9;
-      border-left-width: 2px;
-      border-right-width: 2px;
     }
 
     .comparison-plan--enterprise{
-      --plan-border: #22c55e;
-      border-left-width: 2px;
-      border-right-width: 2px;
     }
 
     .comparison-grid thead .comparison-plan{
       font-weight: 800;
-      border-top: none;
-      border-bottom: none;
       padding-top: 14px;
       padding-bottom: 14px;
       border-top-left-radius: 14px;
       border-top-right-radius: 14px;
-    }
-
-    .comparison-grid thead .comparison-plan--pro,
-    .comparison-grid thead .comparison-plan--enterprise{
-      border-top-width: 2px;
     }
 
     .comparison-grid td.comparison-feature{
@@ -777,22 +785,14 @@
     }
 
     .comparison-section-row .comparison-plan{
-      border-top: none;
-      border-bottom: none;
       padding-top: 18px;
       padding-bottom: 12px;
     }
 
     .comparison-grid tbody:last-of-type tr:last-child .comparison-plan{
-      border-bottom: none;
       padding-bottom: 18px;
       border-bottom-left-radius: 14px;
       border-bottom-right-radius: 14px;
-    }
-
-    .comparison-grid tbody:last-of-type tr:last-child .comparison-plan--pro,
-    .comparison-grid tbody:last-of-type tr:last-child .comparison-plan--enterprise{
-      border-bottom-width: 2px;
     }
 
     .comparison-icon-check{
