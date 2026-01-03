@@ -499,6 +499,18 @@
       transition: background .2s ease, color .2s ease, border .2s ease;
     }
 
+    .price-grid .signup-btn{
+      --signup-border-color: #0ea5e9;
+      border-color: var(--signup-border-color);
+      color: var(--signup-border-color);
+      background: transparent;
+    }
+
+    .price-grid .signup-btn:hover{
+      background: var(--signup-border-color);
+      color: #fff;
+    }
+
     .signup-btn--filled{
       background: #0ea5e9;
       border-color: #0ea5e9;
@@ -510,6 +522,10 @@
       color: #22c55e;
     }
 
+    .price-grid .signup-btn--green{
+      --signup-border-color: #22c55e;
+    }
+
     .signup-btn--green:hover{
       background: #22c55e;
       color: #fff;
@@ -518,6 +534,19 @@
     .signup-btn:hover{
       background: #0ea5e9;
       color: #fff;
+    }
+
+    .price-grid .price-card:nth-child(1) .signup-btn{
+      --signup-border-color: #000;
+      color: #000;
+      border-color: #000;
+    }
+
+    .price-grid .price-card:nth-child(3) .signup-btn{
+      --signup-border-color: #0ea5e9;
+      background: transparent;
+      color: #0ea5e9;
+      border-color: #0ea5e9;
     }
 
     .divider{
