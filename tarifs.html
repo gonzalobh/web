@@ -614,9 +614,167 @@
       margin-top: auto;
     }
 
+    .comparison-toggle{
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .comparison-btn{
+      border: 1px solid #0ea5e9;
+      background: #fff;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+
+    .comparison-btn:hover{
+      box-shadow: 0 12px 20px rgba(14,165,233,.15);
+      transform: translateY(-1px);
+    }
+
+    .comparison-icon{
+      font-size: 14px;
+      transition: transform .2s ease;
+    }
+
+    .comparison-btn.is-open .comparison-icon{
+      transform: rotate(180deg);
+    }
+
+    .comparison-table{
+      margin-top: 32px;
+    }
+
+    .comparison-table.is-collapsed{
+      display: none;
+    }
+
+    .comparison-grid{
+      display: grid;
+      grid-template-columns: minmax(220px, 1.3fr) repeat(3, minmax(150px, 0.9fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .comparison-features{
+      padding: 10px 6px;
+    }
+
+    .comparison-section{
+      margin-bottom: 30px;
+    }
+
+    .comparison-section h4{
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .comparison-divider{
+      width: 140px;
+      height: 2px;
+      background: #111827;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .comparison-features ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .comparison-plan{
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 18px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      box-shadow: 0 14px 30px rgba(15,23,42,.06);
+    }
+
+    .comparison-plan--free{
+      background: #f8fafc;
+    }
+
+    .comparison-plan--pro{
+      border: 2px solid #0ea5e9;
+    }
+
+    .comparison-plan--enterprise{
+      border: 2px solid #22c55e;
+    }
+
+    .comparison-plan h5{
+      margin: 0;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .comparison-plan-divider{
+      height: 1px;
+      background: #e5e7eb;
+      margin: 16px 0;
+    }
+
+    .comparison-list{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .comparison-icon-check{
+      color: #0ea5e9;
+      font-size: 16px;
+    }
+
+    .comparison-icon-check.is-green{
+      color: #22c55e;
+    }
+
+    .comparison-icon-cross{
+      color: #111827;
+      font-size: 16px;
+    }
+
+    .comparison-value{
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 700;
+    }
+
     @media (max-width: 1100px){
       .price-grid{
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .comparison-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-plan{
+        text-align: left;
       }
     }
 
@@ -627,6 +785,11 @@
 
       .pricing-header h1{
         font-size: 24px;
+      }
+
+      .comparison-features ul,
+      .comparison-list{
+        gap: 12px;
       }
     }
 
@@ -892,6 +1055,164 @@
             <div class="stretch"></div>
           </article>
         </div>
+
+        <div class="comparison-toggle">
+          <button class="comparison-btn" type="button" aria-expanded="false" aria-controls="comparison-table">
+            Plans &amp; Feature Comparison
+            <span class="comparison-icon" aria-hidden="true">⌃</span>
+          </button>
+        </div>
+
+        <div class="comparison-table is-collapsed" id="comparison-table">
+          <div class="comparison-grid">
+            <div class="comparison-features">
+              <div class="comparison-section">
+                <h4>Essential Features</h4>
+                <div class="comparison-divider"></div>
+                <ul>
+                  <li>Remove “Powered by Invoice Ninja”</li>
+                  <li>Create Unlimited Clients</li>
+                  <li>Accept Payments Online</li>
+                  <li>Brand Invoices with Your Logo</li>
+                  <li>Professional Invoice Designs</li>
+                  <li>Product Item Library Management</li>
+                  <li>Inventory Management</li>
+                  <li>Custom Taxation Settings</li>
+                  <li>Recurring Invoicing &amp; Auto-Billing</li>
+                  <li>Alerts when Invoices are Viewed &amp; Paid</li>
+                </ul>
+              </div>
+              <div class="comparison-section">
+                <h4>Advanced Features</h4>
+                <ul>
+                  <li>API Access</li>
+                  <li>Email Invoices via Gmail &amp; MSN</li>
+                  <li>Customize Invoice Designs</li>
+                  <li>Reports: Invoices, Expenses, more</li>
+                  <li>Branded URL: “YourSite”.invoicing.co</li>
+                  <li>Customize Email Subjects &amp; Templates</li>
+                  <li>Set Up Auto-Reminder Emails</li>
+                  <li>Display Clients E-Signature on Invoices</li>
+                  <li>Interlink 10 Companies with 1 Login</li>
+                  <li>Create Unique “Client Group” Settings</li>
+                  <li>Additional Account Users</li>
+                  <li>Attach Files to Emails (pdf, jpg, xls)</li>
+                  <li>Custom “Billing.YourCompany.com”</li>
+                  <li>Connect Banks &amp; Sync Transactions</li>
+                  <li>e-Invoicing &amp; PEPPOL Network</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="comparison-plan comparison-plan--free">
+              <h5>Free</h5>
+              <div class="comparison-plan-divider"></div>
+              <ul class="comparison-list">
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-value">4</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+              </ul>
+              <div class="comparison-plan-divider"></div>
+              <h5>Free</h5>
+              <ul class="comparison-list">
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+              </ul>
+            </div>
+
+            <div class="comparison-plan comparison-plan--pro">
+              <h5>Ninja Pro</h5>
+              <div class="comparison-plan-divider"></div>
+              <ul class="comparison-list">
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-value">11</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+              </ul>
+              <div class="comparison-plan-divider"></div>
+              <h5>Ninja Pro</h5>
+              <ul class="comparison-list">
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-check">✓</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+                <li><span class="comparison-icon-cross">✕</span></li>
+              </ul>
+            </div>
+
+            <div class="comparison-plan comparison-plan--enterprise">
+              <h5>Enterprise</h5>
+              <div class="comparison-plan-divider"></div>
+              <ul class="comparison-list">
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-value">11</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+              </ul>
+              <div class="comparison-plan-divider"></div>
+              <h5>Enterprise</h5>
+              <ul class="comparison-list">
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+                <li><span class="comparison-icon-check is-green">✓</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -997,6 +1318,8 @@
 
       const billingToggle = document.getElementById('billing-toggle');
       const pricedItems = document.querySelectorAll('[data-monthly][data-annual]');
+      const comparisonButton = document.querySelector('.comparison-btn');
+      const comparisonTable = document.getElementById('comparison-table');
 
       const updateBilling = () => {
         const isAnnual = billingToggle?.checked;
@@ -1007,6 +1330,13 @@
 
       billingToggle?.addEventListener('change', updateBilling);
       updateBilling();
+
+      comparisonButton?.addEventListener('click', () => {
+        const isCollapsed = comparisonTable?.classList.toggle('is-collapsed');
+        const isOpen = !isCollapsed;
+        comparisonButton.classList.toggle('is-open', isOpen);
+        comparisonButton.setAttribute('aria-expanded', String(isOpen));
+      });
     });
   </script>
 </body>
