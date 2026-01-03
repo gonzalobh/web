@@ -665,7 +665,7 @@
 
     .comparison-grid th,
     .comparison-grid td{
-      padding: 12px 14px;
+      padding: 10px 14px;
       text-align: center;
       vertical-align: middle;
     }
@@ -699,7 +699,9 @@
     }
 
     .comparison-plan{
-      border: 1px solid #e5e7eb;
+      --plan-border: #e5e7eb;
+      border-left: 1px solid var(--plan-border);
+      border-right: 1px solid var(--plan-border);
       background: #fff;
       font-size: 12px;
       font-weight: 700;
@@ -707,19 +709,35 @@
     }
 
     .comparison-plan--free{
+      --plan-border: #e5e7eb;
       background: #f8fafc;
     }
 
     .comparison-plan--pro{
-      border: 2px solid #0ea5e9;
+      --plan-border: #0ea5e9;
+      border-left-width: 2px;
+      border-right-width: 2px;
     }
 
     .comparison-plan--enterprise{
-      border: 2px solid #22c55e;
+      --plan-border: #22c55e;
+      border-left-width: 2px;
+      border-right-width: 2px;
     }
 
     .comparison-grid thead .comparison-plan{
       font-weight: 800;
+      border-top: 1px solid var(--plan-border);
+      border-bottom: 1px solid #e5e7eb;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+    }
+
+    .comparison-grid thead .comparison-plan--pro,
+    .comparison-grid thead .comparison-plan--enterprise{
+      border-top-width: 2px;
     }
 
     .comparison-feature{
@@ -727,6 +745,25 @@
       font-size: 11px;
       font-weight: 400;
       color: #6b7280;
+    }
+
+    .comparison-section-row .comparison-plan{
+      border-top: none;
+      border-bottom: 1px solid #e5e7eb;
+      padding-top: 18px;
+      padding-bottom: 12px;
+    }
+
+    .comparison-grid tbody:last-of-type tr:last-child .comparison-plan{
+      border-bottom: 1px solid var(--plan-border);
+      padding-bottom: 18px;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+
+    .comparison-grid tbody:last-of-type tr:last-child .comparison-plan--pro,
+    .comparison-grid tbody:last-of-type tr:last-child .comparison-plan--enterprise{
+      border-bottom-width: 2px;
     }
 
     .comparison-icon-check{
