@@ -1012,14 +1012,14 @@
 .site-footer{
   padding-top: 70px;
   color: #374151;
-  background: #F3F3F3;
+  background: #ffffff;
 }
 
 .footer-grid{
   display: grid;
-  grid-template-columns: 1.4fr 2fr;
-  gap: 80px;
-  align-items: start;
+  grid-template-columns: minmax(240px, 1fr) 2fr;
+  gap: 60px;
+  align-items: center;
 }
 
 .footer-brand{
@@ -1040,7 +1040,8 @@
 .footer-links{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 44px;
+  justify-self: end;
 }
 
 .footer-column h4{
