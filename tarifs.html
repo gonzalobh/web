@@ -690,10 +690,19 @@
 
     .comparison-table{
       margin-top: 32px;
+      max-height: 3000px;
+      opacity: 1;
+      transform: translateY(0);
+      overflow: hidden;
+      transition: max-height .6s ease, opacity .4s ease, transform .4s ease, margin-top .4s ease;
     }
 
     .comparison-table.is-collapsed{
-      display: none;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-12px);
+      margin-top: 0;
+      pointer-events: none;
     }
 
     .comparison-grid{
