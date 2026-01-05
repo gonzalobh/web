@@ -972,14 +972,15 @@
 }
 
 .pricing-card__badge{
-  background: rgba(22,163,74,.12);
-  color: #1f2937;
+  background: #f8fafc;
+  color: #6b7280;
   font-weight: 700;
   font-size: 12px;
-  letter-spacing: .08em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   padding: 6px 16px;
   border-radius: 999px;
+  border: 1px solid #e5e7eb;
   margin-bottom: 16px;
 }
 
@@ -991,12 +992,15 @@
   display: grid;
   place-items: center;
   margin-bottom: 20px;
+  border: 1px solid #eef2f7;
   box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
 }
 
 .pricing-card__icon img{
   width: 58px;
   height: 58px;
+  opacity: .78;
+  filter: grayscale(1) saturate(.7);
 }
 
 .pricing-card h3{
@@ -1065,7 +1069,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--pricing-accent);
+  color: #9ca3af;
   font-weight: 700;
 }
 
@@ -1089,6 +1093,7 @@
 
 .pricing-card--featured{
   transform: translateY(-10px);
+  box-shadow: 0 22px 42px rgba(15,23,42,.12);
 }
 
 .pricing-card--featured:hover{
