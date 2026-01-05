@@ -882,6 +882,225 @@
     text-align: center;
   }
 }
+
+.pricing-section{
+  padding: 70px 0 40px;
+}
+
+.pricing-header{
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.pricing-icon{
+  height: 36px;
+  margin-bottom: 12px;
+}
+
+.pricing-header h2{
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 20px;
+}
+
+.pricing-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pricing-switch{
+  width: 58px;
+  height: 30px;
+  background: #111827;
+  border-radius: 999px;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.2);
+}
+
+.pricing-switch::after{
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.2);
+}
+
+.pricing-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.pricing-card{
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 34px 30px 30px;
+  border: 2px solid var(--pricing-accent);
+  box-shadow: 0 18px 36px rgba(15,23,42,.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pricing-card__badge{
+  background: rgba(22,163,74,.12);
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.pricing-card__icon{
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #f9fafb;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+}
+
+.pricing-card__icon img{
+  width: 58px;
+  height: 58px;
+}
+
+.pricing-card h3{
+  font-size: 22px;
+  margin: 0 0 6px;
+  color: #1f2937;
+}
+
+.pricing-card__tag{
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.pricing-card__subtitle{
+  color: #6b7280;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.pricing-card__price{
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+.pricing-card__amount{
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.pricing-card__term{
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.pricing-divider{
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0 18px;
+}
+
+.pricing-features{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
+  text-align: left;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.pricing-features li{
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+}
+
+.pricing-features li:last-child{margin-bottom:0;}
+
+.pricing-features li::before{
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--pricing-accent);
+  font-weight: 700;
+}
+
+.pricing-card__cta{
+  border-radius: 12px;
+  border: 2px solid var(--pricing-accent);
+  background: transparent;
+  color: var(--pricing-accent);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 24px;
+  cursor: pointer;
+  width: 100%;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pricing-card__cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15,23,42,.12);
+}
+
+.pricing-card--featured{
+  transform: translateY(-10px);
+}
+
+.pricing-card--featured .pricing-card__cta{
+  background: var(--pricing-accent);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.pricing-card--rempart{--pricing-accent:#d1d5db;}
+.pricing-card--pieter{--pricing-accent:#22c55e;}
+.pricing-card--morne{--pricing-accent:#0ea5e9;}
+
+@media (max-width: 900px){
+  .pricing-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card--featured{
+    transform: none;
+  }
+}
+
+@media (max-width: 520px){
+  .pricing-toggle{
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .pricing-card{
+    padding: 28px 22px;
+  }
+}
 .final-cta{
   padding: 90px 0 10px;
 }
@@ -1624,6 +1843,74 @@
         <div class="testimonial-site">vanillart.mu</div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="tarifs">
+  <div class="container">
+    <div class="pricing-header">
+      <img src="mechas.svg" alt="" class="pricing-icon">
+      <h2>Tarifs</h2>
+      <div class="pricing-toggle" aria-hidden="true">
+        <span>Monthly</span>
+        <span class="pricing-switch"></span>
+        <span>Annual</span>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="pricing-card pricing-card--rempart">
+        <div class="pricing-card__icon">
+          <img src="1.svg" alt="Le Rempart">
+        </div>
+        <h3>Le Rempart</h3>
+        <p class="pricing-card__subtitle">Essentials</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Up to 5 clients</li>
+          <li>Unlimited invoices &amp; quotes</li>
+          <li>Your logo on invoices</li>
+        </ul>
+        <button class="pricing-card__cta" type="button">Sign up</button>
+      </article>
+
+      <article class="pricing-card pricing-card--pieter pricing-card--featured">
+        <div class="pricing-card__badge">Most Popular</div>
+        <div class="pricing-card__icon">
+          <img src="2.svg" alt="Le Pieter">
+        </div>
+        <h3>Le Pieter <span class="pricing-card__tag">– Pro</span></h3>
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">9,9€</span>
+          <span class="pricing-card__term">/ month</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Unlimited clients</li>
+          <li>Professional templates</li>
+          <li>Automatic reminders</li>
+        </ul>
+        <button class="pricing-card__cta" type="button">Sign up</button>
+      </article>
+
+      <article class="pricing-card pricing-card--morne">
+        <div class="pricing-card__icon">
+          <img src="3.svg" alt="Le Morne">
+        </div>
+        <h3>Le Morne <span class="pricing-card__tag">– Enterprise</span></h3>
+        <div class="pricing-card__price">
+          <span class="pricing-card__amount">19,9€</span>
+          <span class="pricing-card__term">/ month</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Multiple users &amp; permissions</li>
+          <li>Attach files to emails</li>
+          <li>API access</li>
+        </ul>
+        <button class="pricing-card__cta" type="button">Sign up</button>
+      </article>
     </div>
   </div>
 </section>
