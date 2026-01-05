@@ -910,6 +910,15 @@
   color: #6b7280;
   font-weight: 600;
   font-size: 14px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pricing-toggle:focus-visible{
+  outline: 2px solid #111827;
+  outline-offset: 4px;
 }
 
 .pricing-switch{
@@ -931,6 +940,11 @@
   top: 4px;
   left: 4px;
   box-shadow: 0 6px 12px rgba(0,0,0,.2);
+  transition: transform 0.2s ease;
+}
+
+.pricing-toggle.is-annual .pricing-switch::after{
+  transform: translateX(28px);
 }
 
 .pricing-grid{
@@ -1852,11 +1866,11 @@
     <div class="pricing-header">
       <img src="mechas.svg" alt="" class="pricing-icon">
       <h2>Tarifs</h2>
-      <div class="pricing-toggle" aria-hidden="true">
+      <button class="pricing-toggle" type="button" aria-pressed="false" aria-label="Toggle annual pricing">
         <span>Monthly</span>
         <span class="pricing-switch"></span>
         <span>Annual</span>
-      </div>
+      </button>
     </div>
 
     <div class="pricing-grid">
@@ -1882,8 +1896,8 @@
         </div>
         <h3>Le Pieter <span class="pricing-card__tag">– Pro</span></h3>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount">20€</span>
-          <span class="pricing-card__term">/ month</span>
+          <span class="pricing-card__amount" data-monthly="20" data-annual="200">20€</span>
+          <span class="pricing-card__term" data-monthly="month" data-annual="year">/ month</span>
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
@@ -1900,8 +1914,8 @@
         </div>
         <h3>Le Morne <span class="pricing-card__tag">– Enterprise</span></h3>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount">30€</span>
-          <span class="pricing-card__term">/ month</span>
+          <span class="pricing-card__amount" data-monthly="30" data-annual="400">30€</span>
+          <span class="pricing-card__term" data-monthly="month" data-annual="year">/ month</span>
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
@@ -2186,6 +2200,31 @@ animation.addEventListener('DOMLoaded', () => {
       menuToggle.classList.toggle('is-active', isOpen);
       menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
+
+    const pricingToggle = document.querySelector('.pricing-toggle');
+    const pricingAmounts = document.querySelectorAll('.pricing-card__amount[data-monthly][data-annual]');
+    const pricingTerms = document.querySelectorAll('.pricing-card__term[data-monthly][data-annual]');
+
+    const updatePricing = isAnnual => {
+      if (!pricingToggle) return;
+      pricingToggle.classList.toggle('is-annual', isAnnual);
+      pricingToggle.setAttribute('aria-pressed', String(isAnnual));
+      pricingAmounts.forEach(amount => {
+        const value = isAnnual ? amount.dataset.annual : amount.dataset.monthly;
+        amount.textContent = value ? `${value}€` : amount.textContent;
+      });
+      pricingTerms.forEach(term => {
+        const value = isAnnual ? term.dataset.annual : term.dataset.monthly;
+        term.textContent = value ? `/ ${value}` : term.textContent;
+      });
+    };
+
+    pricingToggle?.addEventListener('click', () => {
+      const isAnnual = !pricingToggle.classList.contains('is-annual');
+      updatePricing(isAnnual);
+    });
+
+    updatePricing(false);
 
     const registerButtons = document.querySelectorAll('[data-register-cta]');
     registerButtons.forEach(btn => {
