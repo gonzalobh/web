@@ -659,6 +659,10 @@
       justify-content: center;
     }
 
+    .comparison-hidden{
+      display: none !important;
+    }
+
     .comparison-btn{
       border: 1px solid #0ea5e9;
       background: #fff;
@@ -1079,14 +1083,14 @@
 
         </div>
 
-        <div class="comparison-toggle">
+        <div class="comparison-toggle comparison-hidden">
           <button class="comparison-btn" type="button" aria-expanded="false" aria-controls="comparison-table">
             Plans &amp; Feature Comparison
             <span class="comparison-icon" aria-hidden="true">⌃</span>
           </button>
         </div>
 
-        <div class="comparison-table is-collapsed" id="comparison-table">
+        <div class="comparison-table is-collapsed comparison-hidden" id="comparison-table">
           <table class="comparison-grid">
             <thead>
               <tr>
