@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coming soon</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root{
+      --text:#0e1b2c;
+      --bg:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Arial Rounded MT Bold", "Arial Rounded Bold", "Arial Rounded", Arial, sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .coming-soon{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:24px;
+      text-align:center;
+    }
+
+    .logo-animation{
+      width:180px;
+      height:180px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(32px, 6vw, 56px);
+      letter-spacing:-0.02em;
+    }
+  </style>
+</head>
+<body>
+  <main class="coming-soon" aria-label="Coming soon">
+    <div class="logo-animation" data-animation="2.json" role="img" aria-label="Logo"></div>
+    <h1>Coming soon</h1>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script>
+    const container = document.querySelector('.logo-animation');
+    if (window.lottie && container) {
+      lottie.loadAnimation({
+        container,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: container.dataset.animation || '2.json',
+      });
+    }
+  </script>
+</body>
+</html>
