@@ -1359,6 +1359,11 @@
         menuToggle.setAttribute('aria-expanded', String(isOpen));
       });
 
+      const faqLink = document.querySelector('nav a[href="index.html#faq"]');
+      faqLink?.addEventListener('click', () => {
+        sessionStorage.setItem('smoothScrollTarget', 'faq');
+      });
+
       const registerButtons = document.querySelectorAll('[data-register-cta]');
       registerButtons.forEach(btn => {
         btn.addEventListener('click', () => {
