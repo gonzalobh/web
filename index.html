@@ -2248,6 +2248,8 @@ animation.addEventListener('DOMLoaded', () => {
 
     const featureLinks = document.querySelectorAll('a[href="#fonctionnalites"]');
     const featuresSection = document.getElementById('fonctionnalites');
+    const faqLinks = document.querySelectorAll('a[href="#faq"]');
+    const faqSection = document.getElementById('faq');
 
     const acceleratedScrollTo = (target, duration = 450) => {
       if (!target) return;
@@ -2275,6 +2277,20 @@ animation.addEventListener('DOMLoaded', () => {
         acceleratedScrollTo(featuresSection);
       });
     });
+
+    faqLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        acceleratedScrollTo(faqSection);
+      });
+    });
+
+    const pendingScrollTarget = sessionStorage.getItem('smoothScrollTarget');
+    if (pendingScrollTarget === 'faq' && faqSection) {
+      sessionStorage.removeItem('smoothScrollTarget');
+      window.scrollTo(0, 0);
+      requestAnimationFrame(() => acceleratedScrollTo(faqSection));
+    }
 
     const demoTrigger = document.querySelector('.pill-demo');
     const demoModal = document.getElementById('demo-modal');
