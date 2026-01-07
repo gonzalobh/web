@@ -1603,8 +1603,8 @@
           </div>
         </div>
 
-        <a class="link-btn" href="https://facture.mu/login" target="_blank" rel="noopener noreferrer">Se connecter</a>
-        <a class="btn" href="https://facture.mu/register" target="_blank" rel="noopener noreferrer">Créer un compte</a>
+        <a class="link-btn" href="https://app.facture.mu/login" target="_blank" rel="noopener noreferrer">Se connecter</a>
+        <a class="btn" href="https://app.facture.mu/register" target="_blank" rel="noopener noreferrer">Créer un compte</a>
       </div>
     </div>
   </div>
@@ -1900,7 +1900,7 @@
           <li>Unlimited invoices &amp; quotes</li>
           <li>Your logo on invoices</li>
         </ul>
-        <button class="pricing-card__cta" type="button">Sign up</button>
+        <button class="pricing-card__cta" type="button" data-register-cta>Sign up</button>
       </article>
 
       <article class="pricing-card pricing-card--pieter pricing-card--featured">
@@ -1918,7 +1918,7 @@
           <li>Professional templates</li>
           <li>Automatic reminders</li>
         </ul>
-        <button class="pricing-card__cta" type="button">Sign up</button>
+        <button class="pricing-card__cta" type="button" data-register-cta>Sign up</button>
       </article>
 
       <article class="pricing-card pricing-card--morne">
@@ -1936,7 +1936,7 @@
           <li>Attach files to emails</li>
           <li>API access</li>
         </ul>
-        <button class="pricing-card__cta" type="button">Sign up</button>
+        <button class="pricing-card__cta" type="button" data-register-cta>Sign up</button>
       </article>
     </div>
   </div>
@@ -2242,7 +2242,7 @@ animation.addEventListener('DOMLoaded', () => {
     const registerButtons = document.querySelectorAll('[data-register-cta]');
     registerButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        window.open('https://facture.mu/register', '_blank', 'noopener,noreferrer');
+        window.open('https://app.facture.mu/register', '_blank', 'noopener,noreferrer');
       });
     });
 
