@@ -37,9 +37,15 @@
     }
 
     .screens-image{
-      width:min(90vw, 720px);
+      width:min(80vw, 600px);
       height:auto;
       display:block;
+    }
+
+    .screens-frame{
+      padding:56px 64px;
+      background:#f6b300;
+      border-radius:28px;
     }
 
     h1{
@@ -52,7 +58,9 @@
 <body>
   <main class="coming-soon" aria-label="Coming soon">
     <div class="logo-animation" data-animation="2.json" role="img" aria-label="Logo"></div>
-    <img class="screens-image" src="screens.png" alt="Screens preview">
+    <div class="screens-frame">
+      <img class="screens-image" src="screens.png" alt="Screens preview">
+    </div>
     <h1>Coming soon</h1>
   </main>
 
