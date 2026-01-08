@@ -953,6 +953,31 @@
   gap: 26px;
 }
 
+.pricing-cta{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.pricing-cta__button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: 2px solid #000000;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 700;
+  background: transparent;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pricing-cta__button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15,23,42,.12);
+}
+
 .pricing-card{
   background: #ffffff;
   border-radius: 26px;
@@ -1589,7 +1614,7 @@
 
       <nav aria-label="Navigation">
         <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="tarifs.html">Tarifs</a>
+        <a href="#tarifs">Tarifs</a>
         <a href="#faq">FAQ</a>
       </nav>
 
@@ -1948,6 +1973,9 @@
         <button class="pricing-card__cta" type="button" data-register-cta>Sign up</button>
       </article>
     </div>
+    <div class="pricing-cta">
+      <a class="pricing-cta__button" href="tarifs.html">Voir tous les tarifs</a>
+    </div>
   </div>
 </section>
 
@@ -2257,6 +2285,8 @@ animation.addEventListener('DOMLoaded', () => {
 
     const featureLinks = document.querySelectorAll('a[href="#fonctionnalites"]');
     const featuresSection = document.getElementById('fonctionnalites');
+    const tarifsLinks = document.querySelectorAll('a[href="#tarifs"]');
+    const tarifsSection = document.getElementById('tarifs');
     const faqLinks = document.querySelectorAll('a[href="#faq"]');
     const faqSection = document.getElementById('faq');
 
@@ -2284,6 +2314,13 @@ animation.addEventListener('DOMLoaded', () => {
       link.addEventListener('click', event => {
         event.preventDefault();
         acceleratedScrollTo(featuresSection);
+      });
+    });
+
+    tarifsLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        acceleratedScrollTo(tarifsSection);
       });
     });
 
