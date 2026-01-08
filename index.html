@@ -1072,6 +1072,9 @@
 }
 
 .pricing-card__cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 12px;
   border: 2px solid var(--pricing-accent);
   background: transparent;
@@ -1081,7 +1084,12 @@
   padding: 12px 24px;
   cursor: pointer;
   width: 100%;
+  text-decoration: none;
   transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pricing-card__cta + .pricing-card__cta{
+  margin-top: 12px;
 }
 
 .pricing-card__cta:hover{
@@ -1920,6 +1928,7 @@
           <li>Automatic reminders</li>
         </ul>
         <button class="pricing-card__cta" type="button" data-register-cta>Sign up</button>
+        <a class="pricing-card__cta" href="tarifs.html">Voir plus</a>
       </article>
 
       <article class="pricing-card pricing-card--morne">
