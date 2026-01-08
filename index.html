@@ -11,6 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* FIX: forzar visibilidad del chat Tomos */
+#tomos-widget,
+.tomos-widget,
+iframe[src*="tomos.bot"] {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
     :root{
       --text:#0e1b2c;
       --muted:#6b7280;
