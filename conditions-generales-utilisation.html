@@ -1770,8 +1770,50 @@
   </div>
 </main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    if (window.lottie) {
+      const container = document.querySelector('.logo-animation');
+      if (container) {
+        const animation = lottie.loadAnimation({
+          container,
+          renderer: 'svg',
+          loop: false,
+          autoplay: false,
+          path: container.dataset.animation || '2.json',
+          rendererSettings: {
+            preserveAspectRatio: 'xMidYMid meet'
+          }
+        });
+
+        const ARRIVAL_SPEED = 0.9;
+        const RETURN_SPEED  = 0.7;
+        const TURN_FRAME    = 118;
+        const HOLD_TIME     = 400;
+        const FINAL_FRAME   = 118;
+
+        animation.addEventListener('DOMLoaded', () => {
+          animation.setSpeed(ARRIVAL_SPEED);
+          animation.playSegments([0, TURN_FRAME], true);
+        });
+
+        let hasPlayedReturn = false;
+        animation.addEventListener('complete', () => {
+          if (hasPlayedReturn) {
+            animation.goToAndStop(FINAL_FRAME, true);
+            return;
+          }
+
+          hasPlayedReturn = true;
+          setTimeout(() => {
+            animation.setSpeed(RETURN_SPEED);
+            animation.playSegments([TURN_FRAME, FINAL_FRAME], true);
+          }, HOLD_TIME);
+        });
+      }
+    }
+
     const menuToggle = document.querySelector('.menu-toggle');
     const header = document.querySelector('header');
 
