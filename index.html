@@ -1589,6 +1589,87 @@
   }
 }
 
+    .usecases-section{
+  padding: 90px 0;
+}
+
+.usecase-card{
+  background:#f3f3f3;
+  border-radius:28px;
+  padding:40px;
+  margin-bottom:40px;
+}
+
+.usecase-title{
+  text-align:center;
+  font-size:22px;
+  font-weight:800;
+  margin-bottom:30px;
+}
+
+.usecase-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.usecase-col h4{
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.usecase-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.usecase-list li{
+  position:relative;
+  padding-left:28px;
+  margin-bottom:12px;
+  font-size:15px;
+  color:#374151;
+}
+
+.usecase-list.negative li::before{
+  content:"✖";
+  position:absolute;
+  left:0;
+  color:#dc2626;
+  font-weight:700;
+}
+
+.usecase-list.positive li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:#16a34a;
+  font-weight:700;
+}
+
+.usecase-result{
+  margin-top:26px;
+  text-align:center;
+  font-weight:700;
+  color:#166534;
+}
+
+.usecase-footer{
+  margin-top:40px;
+  text-align:center;
+  font-size:16px;
+  color:#374151;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .usecase-grid{
+    grid-template-columns:1fr;
+  }
+}
+
 
   </style>
 </head>
@@ -1826,6 +1907,104 @@
     </div>
   </div>
 </section>
+
+  <section class="usecases-section">
+  <div class="container">
+
+    <!-- CASO 1 -->
+    <div class="usecase-card">
+      <h3 class="usecase-title">Détaillant / Distributeur</h3>
+
+      <div class="usecase-grid">
+        <div class="usecase-col">
+          <h4>Avant</h4>
+          <ul class="usecase-list negative">
+            <li>Rapports de vente à partir des factures</li>
+            <li>Gestion des stocks dans des feuilles de calcul</li>
+            <li>Serveur local, accessible uniquement au bureau</li>
+            <li>Impossible de cibler les groupes clients pour la publicité</li>
+          </ul>
+        </div>
+
+        <div class="usecase-col">
+          <h4>Avec <strong>Facture.mu</strong></h4>
+          <ul class="usecase-list positive">
+            <li>Données dans le cloud, accessibles partout</li>
+            <li>Analyses intelligentes pour exploiter les données</li>
+            <li>Identification des clients performants</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="usecase-result">
+        Résultat : <strong>+20 % de chiffre d’affaires cette année</strong>
+      </p>
+    </div>
+
+    <!-- CASO 2 -->
+    <div class="usecase-card">
+      <h3 class="usecase-title">Entreprise de services</h3>
+
+      <div class="usecase-grid">
+        <div class="usecase-col">
+          <h4>Avant</h4>
+          <ul class="usecase-list negative">
+            <li>Facturation et dépenses dans des systèmes séparés</li>
+            <li>Retards constants de paiement</li>
+          </ul>
+        </div>
+
+        <div class="usecase-col">
+          <h4>Avec <strong>Facture.mu</strong></h4>
+          <ul class="usecase-list positive">
+            <li>Facturation récurrente automatisée</li>
+            <li>Envoi par email ou WhatsApp</li>
+            <li>Relances automatiques = trésorerie améliorée</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="usecase-result">
+        Résultat : <strong>plus de soucis de trésorerie</strong>
+      </p>
+    </div>
+
+    <!-- CASO 3 -->
+    <div class="usecase-card">
+      <h3 class="usecase-title">PME</h3>
+
+      <div class="usecase-grid">
+        <div class="usecase-col">
+          <h4>Avant</h4>
+          <ul class="usecase-list negative">
+            <li>Expert-comptable coûteux</li>
+            <li>Retards TVA et paiements fournisseurs</li>
+          </ul>
+        </div>
+
+        <div class="usecase-col">
+          <h4>Avec <strong>Facture.mu</strong></h4>
+          <ul class="usecase-list positive">
+            <li>Accès partagé avec l’expert-comptable</li>
+            <li>Factures scannées et centralisées</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="usecase-result">
+        Résultat : <strong>trésorerie assainie et paiements ponctuels</strong>
+      </p>
+    </div>
+
+    <p class="usecase-footer">
+      Facture.mu vous permet d’automatiser et de rationaliser la facturation,
+      la gestion des dépenses et l’analyse commerciale.
+      <br><strong>Résultat : une trésorerie plus saine et plus de revenus.</strong>
+    </p>
+
+  </div>
+</section>
+
 
 <section class="testimonials-section">
   <div class="container">
