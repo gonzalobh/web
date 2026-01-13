@@ -1278,15 +1278,25 @@
 }
 
 .faq-item p{
-  padding-bottom: 16px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-bottom: 0;
   font-size: 14px;
   color: #6b7280;
   line-height: 1.6;
+  transition: max-height 300ms ease-out, opacity 300ms ease-out, padding-bottom 300ms ease-out;
 }
 
 /* Animación suave */
 .faq-item[open]{
   background: #ffffff;
+}
+
+.faq-item[open] p{
+  max-height: var(--faq-content-height, 240px);
+  opacity: 1;
+  padding-bottom: 16px;
 }
 .site-footer{
   padding-top: 70px;
@@ -2496,6 +2506,24 @@ animation.addEventListener('complete', () => {
     const tarifsSection = document.getElementById('tarifs');
     const faqLinks = document.querySelectorAll('a[href="#faq"]');
     const faqSection = document.getElementById('faq');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    const setFaqHeights = () => {
+      faqItems.forEach(item => {
+        const content = item.querySelector('p');
+        if (!content) return;
+        content.style.maxHeight = 'none';
+        const height = content.scrollHeight;
+        content.style.maxHeight = '';
+        item.style.setProperty('--faq-content-height', `${height}px`);
+      });
+    };
+
+    setFaqHeights();
+
+    window.addEventListener('resize', () => {
+      setFaqHeights();
+    });
 
     const acceleratedScrollTo = (target, duration = 450) => {
       if (!target) return;
