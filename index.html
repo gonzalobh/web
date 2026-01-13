@@ -1677,6 +1677,18 @@
   }
 }
 
+.usecase-with-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;            /* espacio entre "Avec" y el logo */
+}
+
+.usecase-with-logo .usecase-logo {
+    height: 2em;
+    width: auto;
+    display: block;
+    margin-top: -18px;
+}
 
   </style>
 </head>
@@ -1934,7 +1946,10 @@
         </div>
 
         <div class="usecase-col">
-          <h4>Avec <img class="usecase-logo" src="logo.png" alt="Facture.mu"></h4>
+<h4 class="usecase-with-logo">
+  <span>Avec</span>
+  <img class="usecase-logo" src="logo.png" alt="Facture.mu">
+</h4>
           <ul class="usecase-list positive">
             <li>Données dans le cloud, accessibles partout</li>
             <li>Analyses intelligentes pour exploiter les données</li>
@@ -1962,7 +1977,10 @@
         </div>
 
         <div class="usecase-col">
-          <h4>Avec <img class="usecase-logo" src="logo.png" alt="Facture.mu"></h4>
+<h4 class="usecase-with-logo">
+  <span>Avec</span>
+  <img class="usecase-logo" src="logo.png" alt="Facture.mu">
+</h4>
           <ul class="usecase-list positive">
             <li>Facturation récurrente automatisée</li>
             <li>Envoi par email ou WhatsApp</li>
@@ -1990,7 +2008,10 @@
         </div>
 
         <div class="usecase-col">
-          <h4>Avec <img class="usecase-logo" src="logo.png" alt="Facture.mu"></h4>
+<h4 class="usecase-with-logo">
+  <span>Avec</span>
+  <img class="usecase-logo" src="logo.png" alt="Facture.mu">
+</h4>
           <ul class="usecase-list positive">
             <li>Accès partagé avec l’expert-comptable</li>
             <li>Factures scannées et centralisées</li>
