@@ -1619,10 +1619,10 @@
   margin-bottom:14px;
 }
 
-.usecase-lottie{
+.usecase-logo{
   display:inline-block;
   width:96px;
-  height:26px;
+  height:auto;
   vertical-align:middle;
 }
 
@@ -1934,7 +1934,7 @@
         </div>
 
         <div class="usecase-col">
-          <h4>Avec <span class="usecase-lottie" data-animation="2.json" role="img" aria-label="Facture.mu"></span></h4>
+          <h4>Avec <img class="usecase-logo" src="logo.png" alt="Facture.mu"></h4>
           <ul class="usecase-list positive">
             <li>Données dans le cloud, accessibles partout</li>
             <li>Analyses intelligentes pour exploiter les données</li>
@@ -1962,7 +1962,7 @@
         </div>
 
         <div class="usecase-col">
-          <h4>Avec <span class="usecase-lottie" data-animation="2.json" role="img" aria-label="Facture.mu"></span></h4>
+          <h4>Avec <img class="usecase-logo" src="logo.png" alt="Facture.mu"></h4>
           <ul class="usecase-list positive">
             <li>Facturation récurrente automatisée</li>
             <li>Envoi par email ou WhatsApp</li>
@@ -1990,7 +1990,7 @@
         </div>
 
         <div class="usecase-col">
-          <h4>Avec <span class="usecase-lottie" data-animation="2.json" role="img" aria-label="Facture.mu"></span></h4>
+          <h4>Avec <img class="usecase-logo" src="logo.png" alt="Facture.mu"></h4>
           <ul class="usecase-list positive">
             <li>Accès partagé avec l’expert-comptable</li>
             <li>Factures scannées et centralisées</li>
@@ -2318,19 +2318,6 @@ animation.addEventListener('complete', () => {
       animation.setSpeed(RETURN_SPEED);
       animation.playSegments([TURN_FRAME, FINAL_FRAME], true);
     }, HOLD_TIME);
-  });
-  const usecaseAnimations = document.querySelectorAll('.usecase-lottie');
-  usecaseAnimations.forEach((container) => {
-    lottie.loadAnimation({
-      container,
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      path: container.dataset.animation || '2.json',
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid meet'
-      }
-    });
   });
 }
 
