@@ -460,8 +460,11 @@
 
     .price-amount{
       margin-top: 16px;
-      font-size: 24px;
-      font-weight: 800;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
       color: #0f172a;
     }
 
@@ -469,11 +472,29 @@
       display: inline-block;
     }
 
+    .price-line{
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .price-main{
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
     .price-term{
       font-size: 11px;
-      color: #6b7280;
+      color: #9ca3af;
       font-weight: 600;
-      margin-left: 4px;
+    }
+
+    .price-sub{
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 600;
     }
 
     .price-note{
@@ -1015,8 +1036,10 @@
             <h3>START</h3>
             <p>Yes, it's really free 🙂</p>
             <div class="price-amount">
-              <span data-monthly="0€" data-annual="0€">0€</span></br>
-              <span class="price-term" data-monthly="Per month" data-annual="Per year">Per year</span>
+              <div class="price-line">
+                <span class="price-main" data-monthly="0€" data-annual="0€">0€</span>
+                <span class="price-term" data-monthly="Per month" data-annual="Per year">Per year</span>
+              </div>
             </div>
             <div class="price-action">
               <button class="signup-btn" type="button" data-register-cta>Sign up</button>
@@ -1038,8 +1061,13 @@
             <h3>GROW</h3>
             <p>Pay annually for 10 months + 2 months free!</p>
             <div class="price-amount">
-              <span data-monthly="Rs 499 (9,9€)" data-annual="Rs 4990 (99€)">Rs 499 (9,9€)</span></br>
-              <span class="price-term" data-monthly="Per month" data-annual="per year with an annual plan!">per year with an annual plan!</span>
+              <div class="price-line">
+                <span class="price-main" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
+                <span class="price-term" data-monthly="/ month" data-annual="/ year">/ month</span>
+              </div>
+              <div class="price-line">
+                <span class="price-sub" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
+              </div>
             </div>
             <div class="price-action">
               <button class="signup-btn signup-btn--green" type="button" data-register-cta>Sign up</button>
@@ -1061,8 +1089,13 @@
             <h3>SCALE</h3>
             <p>Pay annually for 10 months + 2 months free!</p>
             <div class="price-amount">
-              <span data-monthly="Rs 999 (19,9€)" data-annual="Rs 9990 (199€)">Rs 999 (19,9€)</span></br>
-              <span class="price-term" data-monthly="Per month" data-annual="Per year">Per year</span>
+              <div class="price-line">
+                <span class="price-main" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
+                <span class="price-term" data-monthly="/ month" data-annual="/ year">/ month</span>
+              </div>
+              <div class="price-line">
+                <span class="price-sub" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
+              </div>
             </div>
             <div class="price-action">
               <button class="signup-btn signup-btn--filled" type="button" data-register-cta>Sign up</button>
