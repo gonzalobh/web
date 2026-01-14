@@ -2160,7 +2160,7 @@
         </div>
         <h3>Grow<span class="pricing-card__tag"></span></h3>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount" data-monthly="9,9" data-annual="99">9,9€</span>
+          <span class="pricing-card__amount" data-monthly="Rs 499 (9,9€)" data-annual="Rs 4990 (99€)">Rs 499 (9,9€)</span>
           <span class="pricing-card__term" data-monthly="month" data-annual="year">/ month</span>
         </div>
         <div class="pricing-divider"></div>
@@ -2178,7 +2178,7 @@
         </div>
         <h3>Scale<span class="pricing-card__tag"></span></h3>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount" data-monthly="19,9" data-annual="199">19,9€</span>
+          <span class="pricing-card__amount" data-monthly="Rs 999 (19,9€)" data-annual="Rs 9990 (199€)">Rs 999 (19,9€)</span>
           <span class="pricing-card__term" data-monthly="month" data-annual="year">/ month</span>
         </div>
         <div class="pricing-divider"></div>
@@ -2478,7 +2478,7 @@ animation.addEventListener('complete', () => {
       pricingToggle.setAttribute('aria-pressed', String(isAnnual));
       pricingAmounts.forEach(amount => {
         const value = isAnnual ? amount.dataset.annual : amount.dataset.monthly;
-        amount.textContent = value ? `${value}€` : amount.textContent;
+        amount.textContent = value ? value : amount.textContent;
       });
       pricingTerms.forEach(term => {
         const value = isAnnual ? term.dataset.annual : term.dataset.monthly;
