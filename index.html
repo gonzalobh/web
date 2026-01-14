@@ -1045,10 +1045,17 @@
 
 .pricing-card__price{
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
   gap: 6px;
   margin-bottom: 12px;
   color: #111827;
+}
+
+.pricing-card__line{
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
 }
 
 .pricing-card__amount{
@@ -1057,9 +1064,16 @@
 }
 
 .pricing-card__term{
-  color: #6b7280;
+  color: #9ca3af;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
+}
+
+.pricing-card__equivalent{
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .pricing-divider{
@@ -2160,8 +2174,13 @@
         </div>
         <h3>Grow<span class="pricing-card__tag"></span></h3>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount" data-monthly="Rs 499 (9,9€)" data-annual="Rs 4990 (99€)">Rs 499 (9,9€)</span>
-          <span class="pricing-card__term" data-monthly="month" data-annual="year">/ month</span>
+          <div class="pricing-card__line">
+            <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4990">Rs 499</span>
+            <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+          </div>
+          <div class="pricing-card__line">
+            <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
+          </div>
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
@@ -2178,8 +2197,13 @@
         </div>
         <h3>Scale<span class="pricing-card__tag"></span></h3>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount" data-monthly="Rs 999 (19,9€)" data-annual="Rs 9990 (199€)">Rs 999 (19,9€)</span>
-          <span class="pricing-card__term" data-monthly="month" data-annual="year">/ month</span>
+          <div class="pricing-card__line">
+            <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9990">Rs 999</span>
+            <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+          </div>
+          <div class="pricing-card__line">
+            <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
+          </div>
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
@@ -2471,6 +2495,7 @@ animation.addEventListener('complete', () => {
     const pricingToggle = document.querySelector('.pricing-toggle');
     const pricingAmounts = document.querySelectorAll('.pricing-card__amount[data-monthly][data-annual]');
     const pricingTerms = document.querySelectorAll('.pricing-card__term[data-monthly][data-annual]');
+    const pricingEquivalents = document.querySelectorAll('.pricing-card__equivalent[data-monthly][data-annual]');
 
     const updatePricing = isAnnual => {
       if (!pricingToggle) return;
@@ -2482,7 +2507,11 @@ animation.addEventListener('complete', () => {
       });
       pricingTerms.forEach(term => {
         const value = isAnnual ? term.dataset.annual : term.dataset.monthly;
-        term.textContent = value ? `/ ${value}` : term.textContent;
+        term.textContent = value ? value : term.textContent;
+      });
+      pricingEquivalents.forEach(equivalent => {
+        const value = isAnnual ? equivalent.dataset.annual : equivalent.dataset.monthly;
+        equivalent.textContent = value ? value : equivalent.textContent;
       });
     };
 
