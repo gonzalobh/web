@@ -448,14 +448,81 @@
 
     .price-card h3{
       margin: 0 0 6px;
-      font-size: 15px;
+      font-size: 22px;
       font-weight: 800;
+      color: #1f2937;
+      text-align: center;
     }
 
     .price-card p{
       margin: 0;
       color: #6b7280;
       font-size: 12px;
+    }
+
+    .price-card .pricing-card__icon{
+      width: 156px;
+      height: 156px;
+      background: #27060408;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+    }
+
+    .price-card .pricing-card__icon img{
+      width: 158px;
+      height: 158px;
+      opacity: .85;
+      filter: grayscale(1) saturate(.7);
+    }
+
+    .price-card .pricing-card__tag{
+      color: #6b7280;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .price-card .pricing-card__subtitle{
+      color: #6b7280;
+      font-weight: 600;
+      margin: 0 0 16px;
+      text-align: center;
+    }
+
+    .price-card .pricing-card__price{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+      color: #111827;
+      text-align: center;
+    }
+
+    .price-card .pricing-card__line{
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .price-card .pricing-card__amount{
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .price-card .pricing-card__term{
+      color: #9ca3af;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .price-card .pricing-card__equivalent{
+      color: #9ca3af;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
     }
 
     .price-amount{
@@ -1033,12 +1100,17 @@
 
         <div class="price-grid">
           <article class="price-card">
-            <h3>START</h3>
-            <p>Yes, it's really free 🙂</p>
-            <div class="price-amount">
-              <div class="price-line">
-                <span class="price-main" data-monthly="Rs 0" data-annual="Rs 0">Rs 0</span>
-                <span class="price-term" data-monthly="Per month" data-annual="Per year">Per year</span>
+            <div class="pricing-card__icon" style="background-color: #ffd256;">
+              <img src="1.svg" alt="Start">
+            </div>
+            <h3>START<span class="pricing-card__tag"></span></h3>
+            <div class="pricing-card__price">
+              <div class="pricing-card__line">
+                <span class="pricing-card__amount" data-monthly="Rs 0" data-annual="Rs 0">Rs 0</span>
+                <span class="pricing-card__term" data-monthly="Per month" data-annual="Per year">Per year</span>
+              </div>
+              <div class="pricing-card__line">
+                <span class="pricing-card__equivalent" data-monthly="Yes, it's really free 🙂" data-annual="Yes, it's really free 🙂">Yes, it's really free 🙂</span>
               </div>
             </div>
             <div class="price-action">
@@ -1058,17 +1130,20 @@
           </article>
 
           <article class="price-card price-card--green">
-            <h3>GROW</h3>
-            <p>Pay annually for 10 months + 2 months free!</p>
-            <div class="price-amount">
-              <div class="price-line">
-                <span class="price-main" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
-                <span class="price-term" data-monthly="/ month" data-annual="/ year">/ month</span>
+            <div class="pricing-card__icon" style="background-color: #22c55e;">
+              <img src="2.svg" alt="Grow">
+            </div>
+            <h3>GROW<span class="pricing-card__tag"></span></h3>
+            <div class="pricing-card__price">
+              <div class="pricing-card__line">
+                <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
+                <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
               </div>
-              <div class="price-line">
-                <span class="price-sub" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
+              <div class="pricing-card__line">
+                <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
               </div>
             </div>
+            <p class="pricing-card__subtitle">Pay annually for 10 months + 2 months free!</p>
             <div class="price-action">
               <button class="signup-btn signup-btn--green" type="button" data-register-cta>Sign up</button>
             </div>
@@ -1086,17 +1161,20 @@
           </article>
 
           <article class="price-card price-card--blue">
-            <h3>SCALE</h3>
-            <p>Pay annually for 10 months + 2 months free!</p>
-            <div class="price-amount">
-              <div class="price-line">
-                <span class="price-main" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
-                <span class="price-term" data-monthly="/ month" data-annual="/ year">/ month</span>
+            <div class="pricing-card__icon" style="background-color: #10a5e9;">
+              <img src="3.svg" alt="Scale">
+            </div>
+            <h3>SCALE<span class="pricing-card__tag"></span></h3>
+            <div class="pricing-card__price">
+              <div class="pricing-card__line">
+                <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
+                <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
               </div>
-              <div class="price-line">
-                <span class="price-sub" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
+              <div class="pricing-card__line">
+                <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
               </div>
             </div>
+            <p class="pricing-card__subtitle">Pay annually for 10 months + 2 months free!</p>
             <div class="price-action">
               <button class="signup-btn signup-btn--filled" type="button" data-register-cta>Sign up</button>
             </div>
