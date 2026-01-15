@@ -1421,6 +1421,10 @@
   min-height: 580px;
   padding-top: 80px;
   padding-bottom: 320px;
+  background-color: var(--hero);
+  background-image: linear-gradient(120deg, #ffbb00 0%, #ffd24d 48%, #ffbb00 100%);
+  background-size: 200% 200%;
+  animation: hero-gradient 12s ease-in-out infinite;
 }
 
 /* TEXTO + CTA SIEMPRE ARRIBA */
@@ -1434,10 +1438,25 @@
 
 .hero-content h1{
   margin-bottom: 18px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-fade-up .6s ease-out forwards;
+  animation-delay: .05s;
 }
 
 .hero-content p{
   margin-bottom: 36px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-fade-up .6s ease-out forwards;
+  animation-delay: .15s;
+}
+
+.hero-content .cta{
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-fade-up .6s ease-out forwards;
+  animation-delay: .25s;
 }
 
 /* MOCKUP SIEMPRE DEBAJO DEL TEXTO */
@@ -1452,6 +1471,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  animation: hero-float 6s ease-in-out infinite;
 }
 
 .hero .mockup{
@@ -1472,6 +1492,15 @@
 
 .hero-cta-floating .cta{
   min-width: 240px;
+}
+
+.hero .cta{
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.hero .cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
 }
 
 .pill-demo{
@@ -1543,6 +1572,68 @@
   filter: blur(22px);
   border-radius: 999px;
   z-index: 0;
+  animation: hero-shadow 6s ease-in-out infinite;
+}
+
+@keyframes hero-fade-up{
+  from{
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-float{
+  0%,
+  100%{
+    transform: translate(-50%, 0);
+  }
+  50%{
+    transform: translate(-50%, -6px);
+  }
+}
+
+@keyframes hero-shadow{
+  0%,
+  100%{
+    opacity: .22;
+    transform: scaleX(1);
+  }
+  50%{
+    opacity: .16;
+    transform: scaleX(.96);
+  }
+}
+
+@keyframes hero-gradient{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero--tall,
+  .hero-mockup-wrapper,
+  .hero .mockup-shadow{
+    animation: none;
+  }
+
+  .hero-content h1,
+  .hero-content p,
+  .hero-content .cta{
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ===============================
@@ -1588,6 +1679,7 @@
     left: auto;
     pointer-events: auto;
     width: 100%;
+    animation: none;
   }
 
   .hero .mockup{
