@@ -21,6 +21,16 @@
       --shadow: 0 20px 45px rgba(0,0,0,.12);
       --radius: 26px;
       --max: 1180px;
+      --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --motion-duration: 600ms;
+      --motion-fast: 250ms;
+      --motion-media: 380ms;
+    }
+
+    @property --featured-offset{
+      syntax: "<length>";
+      inherits: false;
+      initial-value: 0px;
     }
 
     *{box-sizing:border-box}
@@ -121,8 +131,25 @@
       text-decoration:none;
       font-weight:500;
       font-size:14px;
+      position: relative;
     }
     nav a:hover{color:#111827}
+    nav a::after{
+      content:"";
+      position:absolute;
+      left: 10%;
+      right: 10%;
+      bottom: -6px;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 200ms var(--motion-ease);
+      opacity: .8;
+    }
+    nav a:hover::after{
+      transform: scaleX(1);
+    }
 
     .actions{
       display:flex;
@@ -491,7 +518,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease;
+      transition: transform var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease);
       border-color: #e5e7eb;
       box-shadow: 0 6px 14px rgba(0,0,0,.06);
     }
@@ -590,6 +617,10 @@
   gap: 14px;
   color: #6b7280;
   font-weight: 600;
+  border-radius: 18px;
+  transition: transform var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease);
+  --hover-offset: 0px;
+  transform: translateY(calc(var(--reveal-offset, 0px) + var(--hover-offset) + var(--featured-offset, 0px)));
 }
 
 .feature-item img{
@@ -987,12 +1018,19 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease);
+  --hover-offset: 0px;
+  --featured-offset: 0px;
+  transform: translateY(calc(var(--reveal-offset, 0px) + var(--hover-offset) + var(--featured-offset)));
 }
 
 .pricing-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 22px 40px rgba(15,23,42,.12);
+  --hover-offset: -2px;
+  box-shadow: 0 24px 38px rgba(15,23,42,.12);
+}
+
+.pricing-card:active{
+  --hover-offset: 0px;
 }
 
 .pricing-card__badge{
@@ -1137,6 +1175,7 @@
 
 .pricing-card--featured{
   box-shadow: 0 18px 36px rgba(15,23,42,.09);
+  animation: featured-lift 500ms var(--motion-ease) forwards;
 }
 
 .pricing-card--featured:hover{
@@ -1160,7 +1199,7 @@
   }
 
   .pricing-card--featured{
-    transform: none;
+    --featured-offset: 0px;
   }
 }
 
@@ -1276,6 +1315,7 @@
   border-radius: 14px;
   padding: 6px 22px;
   border: 1px solid #e5e7eb;
+  transition: background 200ms var(--motion-ease), transform 200ms var(--motion-ease);
 }
 
 .faq-item summary{
@@ -1304,6 +1344,7 @@
 /* Animación suave */
 .faq-item[open]{
   background: #ffffff;
+  transform: translateY(-1px);
 }
 
 .faq-item[open] p{
@@ -1708,11 +1749,24 @@
   padding: 90px 0;
 }
 
-.usecase-card{
+    .usecase-card{
   background:#f3f3f3;
   border-radius:28px;
   padding:40px;
   margin-bottom:40px;
+  box-shadow: 0 16px 30px rgba(15,23,42,.06);
+  transition: transform var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease);
+  --hover-offset: 0px;
+  transform: translateY(calc(var(--reveal-offset, 0px) + var(--hover-offset) + var(--featured-offset, 0px)));
+}
+
+.usecase-card:hover{
+  --hover-offset: -2px;
+  box-shadow: 0 22px 36px rgba(15,23,42,.12);
+}
+
+.usecase-card:active{
+  --hover-offset: 0px;
 }
 
 .usecase-title{
@@ -1804,6 +1858,64 @@
     width: auto;
     display: block;
     margin-top: -18px;
+}
+
+.reveal-on-scroll{
+  opacity: 0;
+  --reveal-offset: 12px;
+  transform: translateY(var(--reveal-offset, 0px));
+  transition: opacity var(--motion-duration) var(--motion-ease), transform var(--motion-duration) var(--motion-ease);
+}
+
+.reveal-on-scroll.is-visible{
+  opacity: 1;
+  --reveal-offset: 0px;
+}
+
+.reveal-media{
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity var(--motion-media) ease-out, transform var(--motion-media) ease-out;
+}
+
+.reveal-media.is-visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.pricing-card.reveal-on-scroll,
+.usecase-card.reveal-on-scroll{
+  transform: translateY(calc(var(--reveal-offset, 0px) + var(--hover-offset, 0px) + var(--featured-offset, 0px)));
+}
+
+@keyframes featured-lift{
+  from{
+    --featured-offset: 0px;
+  }
+  to{
+    --featured-offset: -4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal-on-scroll,
+  .reveal-media,
+  .pricing-card--featured,
+  .feature-item,
+  .usecase-card,
+  .pricing-card,
+  .pill,
+  nav a::after,
+  .faq-item{
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .reveal-on-scroll,
+  .reveal-media{
+    opacity: 1 !important;
+  }
 }
 
   </style>
@@ -2620,6 +2732,43 @@ animation.addEventListener('complete', () => {
 
     updatePricing(false);
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const revealTargets = document.querySelectorAll(
+      '.features-card, .activity-card, .usecase-card, .testimonials-card, .pricing-card'
+    );
+    const mediaTargets = document.querySelectorAll(
+      '.feature-item img, .activity-image img, .testimonial-logo, .func-preview img, .func-mobile-preview img'
+    );
+
+    const registerRevealClasses = (nodes, className) => {
+      nodes.forEach(node => node.classList.add(className));
+    };
+
+    registerRevealClasses(revealTargets, 'reveal-on-scroll');
+    registerRevealClasses(mediaTargets, 'reveal-media');
+
+    const markVisible = node => node.classList.add('is-visible');
+
+    if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+      revealTargets.forEach(markVisible);
+      mediaTargets.forEach(markVisible);
+    } else {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      revealTargets.forEach(target => revealObserver.observe(target));
+      mediaTargets.forEach(target => revealObserver.observe(target));
+    }
+
     const registerButtons = document.querySelectorAll('[data-register-cta]');
     registerButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -2779,3 +2928,11 @@ animation.addEventListener('complete', () => {
 <script src="https://tomos.bot/embed.js?v=533209" data-empresa="tomos" data-bot="app-facture-mu"></script>
 </body>
 </html>
+.feature-item:hover{
+  --hover-offset: -2px;
+  box-shadow: 0 16px 28px rgba(15,23,42,.12);
+}
+
+.feature-item:active{
+  --hover-offset: 0px;
+}
