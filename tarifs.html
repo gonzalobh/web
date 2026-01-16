@@ -21,6 +21,11 @@
       --shadow: 0 20px 45px rgba(0,0,0,.12);
       --radius: 26px;
       --max: 1180px;
+      --blue:#1f57d6;
+      --yellow:#f6c342;
+      --soft-yellow:#fff5db;
+      --soft-green:#ecf8f0;
+      --soft-blue:#eef4ff;
     }
 
     *{box-sizing:border-box}
@@ -342,12 +347,12 @@
     }
 
     .pricing-section{
-      padding: 70px 0 90px;
+      padding: 80px 0 90px;
     }
 
     .pricing-header{
       text-align: center;
-      margin-bottom: 34px;
+      margin-bottom: 36px;
     }
 
     .pricing-line{
@@ -361,21 +366,23 @@
 
     .pricing-header h1{
       margin: 0;
-      font-size: 30px;
-      font-weight: 700;
+      font-size: 36px;
+      font-weight: 800;
+      color: #19365f;
     }
 
     .pricing-header p{
-      margin: 14px 0 0;
+      margin: 10px 0 0;
       color: #6b7280;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 15px;
     }
 
     .billing-toggle{
-      margin-top: 26px;
+      margin-top: 22px;
       display: inline-flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       font-size: 13px;
       font-weight: 600;
       color: #6b7280;
@@ -385,8 +392,8 @@
       position: relative;
       display: inline-flex;
       align-items: center;
-      width: 54px;
-      height: 30px;
+      width: 52px;
+      height: 28px;
     }
 
     .toggle-switch input{
@@ -401,13 +408,14 @@
       background: #e5e7eb;
       border-radius: 999px;
       transition: background .2s ease;
+      box-shadow: inset 0 0 0 1px rgba(15,23,42,.08);
     }
 
     .toggle-slider::before{
       content: "";
       position: absolute;
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       left: 4px;
       top: 4px;
       background: #fff;
@@ -417,7 +425,7 @@
     }
 
     .toggle-switch input:checked + .toggle-slider{
-      background: #0a1220;
+      background: #111827;
     }
 
     .toggle-switch input:checked + .toggle-slider::before{
@@ -427,31 +435,33 @@
     .price-grid{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 36px;
+      gap: 22px;
+      margin-top: 38px;
       align-items: stretch;
     }
 
     .price-card{
       border: 1px solid #ebab0570;
-      border-radius: 14px;
-      padding: 26px 22px 24px;
+      border-radius: 18px;
+      padding: 26px 26px 24px;
       background: #fff;
       display: flex;
       flex-direction: column;
       min-height: 100%;
+      box-shadow: 0 12px 24px rgba(15,23,42,.06);
     }
 
-    .price-card--green{border-color: #22c55e; box-shadow: 0 10px 20px rgba(34,197,94,.08);}
-    .price-card--blue{border-color: #0ea5e9; box-shadow: 0 10px 20px rgba(14,165,233,.08);}
-    .price-card--yellow{border-color: #facc15; box-shadow: 0 10px 20px rgba(250,204,21,.08);}
+    .price-card--green{border-color: #4caf61; box-shadow: 0 12px 24px rgba(76,175,97,.15);}
+    .price-card--blue{border-color: #2f7de1; box-shadow: 0 12px 24px rgba(47,125,225,.15);}
+    .price-card--yellow{border-color: #f6c342; box-shadow: 0 12px 24px rgba(246,195,66,.15);}
 
     .price-card h3{
-      margin: 0 0 6px;
-      font-size: 22px;
-      font-weight: 800;
+      margin: 0 0 2px;
+      font-size: 16px;
+      font-weight: 700;
       color: #1f2937;
       text-align: center;
+      letter-spacing: .4px;
     }
 
     .price-card p{
@@ -461,20 +471,20 @@
     }
 
     .price-card .pricing-card__icon{
-      width: 156px;
-      height: 156px;
+      width: 104px;
+      height: 104px;
       background: #27060408;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 18px;
     }
 
     .price-card .pricing-card__icon img{
-      width: 158px;
-      height: 158px;
-      opacity: .85;
-      filter: grayscale(1) saturate(.7);
+      width: 90px;
+      height: 90px;
+      opacity: .9;
+      filter: grayscale(1) saturate(.6);
     }
 
     .price-card .pricing-card__tag{
@@ -508,19 +518,19 @@
     }
 
     .price-card .pricing-card__amount{
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 800;
     }
 
     .price-card .pricing-card__term{
       color: #9ca3af;
       font-weight: 600;
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .price-card .pricing-card__equivalent{
       color: #9ca3af;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       text-align: center;
     }
@@ -600,22 +610,22 @@
     }
 
     .signup-btn--filled{
-      background: #0ea5e9;
-      border-color: #0ea5e9;
+      background: #4caf61;
+      border-color: #4caf61;
       color: #fff;
     }
 
     .signup-btn--green{
-      border-color: #22c55e;
-      color: #22c55e;
+      border-color: #4caf61;
+      color: #4caf61;
     }
 
     .price-grid .signup-btn--green{
-      --signup-border-color: #22c55e;
+      --signup-border-color: #4caf61;
     }
 
     .signup-btn--green:hover{
-      background: #22c55e;
+      background: #4caf61;
       color: #fff;
     }
 
@@ -625,30 +635,31 @@
     }
 
     .price-grid .price-card:nth-child(1) .signup-btn{
-      --signup-border-color: #000;
-      color: #000;
-      border-color: #000;
+      --signup-border-color: #f6c342;
+      color: #c27f00;
+      border-color: #f6c342;
+      background: #fff;
     }
 
     .price-grid .price-card:nth-child(1) .signup-btn:hover{
-      background: #000;
+      background: #f6c342;
       color: #fff;
     }
 
     .price-grid .price-card:nth-child(3) .signup-btn{
-      --signup-border-color: #0ea5e9;
+      --signup-border-color: #2f7de1;
       background: transparent;
-      color: #0ea5e9;
-      border-color: #0ea5e9;
+      color: #2f7de1;
+      border-color: #2f7de1;
     }
 
     .price-grid .price-card:nth-child(3) .signup-btn:hover{
-      background: #0ea5e9;
+      background: #2f7de1;
       color: #fff;
     }
 
     .divider{
-      margin: 20px 0 14px;
+      margin: 18px 0 14px;
       border-top: 1px solid #e5e7eb;
     }
 
@@ -657,6 +668,8 @@
       font-weight: 800;
       color: #111827;
       margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: .2px;
     }
 
     .feature-list{
@@ -667,7 +680,7 @@
       flex-direction: column;
       gap: 10px;
       color: #6b7280;
-      font-size: 16px;
+      font-size: 13px;
       line-height: 1.4;
     }
 
@@ -681,17 +694,21 @@
       position: absolute;
       left: 0;
       top: 0;
-      color: #0ea5e9;
+      color: #6b7280;
       font-weight: 800;
     }
 
 
     .feature-list--tight li::before{
-      color: #22c55e;
+      color: #4caf61;
     }
 
     .feature-list--premium li::before{
-      color: #f59e0b;
+      color: #f6c342;
+    }
+
+    .feature-list--cool li::before{
+      color: #2f7de1;
     }
 
     .select-field{
@@ -743,7 +760,7 @@
     }
 
     .comparison-toggle{
-      margin-top: 34px;
+      margin-top: 36px;
       display: flex;
       justify-content: center;
     }
@@ -753,10 +770,10 @@
     }
 
     .comparison-btn{
-      border: 1px solid #0ea5e9;
+      border: 1px solid #d1d5db;
       background: #fff;
       color: #0f172a;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 12px;
       padding: 10px 22px;
       border-radius: 999px;
@@ -768,7 +785,7 @@
     }
 
     .comparison-btn:hover{
-      box-shadow: 0 12px 20px rgba(14,165,233,.15);
+      box-shadow: 0 12px 20px rgba(15,23,42,.12);
       transform: translateY(-1px);
     }
 
@@ -812,7 +829,7 @@
     }
 
     .comparison-feature-head{
-      width: 260px;
+      width: 280px;
     }
 
     .comparison-section{
@@ -821,8 +838,8 @@
 
     .comparison-section-title{
       text-align: left;
-      font-size: 13px;
-      font-weight: 800;
+      font-size: 12px;
+      font-weight: 700;
       color: #0f172a;
       padding-top: 18px;
       padding-bottom: 8px;
@@ -850,24 +867,24 @@
     }
 
     .comparison-plan--free{
-      --plan-border: #e5e7eb;
-      background: #f8fafc;
+      --plan-border: #f6c342;
+      background: #fffaf0;
     }
 
     .comparison-plan--pro{
-      --plan-border: #0ea5e9;
+      --plan-border: #4caf61;
       border-left-width: 1px;
       border-right-width: 1px;
     }
 
     .comparison-plan--enterprise{
-      --plan-border: #22c55e;
+      --plan-border: #2f7de1;
       border-left-width: 1px;
       border-right-width: 1px;
     }
 
     .comparison-grid thead .comparison-plan{
-      font-weight: 800;
+      font-weight: 700;
       border-top: none;
       border-bottom: none;
       padding-top: 14px;
@@ -908,16 +925,28 @@
     }
 
     .comparison-icon-check{
-      color: #0ea5e9;
+      color: #4caf61;
       font-size: 16px;
     }
 
     .comparison-icon-check.is-green{
-      color: #22c55e;
+      color: #2f7de1;
+    }
+
+    .comparison-plan--free .comparison-icon-check{
+      color: #f6c342;
+    }
+
+    .comparison-plan--pro .comparison-icon-check{
+      color: #4caf61;
+    }
+
+    .comparison-plan--enterprise .comparison-icon-check{
+      color: #2f7de1;
     }
 
     .comparison-icon-cross{
-      color: #111827;
+      color: #9ca3af;
       font-size: 16px;
     }
 
@@ -925,6 +954,64 @@
       font-size: 12px;
       color: #64748b;
       font-weight: 700;
+    }
+
+    .plan-chip{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto;
+    }
+
+    .plan-chip--start{background: #f6c342;}
+    .plan-chip--grow{background: #4caf61;}
+    .plan-chip--scale{background: #2f7de1;}
+
+    .payments-section{
+      margin-top: 34px;
+      background: #f3f3f3;
+      border-radius: 16px;
+      padding: 20px 26px;
+      text-align: center;
+    }
+
+    .payments-title{
+      font-size: 13px;
+      color: #6b7280;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .payments-logos{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 16px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .payment-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: #6b7280;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .payment-item img{
+      height: 32px;
+      max-width: 110px;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: .9;
     }
 
     @media (max-width: 1100px){
@@ -947,12 +1034,24 @@
       }
 
       .pricing-header h1{
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .comparison-features ul,
       .comparison-list{
         gap: 12px;
+      }
+    }
+
+    @media (max-width: 900px){
+      .payments-logos{
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      }
+    }
+
+    @media (max-width: 520px){
+      .payments-logos{
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1103,24 +1202,24 @@
     <section class="pricing-section">
       <div class="container">
         <div class="pricing-header">
-          <h1>Plus que la facturation</h1>
-          <p>Tarifs simples. Fonctionnalités avancées.</p>
+          <h1>Plus que de la simple facturation</h1>
+          <p>Prix clairs, fonctionnalités claires.</p>
           <div class="billing-toggle">
-            <span>Mensuel</span>
+            <span>Monthly</span>
             <label class="toggle-switch" aria-label="Basculer entre annuel et mensuel">
               <input id="billing-toggle" type="checkbox" checked>
               <span class="toggle-slider"></span>
             </label>
-            <span>Annuel</span>
+            <span>Annual</span>
           </div>
         </div>
 
         <div class="price-grid">
-          <article class="price-card">
+          <article class="price-card price-card--yellow">
             <div class="pricing-card__icon" style="background-color: #ffd256;">
-              <img src="1.svg" alt="Départ">
+              <img src="1.svg" alt="Start">
             </div>
-            <h3>DÉPART<span class="pricing-card__tag"></span></h3>
+            <h3>Start<span class="pricing-card__tag"></span></h3>
             <div class="pricing-card__price">
               <div class="pricing-card__line">
                 <span class="pricing-card__amount" data-monthly="Gratuit" data-annual="Gratuit">Gratuit</span>
@@ -1130,83 +1229,99 @@
               </div>
             </div>
             <div class="price-action">
-              <button class="signup-btn" type="button" data-register-cta>S'inscrire</button>
+              <button class="signup-btn" type="button" data-register-cta>Essayer</button>
             </div>
             <div class="divider"></div>
             <div class="feature-heading">LE PLAN GRATUIT INCLUT</div>
-            <ul class="feature-list">
+            <ul class="feature-list feature-list--premium">
               <li>1 utilisateur</li>
-              <li>Limité à 5 clients</li>
-              <li>Facturation sans limite</li>
-              <li>Votre logo sur les factures</li>
-              <li>Création de factures en PDF et envoi par email</li>
+              <li>Jusqu’à 5 clients</li>
               <li>Avec gestion de TVA</li>
-
+              <li>Factures et devis illimités</li>
+              <li>Documents avec votre logo</li>
+              <li>Création de factures en PDF et envoi par email</li>
             </ul>
           </article>
 
           <article class="price-card price-card--green">
             <div class="pricing-card__icon" style="background-color: #22c55e;">
-              <img src="2.svg" alt="Croissance">
+              <img src="2.svg" alt="Grow">
             </div>
-            <h3>CROISSANCE<span class="pricing-card__tag"></span></h3>
+            <h3>Grow<span class="pricing-card__tag"></span></h3>
             <div class="pricing-card__price">
               <div class="pricing-card__line">
                 <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
-                <span class="pricing-card__term" data-monthly="/ mois" data-annual="/ an">/ mois</span>
+                <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
               </div>
               <div class="pricing-card__line">
-                <span class="pricing-card__equivalent" data-monthly="(9,9€ / mois)" data-annual="(99€ / an)">(9,9€ / mois)</span>
+                <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
               </div>
             </div>
             <div class="price-action">
-              <button class="signup-btn signup-btn--green" type="button" data-register-cta>S'inscrire</button>
+              <button class="signup-btn signup-btn--filled" type="button" data-register-cta>Essayer</button>
             </div>
             <div class="divider"></div>
             <div class="feature-heading">TOUTES LES FONCTIONNALITÉS GRATUITES +</div>
             <ul class="feature-list feature-list--tight">
               <li>1 utilisateur</li>
-              <li>Clients & Facturation sans limite</li>
-              <li>Modèles de facture</li>
+              <li>Clients illimités</li>
+              <li>Export / import Excel</li>
+              <li>Relances automatiques</li>
+              <li>Modèles de facture illimités</li>
               <li>Gestion et suivi de paiements</li>
-              <li>Export Excel</li>
-              <li>Rapports</li>
-            
             </ul>
           </article>
 
           <article class="price-card price-card--blue">
             <div class="pricing-card__icon" style="background-color: #10a5e9;">
-              <img src="3.svg" alt="Expansion">
+              <img src="3.svg" alt="Scale">
             </div>
-            <h3>EXPANSION<span class="pricing-card__tag"></span></h3>
+            <h3>Scale<span class="pricing-card__tag"></span></h3>
             <div class="pricing-card__price">
               <div class="pricing-card__line">
                 <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
-                <span class="pricing-card__term" data-monthly="/ mois" data-annual="/ an">/ mois</span>
+                <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
               </div>
               <div class="pricing-card__line">
-                <span class="pricing-card__equivalent" data-monthly="(19,9€ / mois)" data-annual="(199€ / an)">(19,9€ / mois)</span>
+                <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
               </div>
             </div>
             <div class="price-action">
-              <button class="signup-btn signup-btn--filled" type="button" data-register-cta>S'inscrire</button>
+              <button class="signup-btn" type="button" data-register-cta>Essayer</button>
             </div>
             <div class="divider"></div>
             <div class="feature-heading">TOUTES LES FONCTIONNALITÉS PRO+</div>
-            <ul class="feature-list">
+            <ul class="feature-list feature-list--cool">
               <li>3 utilisateurs</li>
-              <li>Factures récurrentes</li>
-              <li>Relances automatiques</li>
-            <p>À venir :</p>
-              <li>Gestion de stock</li>
-              <li>Facturation électronique</li>
-              <li>Accès API</li>
               <li>Multi-devises</li>
-
+              <li>Gestion de stock</li>
+              <li>Factures récurrentes</li>
+              <li>Accès API</li>
             </ul>
           </article>
 
+        </div>
+
+        <div class="payments-section">
+          <div class="payments-title">Paiements via</div>
+          <div class="payments-logos">
+            <div class="payment-item">
+              <img src="mcb.svg" alt="MCB">
+              <span>Virement bancaire</span>
+            </div>
+            <div class="payment-item">
+              <img src="juice.svg" alt="Juice">
+              <span>App Juice</span>
+            </div>
+            <div class="payment-item">
+              <img src="money.svg" alt="my.t money">
+              <span>App My.t Money</span>
+            </div>
+            <div class="payment-item">
+              <img src="stripe.svg" alt="Stripe">
+              <span>Carte bancaire</span>
+            </div>
+          </div>
         </div>
 
         <div class="comparison-toggle ">
@@ -1216,14 +1331,14 @@
           </button>
         </div>
 
-        <div class="comparison-table is-collapsed " id="comparison-table">
+        <div class="comparison-table" id="comparison-table">
           <table class="comparison-grid">
             <thead>
               <tr>
                 <th class="comparison-feature-head"></th>
-                <th class="comparison-plan comparison-plan--free" style=" border-top: 1px solid #e5e6ea; ">Le Rempart – Essentiels</th>
-                <th class="comparison-plan comparison-plan--pro" style=" border-top: 1px solid #0fa4e8; ">Le Pieter – Pro</th>
-                <th class="comparison-plan comparison-plan--enterprise" style=" border-top: 1px solid #23c45f; ">Le Morne – Entreprise </th>
+                <th class="comparison-plan comparison-plan--free"><span class="plan-chip plan-chip--start">Start</span></th>
+                <th class="comparison-plan comparison-plan--pro"><span class="plan-chip plan-chip--grow">Grow</span></th>
+                <th class="comparison-plan comparison-plan--enterprise"><span class="plan-chip plan-chip--scale">Scale</span></th>
               </tr>
             </thead>
             <tbody class="comparison-section">
@@ -1402,13 +1517,14 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <img src="logo.png" alt="Facture.mu" class="footer-logo">
-        <p class="footer-tagline">Eldorado de la facturation</p>
+        <p class="footer-tagline">El dorado de la facturation</p>
       </div>
 
       <div class="footer-links">
         <div class="footer-column">
           <h4>Produit</h4>
           <a href="index.html#fonctionnalites">Fonctionnalités</a>
+          <a href="index.html#intro">Comment ça marche</a>
           <a href="tarifs.html">Tarifs</a>
         </div>
 
@@ -1420,7 +1536,7 @@
         </div>
 
         <div class="footer-column">
-          <h4>Assistance</h4>
+          <h4>Support</h4>
           <a href="index.html#faq">FAQ</a>
           <a href="#">Centre d’aide</a>
           <a href="#">État du système</a>
@@ -1430,7 +1546,7 @@
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>© Facture.mu - Tous droits réservés. @2026</span>
+        <span>© Facture.mu - Tous droits réservés.</span>
         <span>Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
       </div>
     </div>
