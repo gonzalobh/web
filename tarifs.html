@@ -440,6 +440,11 @@
       align-items: stretch;
     }
 
+    .pricing-width{
+      width: 100%;
+      margin: 0 auto;
+    }
+
     .price-card{
       border: 1px solid #ebab0570;
       border-radius: 18px;
@@ -938,9 +943,6 @@
       border-radius: 18px;
       padding: 32px 36px;
       text-align: center;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .payments-title{
@@ -1175,169 +1177,170 @@
           </div>
         </div>
 
-        <div class="price-grid">
-          <article class="price-card price-card--yellow">
-            <div class="pricing-card__icon" style="background-color: #ffd256;">
-              <img src="1.svg" alt="Start">
-            </div>
-            <h3>Start<span class="pricing-card__tag"></span></h3>
-            <div class="pricing-card__price">
-              <div class="pricing-card__line">
-                <span class="pricing-card__amount" data-monthly="Gratuit" data-annual="Gratuit">Gratuit</span>
+        <div class="pricing-width">
+          <div class="price-grid">
+            <article class="price-card price-card--yellow">
+              <div class="pricing-card__icon" style="background-color: #ffd256;">
+                <img src="1.svg" alt="Start">
               </div>
-              <div class="pricing-card__line">
-                <span class="pricing-card__equivalent" data-monthly="Oui, gratuit" data-annual="Oui, gratuit">Oui, gratuit</span>
+              <h3>Start<span class="pricing-card__tag"></span></h3>
+              <div class="pricing-card__price">
+                <div class="pricing-card__line">
+                  <span class="pricing-card__amount" data-monthly="Gratuit" data-annual="Gratuit">Gratuit</span>
+                </div>
+                <div class="pricing-card__line">
+                  <span class="pricing-card__equivalent" data-monthly="Oui, gratuit" data-annual="Oui, gratuit">Oui, gratuit</span>
+                </div>
               </div>
-            </div>
-            <div class="price-action">
-              <button class="signup-btn" type="button" data-register-cta>Essayer</button>
-            </div>
-            <div class="divider"></div>
-            <div class="feature-heading">LE PLAN GRATUIT INCLUT</div>
-            <ul class="feature-list feature-list--premium">
-              <li>1 utilisateur</li>
-              <li>Jusqu’à 5 clients</li>
-              <li>Avec gestion de TVA</li>
-              <li>Factures et devis illimités</li>
-              <li>Documents avec votre logo</li>
-              <li>Création de factures en PDF et envoi par email</li>
-            </ul>
-          </article>
+              <div class="price-action">
+                <button class="signup-btn" type="button" data-register-cta>Essayer</button>
+              </div>
+              <div class="divider"></div>
+              <div class="feature-heading">LE PLAN GRATUIT INCLUT</div>
+              <ul class="feature-list feature-list--premium">
+                <li>1 utilisateur</li>
+                <li>Jusqu’à 5 clients</li>
+                <li>Avec gestion de TVA</li>
+                <li>Factures et devis illimités</li>
+                <li>Documents avec votre logo</li>
+                <li>Création de factures en PDF et envoi par email</li>
+              </ul>
+            </article>
 
-          <article class="price-card price-card--green">
-            <div class="pricing-card__icon" style="background-color: #22c55e;">
-              <img src="2.svg" alt="Grow">
-            </div>
-            <h3>Grow<span class="pricing-card__tag"></span></h3>
-            <div class="pricing-card__price">
-              <div class="pricing-card__line">
-                <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
-                <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+            <article class="price-card price-card--green">
+              <div class="pricing-card__icon" style="background-color: #22c55e;">
+                <img src="2.svg" alt="Grow">
               </div>
-              <div class="pricing-card__line">
-                <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
+              <h3>Grow<span class="pricing-card__tag"></span></h3>
+              <div class="pricing-card__price">
+                <div class="pricing-card__line">
+                  <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
+                  <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+                </div>
+                <div class="pricing-card__line">
+                  <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
+                </div>
               </div>
-            </div>
-            <div class="price-action">
-              <button class="signup-btn signup-btn--filled" type="button" data-register-cta>Essayer</button>
-            </div>
-            <div class="divider"></div>
-            <div class="feature-heading">TOUTES LES FONCTIONNALITÉS GRATUITES +</div>
-            <ul class="feature-list feature-list--tight">
-              <li>1 utilisateur</li>
-              <li>Clients illimités</li>
-              <li>Export / import Excel</li>
-              <li>Relances automatiques</li>
-              <li>Modèles de facture illimités</li>
-              <li>Gestion et suivi de paiements</li>
-            </ul>
-          </article>
+              <div class="price-action">
+                <button class="signup-btn signup-btn--filled" type="button" data-register-cta>Essayer</button>
+              </div>
+              <div class="divider"></div>
+              <div class="feature-heading">TOUTES LES FONCTIONNALITÉS GRATUITES +</div>
+              <ul class="feature-list feature-list--tight">
+                <li>1 utilisateur</li>
+                <li>Clients illimités</li>
+                <li>Export / import Excel</li>
+                <li>Relances automatiques</li>
+                <li>Modèles de facture illimités</li>
+                <li>Gestion et suivi de paiements</li>
+              </ul>
+            </article>
 
-          <article class="price-card price-card--blue">
-            <div class="pricing-card__icon" style="background-color: #10a5e9;">
-              <img src="3.svg" alt="Scale">
-            </div>
-            <h3>Scale<span class="pricing-card__tag"></span></h3>
-            <div class="pricing-card__price">
-              <div class="pricing-card__line">
-                <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
-                <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+            <article class="price-card price-card--blue">
+              <div class="pricing-card__icon" style="background-color: #10a5e9;">
+                <img src="3.svg" alt="Scale">
               </div>
-              <div class="pricing-card__line">
-                <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
+              <h3>Scale<span class="pricing-card__tag"></span></h3>
+              <div class="pricing-card__price">
+                <div class="pricing-card__line">
+                  <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
+                  <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+                </div>
+                <div class="pricing-card__line">
+                  <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
+                </div>
               </div>
-            </div>
-            <div class="price-action">
-              <button class="signup-btn" type="button" data-register-cta>Essayer</button>
-            </div>
-            <div class="divider"></div>
-            <div class="feature-heading">TOUTES LES FONCTIONNALITÉS PRO+</div>
-            <ul class="feature-list feature-list--cool">
-              <li>3 utilisateurs</li>
-              <li>Multi-devises</li>
-              <li>Gestion de stock</li>
-              <li>Factures récurrentes</li>
-              <li>Accès API</li>
-            </ul>
-          </article>
+              <div class="price-action">
+                <button class="signup-btn" type="button" data-register-cta>Essayer</button>
+              </div>
+              <div class="divider"></div>
+              <div class="feature-heading">TOUTES LES FONCTIONNALITÉS PRO+</div>
+              <ul class="feature-list feature-list--cool">
+                <li>3 utilisateurs</li>
+                <li>Multi-devises</li>
+                <li>Gestion de stock</li>
+                <li>Factures récurrentes</li>
+                <li>Accès API</li>
+              </ul>
+            </article>
 
-        </div>
+          </div>
 
-        <div class="payments-section">
-          <div class="payments-title">Paiements via</div>
-          <div class="payments-logos">
-            <div class="payment-item">
-              <img src="mcb.png" alt="MCB">
-              <span>Virement bancaire</span>
-            </div>
-            <div class="payment-item">
-              <img src="juice.png" alt="MCB Juice">
-              <span>App Juice</span>
-            </div>
-            <div class="payment-item">
-              <img src="money.png" alt="My.t Money">
-              <span>App My.t Money</span>
-            </div>
-            <div class="payment-item">
-              <img src="stripe.png" alt="Stripe">
-              <span>Carte bancaire</span>
+          <div class="payments-section">
+            <div class="payments-title">Paiements via</div>
+            <div class="payments-logos">
+              <div class="payment-item">
+                <img src="mcb.png" alt="MCB">
+                <span>Virement bancaire</span>
+              </div>
+              <div class="payment-item">
+                <img src="juice.png" alt="MCB Juice">
+                <span>App Juice</span>
+              </div>
+              <div class="payment-item">
+                <img src="money.png" alt="My.t Money">
+                <span>App My.t Money</span>
+              </div>
+              <div class="payment-item">
+                <img src="stripe.png" alt="Stripe">
+                <span>Carte bancaire</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="comparison-table" id="comparison-table">
-          <table class="comparison-grid">
-            <thead>
-              <tr>
-                <th class="comparison-feature-head"></th>
-                <th class="comparison-plan comparison-plan--free"><span class="plan-chip plan-chip--start">Start</span></th>
-                <th class="comparison-plan comparison-plan--pro"><span class="plan-chip plan-chip--grow">Grow</span></th>
-                <th class="comparison-plan comparison-plan--enterprise"><span class="plan-chip plan-chip--scale">Scale</span></th>
-              </tr>
-            </thead>
-            <tbody class="comparison-section">
-              <tr class="comparison-section-row">
-                <th class="comparison-section-title">Fonctionnalités de base<div class="comparison-divider"></div></th>
-                <td class="comparison-plan comparison-plan--free"></td>
-                <td class="comparison-plan comparison-plan--pro"></td>
-                <td class="comparison-plan comparison-plan--enterprise"></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Suppression de la mention « Facture.mu »</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Création de clients illimitée</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Acceptation des paiements en ligne</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Ajout de votre logo sur les documents</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-value">1</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-value">Illim.</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-value">Illim.</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Modèles de documents personnalisables</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Gestion des articles</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
+          <div class="comparison-table" id="comparison-table">
+            <table class="comparison-grid">
+              <thead>
+                <tr>
+                  <th class="comparison-feature-head"></th>
+                  <th class="comparison-plan comparison-plan--free"><span class="plan-chip plan-chip--start">Start</span></th>
+                  <th class="comparison-plan comparison-plan--pro"><span class="plan-chip plan-chip--grow">Grow</span></th>
+                  <th class="comparison-plan comparison-plan--enterprise"><span class="plan-chip plan-chip--scale">Scale</span></th>
+                </tr>
+              </thead>
+              <tbody class="comparison-section">
+                <tr class="comparison-section-row">
+                  <th class="comparison-section-title">Fonctionnalités de base<div class="comparison-divider"></div></th>
+                  <td class="comparison-plan comparison-plan--free"></td>
+                  <td class="comparison-plan comparison-plan--pro"></td>
+                  <td class="comparison-plan comparison-plan--enterprise"></td>
+                </tr>
+                <tr>
+                  <td class="comparison-feature">Suppression de la mention « Facture.mu »</td>
+                  <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
+                </tr>
+                <tr>
+                  <td class="comparison-feature">Création de clients illimitée</td>
+                  <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
+                </tr>
+                <tr>
+                  <td class="comparison-feature">Acceptation des paiements en ligne</td>
+                  <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
+                </tr>
+                <tr>
+                  <td class="comparison-feature">Ajout de votre logo sur les documents</td>
+                  <td class="comparison-plan comparison-plan--free"><span class="comparison-value">1</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-value">Illim.</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-value">Illim.</span></td>
+                </tr>
+                <tr>
+                  <td class="comparison-feature">Modèles de documents personnalisables</td>
+                  <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
+                </tr>
+                <tr>
+                  <td class="comparison-feature">Gestion des articles</td>
+                  <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
+                </tr>
               <tr>
                 <td class="comparison-feature">Gestion des stocks</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
