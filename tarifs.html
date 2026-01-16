@@ -759,66 +759,15 @@
       margin-top: auto;
     }
 
-    .comparison-toggle{
-      margin-top: 36px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .comparison-hidden{
-      display: none !important;
-    }
-
-    .comparison-btn{
-      border: 1px solid #d1d5db;
-      background: #fff;
-      color: #0f172a;
-      font-weight: 600;
-      font-size: 12px;
-      padding: 10px 22px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      transition: box-shadow .2s ease, transform .2s ease;
-    }
-
-    .comparison-btn:hover{
-      box-shadow: 0 12px 20px rgba(15,23,42,.12);
-      transform: translateY(-1px);
-    }
-
-    .comparison-icon{
-      font-size: 14px;
-      transition: transform .2s ease;
-    }
-
-    .comparison-btn.is-open .comparison-icon{
-      transform: rotate(180deg);
-    }
-
     .comparison-table{
       margin-top: 32px;
-      max-height: 3000px;
-      opacity: 1;
-      transform: translateY(0);
-      overflow: hidden;
-      transition: max-height .6s ease, opacity .4s ease, transform .4s ease, margin-top .4s ease;
-    }
-
-    .comparison-table.is-collapsed{
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(-12px);
-      margin-top: 0;
-      pointer-events: none;
     }
 
     .comparison-grid{
       width: 100%;
       border-collapse: separate;
-      border-spacing: 18px 0;
+      border-spacing: 20px 0;
+      table-layout: fixed;
     }
 
     .comparison-grid th,
@@ -829,7 +778,13 @@
     }
 
     .comparison-feature-head{
-      width: 280px;
+      width: 320px;
+      background: #f3f3f3;
+      border-radius: 22px 22px 0 0;
+    }
+
+    .comparison-grid thead .comparison-feature-head{
+      padding: 28px 22px;
     }
 
     .comparison-section{
@@ -838,28 +793,21 @@
 
     .comparison-section-title{
       text-align: left;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
-      color: #0f172a;
-      padding-top: 18px;
-      padding-bottom: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      color: #6b7280;
+      padding: 18px 22px 10px;
+      background: #f3f3f3;
     }
 
     .comparison-divider{
-      width: 140px;
-      height: 2px;
-      background: #111827;
-      border-radius: 999px;
-      margin-top: 10px;
+      display: none;
     }
 
     .comparison-plan{
       --plan-border: #e5e7eb;
-      border-left: 1px solid var(--plan-border);
-      border-right: 1px solid var(--plan-border);
+      border-left: 2px solid var(--plan-border);
+      border-right: 2px solid var(--plan-border);
       background: #fff;
       font-size: 12px;
       font-weight: 700;
@@ -868,29 +816,25 @@
 
     .comparison-plan--free{
       --plan-border: #f6c342;
-      background: #fffaf0;
     }
 
     .comparison-plan--pro{
       --plan-border: #4caf61;
-      border-left-width: 1px;
-      border-right-width: 1px;
     }
 
     .comparison-plan--enterprise{
       --plan-border: #2f7de1;
-      border-left-width: 1px;
-      border-right-width: 1px;
     }
 
     .comparison-grid thead .comparison-plan{
       font-weight: 700;
-      border-top: none;
+      border-top: 2px solid var(--plan-border);
       border-bottom: none;
-      padding-top: 14px;
-      padding-bottom: 14px;
-      border-top-left-radius: 14px;
-      border-top-right-radius: 14px;
+      padding-top: 34px;
+      padding-bottom: 22px;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      position: relative;
     }
 
     .comparison-grid thead .comparison-plan--pro,
@@ -900,9 +844,16 @@
 
     .comparison-grid td.comparison-feature{
       text-align: left;
-      font-size: 11px;
-      font-weight: 400;
+      font-size: 12px;
+      font-weight: 500;
       color: #6b7280;
+      background: #f3f3f3;
+      padding: 10px 22px;
+    }
+
+    .comparison-grid tbody:last-of-type tr:last-child .comparison-feature{
+      border-radius: 0 0 22px 22px;
+      padding-bottom: 18px;
     }
 
     .comparison-section-row .comparison-plan{
@@ -913,10 +864,10 @@
     }
 
     .comparison-grid tbody:last-of-type tr:last-child .comparison-plan{
-      border-bottom: none;
+      border-bottom: 2px solid var(--plan-border);
       padding-bottom: 18px;
-      border-bottom-left-radius: 14px;
-      border-bottom-right-radius: 14px;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
     }
 
     .comparison-grid tbody:last-of-type tr:last-child .comparison-plan--pro,
@@ -925,48 +876,56 @@
     }
 
     .comparison-icon-check{
-      color: #4caf61;
-      font-size: 16px;
+      color: #6b7280;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
     }
 
     .comparison-icon-check.is-green{
-      color: #2f7de1;
+      color: #6b7280;
     }
 
     .comparison-plan--free .comparison-icon-check{
-      color: #f6c342;
+      color: #6b7280;
     }
 
     .comparison-plan--pro .comparison-icon-check{
-      color: #4caf61;
+      color: #6b7280;
     }
 
     .comparison-plan--enterprise .comparison-icon-check{
-      color: #2f7de1;
+      color: #6b7280;
     }
 
     .comparison-icon-cross{
       color: #9ca3af;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
     }
 
     .comparison-value{
       font-size: 12px;
-      color: #64748b;
-      font-weight: 700;
+      color: #6b7280;
+      font-weight: 600;
     }
 
     .plan-chip{
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 46px;
-      height: 46px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 800;
       color: #fff;
       margin: 0 auto;
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .plan-chip--start{background: #f6c342;}
@@ -1324,13 +1283,6 @@
           </div>
         </div>
 
-        <div class="comparison-toggle ">
-          <button class="comparison-btn" type="button" aria-expanded="false" aria-controls="comparison-table">
-            Comparaison des offres et des fonctionnalités
-            <span class="comparison-icon" aria-hidden="true">⌃</span>
-          </button>
-        </div>
-
         <div class="comparison-table" id="comparison-table">
           <table class="comparison-grid">
             <thead>
@@ -1343,43 +1295,43 @@
             </thead>
             <tbody class="comparison-section">
               <tr class="comparison-section-row">
-                <th class="comparison-section-title">Fonctionnalités essentielles<div class="comparison-divider"></div></th>
+                <th class="comparison-section-title">Fonctionnalités de base<div class="comparison-divider"></div></th>
                 <td class="comparison-plan comparison-plan--free"></td>
                 <td class="comparison-plan comparison-plan--pro"></td>
                 <td class="comparison-plan comparison-plan--enterprise"></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Supprimer « Propulsé par Facture.mu »</td>
+                <td class="comparison-feature">Suppression de la mention « Facture.mu »</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Créer des clients illimités</td>
+                <td class="comparison-feature">Création de clients illimitée</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Accepter les paiements en ligne</td>
+                <td class="comparison-feature">Acceptation des paiements en ligne</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Personnaliser les factures avec votre logo</td>
+                <td class="comparison-feature">Ajout de votre logo sur les documents</td>
+                <td class="comparison-plan comparison-plan--free"><span class="comparison-value">1</span></td>
+                <td class="comparison-plan comparison-plan--pro"><span class="comparison-value">Illim.</span></td>
+                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-value">Illim.</span></td>
+              </tr>
+              <tr>
+                <td class="comparison-feature">Modèles de documents personnalisables</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Modèles de facture professionnels</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-value">4</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-value">11</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-value">11</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Gestion de la bibliothèque d’articles</td>
+                <td class="comparison-feature">Gestion des articles</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
@@ -1391,19 +1343,19 @@
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Paramètres de taxation personnalisés</td>
+                <td class="comparison-feature">Paramétrage personnalisé des taxes</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Facturation récurrente &amp; auto-facturation</td>
+                <td class="comparison-feature">Facturation récurrente</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Alertes lorsque les factures sont consultées &amp; payées</td>
+                <td class="comparison-feature">Envoi des factures par e-mail et WhatsApp</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
@@ -1417,91 +1369,49 @@
                 <td class="comparison-plan comparison-plan--enterprise"></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Accès API</td>
+                <td class="comparison-feature">Personnalisation du design des factures</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Envoyer des factures par email via Gmail &amp; MSN</td>
+                <td class="comparison-feature">Rapports et statistiques (factures, dépenses, etc.)</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Personnaliser les modèles de facture</td>
+                <td class="comparison-feature">Personnalisation des objets et modèles d’e-mails</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Rapports : factures, dépenses, plus encore</td>
+                <td class="comparison-feature">Relances automatiques par e-mail</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">URL personnalisée : « YourSite ».invoicing.co</td>
+                <td class="comparison-feature">Ajout de pièces jointes aux e-mails (PDF, JPG, XLS)</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Personnaliser les objets &amp; modèles d’e-mails</td>
+                <td class="comparison-feature">Ajout d’utilisateurs supplémentaires au compte</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Configurer des e-mails de relance automatiques</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Afficher la signature électronique des clients sur les factures</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Interconnecter 10 entreprises avec 1 identifiant</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Créer des paramètres uniques de « groupe de clients »</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Utilisateurs supplémentaires</td>
+                <td class="comparison-feature">Facturation électronique (e-Invoicing)</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Joindre des fichiers aux e-mails (pdf, jpg, xls)</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">URL personnalisée « Billing.YourCompany.com »</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Connecter les banques &amp; synchroniser les transactions</td>
-                <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
-                <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
-              </tr>
-              <tr>
-                <td class="comparison-feature">Facturation électronique &amp; réseau PEPPOL</td>
+                <td class="comparison-feature">Accès à l’API</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
@@ -1619,8 +1529,6 @@
 
       const billingToggle = document.getElementById('billing-toggle');
       const pricedItems = document.querySelectorAll('[data-monthly][data-annual]');
-      const comparisonButton = document.querySelector('.comparison-btn');
-      const comparisonTable = document.getElementById('comparison-table');
 
       const updateBilling = () => {
         const isAnnual = billingToggle?.checked;
@@ -1631,13 +1539,6 @@
 
       billingToggle?.addEventListener('change', updateBilling);
       updateBilling();
-
-      comparisonButton?.addEventListener('click', () => {
-        const isCollapsed = comparisonTable?.classList.toggle('is-collapsed');
-        const isOpen = !isCollapsed;
-        comparisonButton.classList.toggle('is-open', isOpen);
-        comparisonButton.setAttribute('aria-expanded', String(isOpen));
-      });
     });
   </script>
 </body>
