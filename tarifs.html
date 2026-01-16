@@ -785,9 +785,17 @@ margin-right: -20px;
     }
 
     .comparison-feature-head{
-      width: 320px;
+      width: 390px;
       background: #f3f3f3;
       border-radius: 22px 22px 0 0;
+    }
+
+    .comparison-grid col.comparison-col-feature{
+      width: 390px;
+    }
+
+    .comparison-grid col.comparison-col-plan{
+      width: calc((100% - 390px) / 3);
     }
 
     .comparison-grid thead .comparison-feature-head{
@@ -1297,6 +1305,12 @@ margin-right: -20px;
 
           <div class="comparison-table" id="comparison-table">
             <table class="comparison-grid">
+              <colgroup>
+                <col class="comparison-col-feature" />
+                <col class="comparison-col-plan" />
+                <col class="comparison-col-plan" />
+                <col class="comparison-col-plan" />
+              </colgroup>
               <thead>
                 <tr>
                   <th class="comparison-feature-head"></th>
