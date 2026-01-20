@@ -1755,19 +1755,13 @@
   border-radius:28px;
   padding:40px;
   margin-bottom:40px;
-  box-shadow: 0 16px 30px rgba(15,23,42,.06);
-  transition: transform var(--motion-fast) var(--motion-ease), box-shadow var(--motion-fast) var(--motion-ease);
-  --hover-offset: 0px;
-  transform: translateY(calc(var(--reveal-offset, 0px) + var(--hover-offset) + var(--featured-offset, 0px)));
+
 }
 
 .usecase-card:hover{
-  --hover-offset: -2px;
-  box-shadow: 0 22px 36px rgba(15,23,42,.12);
 }
 
 .usecase-card:active{
-  --hover-offset: 0px;
 }
 
 .usecase-title{
