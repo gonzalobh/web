@@ -1513,7 +1513,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  animation: hero-float 6s ease-in-out infinite;
 }
 
 .hero .mockup{
@@ -1625,16 +1624,6 @@
   to{
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes hero-float{
-  0%,
-  100%{
-    transform: translate(-50%, 0);
-  }
-  50%{
-    transform: translate(-50%, -6px);
   }
 }
 
@@ -2032,10 +2021,28 @@
 ================================ */
 
 .floating-faces{
+  pointer-events: none;
+}
+
+.hero-faces-area{
   position: absolute;
   inset: 0;
+  overflow: hidden;
+  border-radius: 32px;
+  z-index: 2;
   pointer-events: none;
-  z-index: 2; /* debajo del texto (z=3), sobre el fondo */
+}
+
+.floating-faces--inside{
+  position: absolute;
+  inset: 0;
+}
+
+.floating-faces--outside{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .floating-face{
@@ -2280,7 +2287,7 @@
     display: none;
   }
 
-  .floating-faces{
+  .floating-faces--outside{
     z-index: 1;
   }
 }
@@ -2366,21 +2373,26 @@
       <img src="Imagen 85.png" alt="Mauritius Revenue Authority" style="height:64px;">
     </div>
 
-    <div class="floating-faces" aria-hidden="true">
-      <img src="caras/1.png" class="floating-face face-1" data-group="left" alt="">
-      <img src="caras/2.png" class="floating-face face-2 is-mobile-hidden" data-group="left" alt="">
-      <img src="caras/3.png" class="floating-face face-3" data-group="left" alt="">
-      <img src="caras/4.png" class="floating-face face-4 is-mobile-hidden" data-group="left" alt="">
-      <img src="caras/5.png" class="floating-face face-5" data-group="left" alt="">
-      <img src="caras/6.png" class="floating-face face-6 is-mobile-hidden" data-group="left" alt="">
-      <img src="caras/7.png" class="floating-face face-7" data-group="right" alt="">
-      <img src="caras/8.png" class="floating-face face-8 is-mobile-hidden" data-group="right" alt="">
-      <img src="caras/9.png" class="floating-face face-9" data-group="right" alt="">
-      <img src="caras/10.png" class="floating-face face-10 is-mobile-hidden" data-group="right" alt="">
-      <img src="caras/11.png" class="floating-face face-11" data-group="right" alt="">
-      <img src="caras/12.png" class="floating-face face-12 is-mobile-hidden" data-group="right" alt="">
-      <img src="caras/13.png" class="floating-face face-13" data-group="inner" alt="">
-      <img src="caras/14.png" class="floating-face face-14 is-mobile-hidden" data-group="inner" alt="">
+    <div class="hero-faces-area" aria-hidden="true">
+      <div class="floating-faces floating-faces--inside">
+        <img src="caras/1.png" class="floating-face face-1" data-group="left" alt="">
+        <img src="caras/2.png" class="floating-face face-2 is-mobile-hidden" data-group="left" alt="">
+        <img src="caras/3.png" class="floating-face face-3" data-group="left" alt="">
+        <img src="caras/4.png" class="floating-face face-4 is-mobile-hidden" data-group="left" alt="">
+        <img src="caras/5.png" class="floating-face face-5" data-group="left" alt="">
+        <img src="caras/6.png" class="floating-face face-6 is-mobile-hidden" data-group="left" alt="">
+        <img src="caras/7.png" class="floating-face face-7" data-group="right" alt="">
+        <img src="caras/8.png" class="floating-face face-8 is-mobile-hidden" data-group="right" alt="">
+        <img src="caras/9.png" class="floating-face face-9" data-group="right" alt="">
+        <img src="caras/10.png" class="floating-face face-10 is-mobile-hidden" data-group="right" alt="">
+        <img src="caras/11.png" class="floating-face face-11" data-group="right" alt="">
+        <img src="caras/12.png" class="floating-face face-12 is-mobile-hidden" data-group="right" alt="">
+        <img src="caras/13.png" class="floating-face face-13" data-group="inner" alt="">
+        <img src="caras/14.png" class="floating-face face-14 is-mobile-hidden" data-group="inner" alt="">
+      </div>
+    </div>
+
+    <div class="floating-faces floating-faces--outside" aria-hidden="true">
       <img src="caras/15.png" class="floating-face face-15" data-group="inner" alt="">
       <img src="caras/16.png" class="floating-face face-16 is-mobile-hidden" data-group="inner" alt="">
       <img src="caras/17.png" class="floating-face face-17" data-group="inner" alt="">
