@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administración de Helpin</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="admin-ui">
+  <main class="page admin-layout">
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">Helpin</div>
+      <nav class="sidebar-nav" aria-label="Pestañas de administración">
+        <button class="tab-button active" type="button" data-tab-target="dashboard">
+          <i data-lucide="layout-dashboard" class="nav-icon" aria-hidden="true"></i>
+          <span class="nav-label">Panel</span>
+        </button>
+        <button class="tab-button" type="button" data-tab-target="knowledge">
+          <i data-lucide="book-open" class="nav-icon" aria-hidden="true"></i>
+          <span class="nav-label">Contenido oficial</span>
+        </button>
+        <button class="tab-button" type="button" data-tab-target="activation">
+          <i data-lucide="settings" class="nav-icon" aria-hidden="true"></i>
+          <span class="nav-label">Activación</span>
+        </button>
+        <a class="sidebar-cta sidebar-chat" id="employeeChatLink" href="chat.html">Probar chat</a>
+      </nav>
+    </aside>
+    <div class="admin-content">
+      <section class="section tab-panel active" data-tab-panel="dashboard">
+        <div class="section-header">
+          <h2>Panel de control RR. HH.</h2>
+          <p>Configure el asistente para que responda a los colaboradores.</p>
+        </div>
+        <div class="dashboard-stack">
+          <div class="status-card status-card--primary" id="assistantStatusCard">
+            <div class="status-card-header">
+              <span class="status-title">Estado del asistente RR. HH.</span>
+              <span class="status-pill" id="assistantStatusValue">🟡 No activo</span>
+            </div>
+            <p class="status-description" id="assistantStatusSubtitle">Falta completar la configuración</p>
+            <div class="checklist" id="setupChecklist">
+              <button class="checklist-item" type="button" data-tab-link="knowledge" data-check-key="knowledge">
+                <span class="checkmark" aria-hidden="true">✓</span>
+                <span class="checklist-title">Reglamento interno pegado</span>
+              </button>
+              <button class="checklist-item" type="button" data-tab-link="activation" data-check-key="hr">
+                <span class="checkmark" aria-hidden="true">✓</span>
+                <span class="checklist-title">Contacto de RR. HH. definido</span>
+              </button>
+              <button class="checklist-item" type="button" data-tab-link="activation" data-check-key="activation">
+                <span class="checkmark" aria-hidden="true">✓</span>
+                <span class="checklist-title" id="activationChecklistText">Asistente activado</span>
+              </button>
+            </div>
+            <div class="status-actions">
+              <button class="primary cta-button" type="button" id="dashboardCta">Continuar configuración</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tab-panel" data-tab-panel="knowledge">
+        <div class="section-header">
+          <h2>Contenido oficial</h2>
+          <p>Solo se utilizará el contenido que RR. HH. defina oficialmente.</p>
+        </div>
+        <div class="knowledge-editor">
+          <p class="note">El asistente responderá únicamente con la información que usted pegue aquí, sin interpretar ni inventar contenido.</p>
+          <label class="sr-only" for="knowledgeContent">Contenido de conocimiento</label>
+          <textarea
+            id="knowledgeContent"
+            placeholder="Pegue aquí políticas internas, beneficios, procedimientos y textos oficiales de RR. HH.
+
+Ejemplo:
+• Vacaciones
+• Licencias médicas
+• Beneficios
+• Horarios
+• Reglamentos"
+          ></textarea>
+          <div class="knowledge-actions">
+            <button class="cta-button primary" type="button" id="saveKnowledge">
+              Guardar contenido
+            </button>
+          </div>
+          <div class="knowledge-status" id="knowledgeStatus">Sin contenido aún</div>
+        </div>
+      </section>
+
+      <section class="section tab-panel" data-tab-panel="activation">
+        <div class="section-header">
+          <h2>Activación</h2>
+          <p>Configure lo esencial y active el asistente cuando esté listo.</p>
+        </div>
+        <div class="activation-editable" id="activationEditable">
+          <div class="settings-block">
+            <div class="settings-header">
+              <h3>Contacto RR. HH.</h3>
+              <p>Información oficial para escalar consultas cuando corresponda.</p>
+            </div>
+            <div class="form-grid">
+              <div>
+                <label for="hrEmail">Correo RR. HH.</label>
+                <input id="hrEmail" type="text" placeholder="ejemplo@empresa.com" />
+              </div>
+              <div>
+                <label for="hrFallback">Mensaje alternativo RR. HH.</label>
+                <textarea id="hrFallback">Para consultas específicas o casos personales, por favor contacte directamente al equipo de RR. HH.</textarea>
+              </div>
+              <div>
+                <label for="assistantDisclaimer">Texto de descargo de responsabilidad</label>
+                <textarea id="assistantDisclaimer">Este asistente entrega información general basada en políticas internas.
+Para casos particulares, confirme siempre con RR. HH.</textarea>
+              </div>
+              <div>
+                <button type="button" class="secondary small" id="resetDisclaimer">Restablecer a predeterminado</button>
+              </div>
+            </div>
+          </div>
+          <details class="settings-block" id="advancedOptions">
+            <summary class="settings-header">Ajustes legales y de límites (opcional)</summary>
+            <p class="note">No es necesario para la activación estándar.</p>
+            <p class="note">Detalles adicionales para límites, tono e idioma.</p>
+            <div class="form-grid">
+              <div>
+                <label for="hrUrl">URL de contacto RR. HH. (opcional)</label>
+                <input id="hrUrl" type="text" placeholder="https://intranet.empresa.com/rrhh o https://empresa.com/contacto-rrhh" />
+              </div>
+              <div>
+                <label for="noInfoMessage">Mensaje cuando no existe información oficial</label>
+                <textarea id="noInfoMessage">No tengo información oficial sobre este tema.
+Para evitar errores, te recomiendo contactar directamente a RR. HH.</textarea>
+              </div>
+            </div>
+            <div class="settings-options">
+              <label class="option-row">
+                <span class="option-label">Responder solo con información oficial pegada por RR. HH. (recomendado)</span>
+                <input id="boundaryOfficialOnly" class="toggle-input" type="checkbox" />
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-row">
+                <span class="option-label">No responder casos personales</span>
+                <input id="boundaryPersonal" class="toggle-input" type="checkbox" />
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-row">
+                <span class="option-label">No interpretar contratos</span>
+                <input id="boundaryContracts" class="toggle-input" type="checkbox" />
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-row">
+                <span class="option-label">No responder consultas legales</span>
+                <input id="boundaryLegal" class="toggle-input" type="checkbox" />
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="option-row">
+                <span class="option-label">Sugerir siempre contactar a RR. HH. para excepciones</span>
+                <input id="boundaryEscalate" class="toggle-input" type="checkbox" />
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+            </div>
+            <div class="form-grid">
+              <div>
+                <label for="countryContext">País o marco laboral de referencia</label>
+                <select id="countryContext">
+                  <option value="Chile">Chile</option>
+                  <option value="España">España</option>
+                  <option value="Francia">Francia</option>
+                  <option value="Polonia">Polonia</option>
+                  <option value="Genérico">Genérico</option>
+                </select>
+              </div>
+              <div>
+                <label>Tono (opcional)</label>
+                <div class="segmented-control" role="radiogroup" aria-label="Tono">
+                  <label class="segment">
+                    <input type="radio" name="tone" value="Neutral" />
+                    <span>Neutral</span>
+                  </label>
+                  <label class="segment">
+                    <input type="radio" name="tone" value="Formal" />
+                    <span>Formal</span>
+                  </label>
+                  <label class="segment">
+                    <input type="radio" name="tone" value="Amable" />
+                    <span>Amable</span>
+                  </label>
+                </div>
+                <p class="note">El tono es opcional y no afecta las políticas oficiales.</p>
+              </div>
+              <div>
+                <label>Idiomas disponibles</label>
+                <div class="language-options">
+                  <label class="language-option">
+                    <input type="checkbox" name="assistantLanguage" value="Español" />
+                    <span>Español</span>
+                  </label>
+                  <label class="language-option">
+                    <input type="checkbox" name="assistantLanguage" value="Inglés" />
+                    <span>Inglés</span>
+                  </label>
+                  <label class="language-option">
+                    <input type="checkbox" name="assistantLanguage" value="Francés" />
+                    <span>Francés</span>
+                  </label>
+                  <label class="language-option">
+                    <input type="checkbox" name="assistantLanguage" value="Alemán" />
+                    <span>Alemán</span>
+                  </label>
+                  <label class="language-option">
+                    <input type="checkbox" name="assistantLanguage" value="Portugués" />
+                    <span>Portugués</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+        <div class="settings-block activation-summary" id="activationSummary" hidden>
+          <div class="activation-summary-header">
+            <div class="activation-summary-title">
+              <i data-lucide="shield-check" class="summary-icon" aria-hidden="true"></i>
+              <h3>Asistente activo</h3>
+              <span class="summary-pill" id="summaryStatus">Activo</span>
+            </div>
+            <p class="activation-summary-subtitle">Disponible para colaboradores · Controlado por RR. HH.</p>
+          </div>
+          <div class="activation-summary-details">
+            <p>Última actualización del contenido: <span id="summaryKnowledgeUpdate">—</span></p>
+            <p>
+              Contacto RR. HH.:
+              <a class="summary-link" id="summaryHrContact" href="mailto:">—</a>
+            </p>
+          </div>
+          <button type="button" class="secondary" id="editActivation">Editar configuración</button>
+        </div>
+        <div class="settings-block" id="activationBlock">
+          <div class="settings-header">
+            <h3>Activación</h3>
+            <p>El asistente no quedará disponible para colaboradores hasta activar esta opción.</p>
+          </div>
+          <div class="settings-options">
+            <label class="option-row">
+              <span class="option-label">Activar el asistente para colaboradores</span>
+              <input id="assistantActive" class="toggle-input" type="checkbox" />
+              <span class="toggle-switch" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/mockData.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
