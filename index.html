@@ -2035,7 +2035,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2; /* debajo del texto (z=3), sobre el fondo */
+  z-index: 2;
 }
 
 .floating-face{
@@ -2063,203 +2063,29 @@
   }
 }
 
-.face-1{
-  top: 6%;
-  left: -48px;
-  --size: 58px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 2deg;
-  --float-duration: 12s;
-  --float-delay: -3s;
-}
+/* IZQUIERDA – equilibrio hacia dentro */
+.face-1{ top:6%;  left:6%;  --size:52px; }
+.face-2{ top:20%; left:-24px; }
+.face-3{ top:34%; left:10%; --size:54px; }
+.face-4{ top:52%; left:-32px; }
+.face-5{ top:68%; left:8%;  --size:56px; }
+.face-6{ top:82%; left:-22px; }
 
-.face-2{
-  top: 20%;
-  left: -32px;
-  --size: 52px;
-  --float-x: 5px;
-  --float-y: 12px;
-  --float-rot: 1.6deg;
-  --float-duration: 9s;
-  --float-delay: -7s;
-}
+/* DERECHA – espejo del lado izquierdo */
+.face-7{  top:10%; right:6%;  --size:52px; }
+.face-8{  top:26%; right:-28px; }
+.face-9{  top:42%; right:10%; --size:54px; }
+.face-10{ top:58%; right:-26px; }
+.face-11{ top:74%; right:8%;  --size:56px; }
+.face-12{ top:88%; right:-18px; }
 
-.face-3{
-  top: 34%;
-  left: -60px;
-  --size: 60px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 1.8deg;
-  --float-duration: 15s;
-  --float-delay: -5s;
-}
-
-.face-4{
-  top: 52%;
-  left: -40px;
-  --size: 54px;
-  --float-x: 4px;
-  --float-y: 12px;
-  --float-rot: 1.4deg;
-  --float-duration: 11s;
-  --float-delay: -9s;
-}
-
-.face-5{
-  top: 68%;
-  left: -56px;
-  --size: 62px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 2deg;
-  --float-duration: 18s;
-  --float-delay: -6s;
-}
-
-.face-6{
-  top: 82%;
-  left: -28px;
-  --size: 50px;
-  --float-x: 4px;
-  --float-y: 12px;
-  --float-rot: 1.2deg;
-  --float-duration: 10s;
-  --float-delay: -4s;
-}
-
-.face-7{
-  top: 10%;
-  right: -46px;
-  --size: 58px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 1.8deg;
-  --float-duration: 13s;
-  --float-delay: -8s;
-}
-
-.face-8{
-  top: 26%;
-  right: -36px;
-  --size: 52px;
-  --float-x: 5px;
-  --float-y: 12px;
-  --float-rot: 1.6deg;
-  --float-duration: 9.5s;
-  --float-delay: -2s;
-}
-
-.face-9{
-  top: 42%;
-  right: -58px;
-  --size: 60px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 2deg;
-  --float-duration: 16s;
-  --float-delay: -6s;
-}
-
-.face-10{
-  top: 58%;
-  right: -34px;
-  --size: 54px;
-  --float-x: 4px;
-  --float-y: 12px;
-  --float-rot: 1.4deg;
-  --float-duration: 12s;
-  --float-delay: -10s;
-}
-
-.face-11{
-  top: 74%;
-  right: -54px;
-  --size: 62px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 2deg;
-  --float-duration: 17s;
-  --float-delay: -5s;
-}
-
-.face-12{
-  top: 88%;
-  right: -24px;
-  --size: 50px;
-  --float-x: 4px;
-  --float-y: 12px;
-  --float-rot: 1.2deg;
-  --float-duration: 10s;
-  --float-delay: -7s;
-}
-
-.face-13{
-  top: 18%;
-  left: 12%;
-  --size: 56px;
-  --float-x: 5px;
-  --float-y: 14px;
-  --float-rot: 1.6deg;
-  --float-duration: 14s;
-  --float-delay: -4s;
-}
-
-.face-14{
-  top: 34%;
-  left: 28%;
-  --size: 52px;
-  --float-x: 4px;
-  --float-y: 12px;
-  --float-rot: 1.4deg;
-  --float-duration: 11.5s;
-  --float-delay: -8s;
-}
-
-.face-15{
-  top: 26%;
-  right: 18%;
-  --size: 54px;
-  --float-x: 5px;
-  --float-y: 14px;
-  --float-rot: 1.6deg;
-  --float-duration: 13s;
-  --float-delay: -6s;
-}
-
-.face-16{
-  bottom: 32%;
-  left: 34%;
-  --size: 58px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 2deg;
-  --float-duration: 18s;
-  --float-delay: -9s;
-}
-
-.face-17{
-  bottom: 26%;
-  right: 26%;
-  --size: 52px;
-  --float-x: 4px;
-  --float-y: 12px;
-  --float-rot: 1.4deg;
-  --float-duration: 10.5s;
-  --float-delay: -3s;
-}
-
-.face-18{
-  bottom: 40%;
-  right: 8%;
-  --size: 60px;
-  --float-x: 6px;
-  --float-y: 14px;
-  --float-rot: 2deg;
-  --float-duration: 15.5s;
-  --float-delay: -7s;
-}
+/* INTERIOR – micro ajustes */
+.face-13{ top:18%; left:14%; }
+.face-14{ top:36%; left:30%; }
+.face-15{ top:28%; right:20%; }
+.face-16{ bottom:34%; left:36%; }
+.face-17{ bottom:28%; right:28%; }
+.face-18{ bottom:42%; right:10%; }
 
 @media (prefers-reduced-motion: reduce){
   .floating-face{
@@ -2284,6 +2110,7 @@
     z-index: 1;
   }
 }
+
 
   </style>
 </head>
