@@ -1912,9 +1912,107 @@
     transform: none !important;
   }
 
-  .reveal-on-scroll,
+.reveal-on-scroll,
   .reveal-media{
     opacity: 1 !important;
+  }
+}
+
+.contact-section{
+  padding: 80px 0;
+  background: transparent;
+}
+
+.contact-section .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-section__title{
+  text-align: center;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #111111;
+}
+
+.contact-card{
+  width: min(760px, 100%);
+  background: #ffffff;
+  border: 4px solid #5b8cff;
+  border-radius: 30px;
+  padding: 48px;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form label{
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.contact-field{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 18px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #111111;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.contact-form textarea{
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color: #b7bdc8;
+}
+
+.contact-submit{
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.contact-submit button{
+  background: #111111;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 12px 48px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  .contact-section{
+    padding: 60px 0;
+  }
+
+  .contact-card{
+    padding: 32px 24px;
   }
 }
 
@@ -2525,6 +2623,28 @@
         </p>
       </details>
 
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <h2 class="contact-section__title">Contactez-nous</h2>
+    <div class="contact-card">
+      <form class="contact-form">
+        <div class="contact-field">
+          <label for="contact-subject">Sujet</label>
+          <select id="contact-subject" name="subject">
+            <option value="Facture.mu" selected>Facture.mu</option>
+          </select>
+        </div>
+        <input type="text" name="full-name" placeholder="Nom complet">
+        <input type="email" name="email" placeholder="Adresse e-mail">
+        <textarea name="message" placeholder="Écrivez votre message..."></textarea>
+        <div class="contact-submit">
+          <button type="submit">Envoyer</button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
