@@ -1929,11 +1929,21 @@
   align-items: center;
 }
 
+.contact-section__header{
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.contact-section__icon{
+  height: 36px;
+  margin-bottom: 12px;
+}
+
 .contact-section__title{
   text-align: center;
-  font-size: clamp(32px, 4vw, 46px);
-  font-weight: 700;
-  margin-bottom: 32px;
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0;
   color: #111111;
 }
 
@@ -2629,7 +2639,10 @@
 
 <section class="contact-section">
   <div class="container">
-    <h2 class="contact-section__title">Contactez-nous</h2>
+    <div class="contact-section__header">
+      <img src="mechas.svg" alt="" class="contact-section__icon">
+      <h2 class="contact-section__title">Contactez-nous</h2>
+    </div>
     <div class="contact-card">
       <form class="contact-form">
         <div class="contact-field">
