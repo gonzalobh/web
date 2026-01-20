@@ -1956,6 +1956,25 @@
   gap: 18px;
 }
 
+.contact-form .field-error{
+  color: #d92d20;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-form .field-error-message{
+  border-color: #d92d20;
+}
+
+.contact-form .contact-success{
+  background: #e7f7ef;
+  color: #046c4e;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
 .contact-form label{
   font-size: 16px;
   font-weight: 600;
@@ -2867,16 +2886,32 @@
       <h2 class="contact-section__title">Contactez-nous</h2>
     </div>
     <div class="contact-card">
-      <form class="contact-form">
+      <form class="contact-form" novalidate>
+        <div class="contact-success" role="status" aria-live="polite" hidden>
+          Merci ! Votre message a été envoyé avec succès.
+        </div>
         <div class="contact-field">
           <label for="contact-subject">Sujet</label>
           <select id="contact-subject" name="subject">
             <option value="Facture.mu" selected>Facture.mu</option>
           </select>
+          <span class="field-error" data-error-for="contact-subject" aria-live="polite"></span>
         </div>
-        <input type="text" name="full-name" placeholder="Nom complet">
-        <input type="email" name="email" placeholder="Adresse e-mail">
-        <textarea name="message" placeholder="Écrivez votre message..."></textarea>
+        <div class="contact-field">
+          <label for="contact-name" class="sr-only">Nom complet</label>
+          <input type="text" id="contact-name" name="full-name" placeholder="Nom complet">
+          <span class="field-error" data-error-for="contact-name" aria-live="polite"></span>
+        </div>
+        <div class="contact-field">
+          <label for="contact-email" class="sr-only">Adresse e-mail</label>
+          <input type="email" id="contact-email" name="email" placeholder="Adresse e-mail" autocomplete="email">
+          <span class="field-error" data-error-for="contact-email" aria-live="polite"></span>
+        </div>
+        <div class="contact-field">
+          <label for="contact-message" class="sr-only">Message</label>
+          <textarea id="contact-message" name="message" placeholder="Écrivez votre message..."></textarea>
+          <span class="field-error" data-error-for="contact-message" aria-live="polite"></span>
+        </div>
         <div class="contact-submit">
           <button type="submit">Envoyer</button>
         </div>
@@ -3241,6 +3276,104 @@ animation.addEventListener('complete', () => {
       if (event.target === demoModal) {
         closeDemo();
       }
+    });
+
+    const contactForm = document.querySelector('.contact-form');
+    const contactSuccess = contactForm?.querySelector('.contact-success');
+    const contactFieldMap = {
+      subject: {
+        input: contactForm?.querySelector('#contact-subject'),
+        message: 'Veuillez sélectionner un sujet.'
+      },
+      name: {
+        input: contactForm?.querySelector('#contact-name'),
+        message: 'Veuillez indiquer votre nom complet.'
+      },
+      email: {
+        input: contactForm?.querySelector('#contact-email'),
+        message: 'Veuillez indiquer une adresse e-mail valide.'
+      },
+      message: {
+        input: contactForm?.querySelector('#contact-message'),
+        message: 'Veuillez écrire votre message.'
+      }
+    };
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const setFieldError = (fieldKey, message = '') => {
+      const field = contactFieldMap[fieldKey];
+      if (!field?.input || !contactForm) return;
+      const error = contactForm.querySelector(`[data-error-for="${field.input.id}"]`);
+      if (message) {
+        field.input.classList.add('field-error-message');
+        if (error) error.textContent = message;
+      } else {
+        field.input.classList.remove('field-error-message');
+        if (error) error.textContent = '';
+      }
+    };
+
+    const validateContactForm = () => {
+      if (!contactForm) return false;
+      let isValid = true;
+
+      const subjectValue = contactFieldMap.subject.input?.value.trim() ?? '';
+      if (!subjectValue) {
+        setFieldError('subject', contactFieldMap.subject.message);
+        isValid = false;
+      } else {
+        setFieldError('subject');
+      }
+
+      const nameValue = contactFieldMap.name.input?.value.trim() ?? '';
+      if (!nameValue) {
+        setFieldError('name', contactFieldMap.name.message);
+        isValid = false;
+      } else {
+        setFieldError('name');
+      }
+
+      const emailValue = contactFieldMap.email.input?.value.trim() ?? '';
+      if (!emailValue || !emailPattern.test(emailValue)) {
+        setFieldError('email', contactFieldMap.email.message);
+        isValid = false;
+      } else {
+        setFieldError('email');
+      }
+
+      const messageValue = contactFieldMap.message.input?.value.trim() ?? '';
+      if (!messageValue) {
+        setFieldError('message', contactFieldMap.message.message);
+        isValid = false;
+      } else {
+        setFieldError('message');
+      }
+
+      return isValid;
+    };
+
+    contactForm?.addEventListener('submit', event => {
+      event.preventDefault();
+      if (contactSuccess) contactSuccess.hidden = true;
+
+      if (!validateContactForm()) return;
+
+      const subjectValue = contactFieldMap.subject.input?.value.trim() ?? 'Contact';
+      const nameValue = contactFieldMap.name.input?.value.trim() ?? '';
+      const emailValue = contactFieldMap.email.input?.value.trim() ?? '';
+      const messageValue = contactFieldMap.message.input?.value.trim() ?? '';
+
+      const mailSubject = encodeURIComponent(`Contact Facture.mu - ${subjectValue}`);
+      const mailBody = encodeURIComponent(
+        `Nom complet: ${nameValue}\nAdresse e-mail: ${emailValue}\n\nMessage:\n${messageValue}`
+      );
+      window.location.href = `mailto:info@facture.mu?subject=${mailSubject}&body=${mailBody}`;
+
+      if (contactSuccess) {
+        contactSuccess.hidden = false;
+      }
+      contactForm.reset();
     });
   });
 </script>
