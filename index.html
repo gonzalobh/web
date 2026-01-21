@@ -2901,13 +2901,6 @@
         </div>
         <div class="contact-error" role="alert" aria-live="polite" hidden></div>
         <div class="contact-field">
-          <label for="contact-subject">Sujet</label>
-          <select id="contact-subject" name="subject">
-            <option value="Facture.mu" selected>Facture.mu</option>
-          </select>
-          <span class="field-error" data-error-for="contact-subject" aria-live="polite"></span>
-        </div>
-        <div class="contact-field">
           <label for="contact-name" class="sr-only">Nom complet</label>
           <input type="text" id="contact-name" name="full-name" placeholder="Nom complet">
           <span class="field-error" data-error-for="contact-name" aria-live="polite"></span>
@@ -3294,10 +3287,6 @@ animation.addEventListener('complete', () => {
     const contactSubmitButton = contactForm?.querySelector('button[type="submit"]');
     const contactSubmitLabel = contactSubmitButton?.textContent ?? 'Envoyer';
     const contactFieldMap = {
-      subject: {
-        input: contactForm?.querySelector('#contact-subject'),
-        message: 'Veuillez sélectionner un sujet.'
-      },
       name: {
         input: contactForm?.querySelector('#contact-name'),
         message: 'Veuillez indiquer votre nom complet.'
@@ -3330,14 +3319,6 @@ animation.addEventListener('complete', () => {
     const validateContactForm = () => {
       if (!contactForm) return false;
       let isValid = true;
-
-      const subjectValue = contactFieldMap.subject.input?.value.trim() ?? '';
-      if (!subjectValue) {
-        setFieldError('subject', contactFieldMap.subject.message);
-        isValid = false;
-      } else {
-        setFieldError('subject');
-      }
 
       const nameValue = contactFieldMap.name.input?.value.trim() ?? '';
       if (!nameValue) {
