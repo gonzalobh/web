@@ -1975,6 +1975,15 @@
   text-align: center;
 }
 
+.contact-form .contact-error{
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
 .contact-form label{
   font-size: 16px;
   font-weight: 600;
@@ -2890,6 +2899,7 @@
         <div class="contact-success" role="status" aria-live="polite" hidden>
           Merci ! Votre message a été envoyé avec succès.
         </div>
+        <div class="contact-error" role="alert" aria-live="polite" hidden></div>
         <div class="contact-field">
           <label for="contact-subject">Sujet</label>
           <select id="contact-subject" name="subject">
@@ -3280,6 +3290,9 @@ animation.addEventListener('complete', () => {
 
     const contactForm = document.querySelector('.contact-form');
     const contactSuccess = contactForm?.querySelector('.contact-success');
+    const contactError = contactForm?.querySelector('.contact-error');
+    const contactSubmitButton = contactForm?.querySelector('button[type="submit"]');
+    const contactSubmitLabel = contactSubmitButton?.textContent ?? 'Envoyer';
     const contactFieldMap = {
       subject: {
         input: contactForm?.querySelector('#contact-subject'),
@@ -3353,27 +3366,59 @@ animation.addEventListener('complete', () => {
       return isValid;
     };
 
-    contactForm?.addEventListener('submit', event => {
+    const setContactSubmitState = isSending => {
+      if (!contactSubmitButton) return;
+      contactSubmitButton.disabled = isSending;
+      contactSubmitButton.textContent = isSending ? 'Envoi en cours...' : contactSubmitLabel;
+    };
+
+    contactForm?.addEventListener('submit', async event => {
       event.preventDefault();
       if (contactSuccess) contactSuccess.hidden = true;
+      if (contactError) {
+        contactError.hidden = true;
+        contactError.textContent = '';
+      }
 
       if (!validateContactForm()) return;
 
-      const subjectValue = contactFieldMap.subject.input?.value.trim() ?? 'Contact';
       const nameValue = contactFieldMap.name.input?.value.trim() ?? '';
       const emailValue = contactFieldMap.email.input?.value.trim() ?? '';
       const messageValue = contactFieldMap.message.input?.value.trim() ?? '';
 
-      const mailSubject = encodeURIComponent(`Contact Facture.mu - ${subjectValue}`);
-      const mailBody = encodeURIComponent(
-        `Nom complet: ${nameValue}\nAdresse e-mail: ${emailValue}\n\nMessage:\n${messageValue}`
-      );
-      window.location.href = `mailto:info@facture.mu?subject=${mailSubject}&body=${mailBody}`;
+      setContactSubmitState(true);
 
-      if (contactSuccess) {
-        contactSuccess.hidden = false;
+      try {
+        const response = await fetch('contact.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: nameValue,
+            email: emailValue,
+            message: messageValue
+          })
+        });
+
+        const data = await response.json().catch(() => null);
+        if (!response.ok || !data?.success) {
+          const errorMessage = data?.error || 'Une erreur est survenue. Veuillez réessayer.';
+          throw new Error(errorMessage);
+        }
+
+        if (contactSuccess) {
+          contactSuccess.hidden = false;
+        }
+        contactForm.reset();
+      } catch (error) {
+        if (contactError) {
+          contactError.textContent = error?.message || 'Une erreur est survenue. Veuillez réessayer.';
+          contactError.hidden = false;
+        }
+      } finally {
+        setContactSubmitState(false);
       }
-      contactForm.reset();
     });
   });
 </script>
