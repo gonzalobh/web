@@ -3183,6 +3183,8 @@ animation.addEventListener('complete', () => {
     const tarifsSection = document.getElementById('tarifs');
     const faqLinks = document.querySelectorAll('a[href="#faq"]');
     const faqSection = document.getElementById('faq');
+    const contactLinks = document.querySelectorAll('a[href="#contact"]');
+    const contactSection = document.getElementById('contact');
     const faqItems = document.querySelectorAll('.faq-item');
 
     const setFaqHeights = () => {
@@ -3240,6 +3242,13 @@ animation.addEventListener('complete', () => {
       link.addEventListener('click', event => {
         event.preventDefault();
         acceleratedScrollTo(faqSection);
+      });
+    });
+
+    contactLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        acceleratedScrollTo(contactSection);
       });
     });
 
