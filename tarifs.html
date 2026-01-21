@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Facture.mu – Tarifs</title>
+  <title data-i18n="page.title.pricing">Facture.mu – Tarifs</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1139,51 +1139,52 @@ margin-right: -20px;
 
     
   </style>
+  <script src="i18n.js" defer></script>
 </head>
 <body>
   <header>
     <div class="container">
         <div class="topbar">
         <div class="brand">
-          <a href="index.html" aria-label="Accueil Facture.mu">
+          <a href="index.html" aria-label="Accueil Facture.mu" data-i18n-aria-label="nav.home">
             <div class="logo-animation" data-animation="2.json" role="img" aria-label="Facture.mu"></div>
           </a>
         </div>
 
-        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-i18n-aria-label="menu.toggle">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
         <nav aria-label="Navigation">
-          <a href="#fonctionnalites">Fonctionnalités</a>
-          <a href="#tarifs">Tarifs</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <a href="#fonctionnalites" data-i18n="nav.features">Fonctionnalités</a>
+          <a href="#tarifs" data-i18n="nav.pricing">Tarifs</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
 
         <div class="actions">
-          <div class="lang" aria-label="Langue">
-            <button class="lang-toggle" type="button">
+          <div class="lang" aria-label="Langue" data-i18n-aria-label="lang.label">
+            <button class="lang-toggle" type="button" aria-label="Changer de langue" data-i18n-aria-label="lang.toggle">
               <span class="flag" aria-hidden="true">🇫🇷</span>
               <span class="caret" aria-hidden="true"></span>
             </button>
             <div class="lang-menu" role="menu">
-              <button class="lang-option is-active" type="button" role="menuitem">
+              <button class="lang-option is-active" type="button" role="menuitem" data-lang="fr">
                 <span class="flag" aria-hidden="true">🇫🇷</span>
               </button>
-              <button class="lang-option" type="button" role="menuitem">
+              <button class="lang-option" type="button" role="menuitem" data-lang="en">
                 <span class="flag" aria-hidden="true">🇬🇧</span>
               </button>
-              <button class="lang-option" type="button" role="menuitem">
+              <button class="lang-option" type="button" role="menuitem" data-lang="mfe">
                 <span class="flag" aria-hidden="true">🇲🇺</span>
               </button>
             </div>
           </div>
 
-          <a class="link-btn" href="https://app.facture.mu/login" target="_blank" rel="noopener noreferrer">Se connecter</a>
-          <button class="cta" type="button" data-register-cta>Essai 15j gratuits</button>
+          <a class="link-btn" href="https://app.facture.mu/login" target="_blank" rel="noopener noreferrer" data-i18n="actions.login">Se connecter</a>
+          <button class="cta" type="button" data-register-cta data-i18n="actions.free_trial">Essai 15j gratuits</button>
         </div>
       </div>
     </div>
@@ -1193,15 +1194,15 @@ margin-right: -20px;
     <section class="pricing-section">
       <div class="container">
         <div class="pricing-header">
-          <h1>Plus que de la simple facturation</h1>
-          <p>Prix clairs, fonctionnalités claires.</p>
+          <h1 data-i18n="pricing_page.hero.title">Plus que de la simple facturation</h1>
+          <p data-i18n="pricing_page.hero.subtitle">Prix clairs, fonctionnalités claires.</p>
           <div class="billing-toggle">
-            <span>Mensuel</span>
-            <label class="toggle-switch" aria-label="Basculer entre annuel et mensuel">
+            <span data-i18n="pricing.billing.monthly">Mensuel</span>
+            <label class="toggle-switch" aria-label="Basculer entre annuel et mensuel" data-i18n-aria-label="pricing_page.billing.label">
               <input id="billing-toggle" type="checkbox">
               <span class="toggle-slider"></span>
             </label>
-            <span>Annuel</span>
+            <span data-i18n="pricing.billing.annual">Annuel</span>
           </div>
         </div>
 
@@ -1211,27 +1212,27 @@ margin-right: -20px;
               <div class="pricing-card__icon" style="background-color: #ffd256;">
                 <img src="1.svg" alt="Start">
               </div>
-              <h3 style=" margin-top: -48px; padding-bottom: 30px; ">Start<span class="pricing-card__tag"></span></h3>
+              <h3 style=" margin-top: -48px; padding-bottom: 30px; "><span data-i18n="pricing.plans.start.name">Start</span><span class="pricing-card__tag"></span></h3>
               <div class="pricing-card__price">
                 <div class="pricing-card__line">
-                  <span class="pricing-card__amount" data-monthly="Gratuit" data-annual="Gratuit">Gratuit</span>
+                  <span class="pricing-card__amount" data-monthly="Gratuit" data-annual="Gratuit" data-i18n-monthly="pricing.plans.start.price" data-i18n-annual="pricing.plans.start.price">Gratuit</span>
                 </div>
                 <div class="pricing-card__line">
-                  <span class="pricing-card__equivalent" data-monthly="Oui, gratuit" data-annual="Oui, gratuit">Oui, gratuit</span>
+                  <span class="pricing-card__equivalent" data-monthly="Oui, gratuit" data-annual="Oui, gratuit" data-i18n-monthly="pricing.plans.start.equivalent" data-i18n-annual="pricing.plans.start.equivalent">Oui, gratuit</span>
                 </div>
               </div>
               <div class="price-action">
-                <button class="signup-btn" type="button" data-register-cta>Essayer</button>
+                <button class="signup-btn" type="button" data-register-cta data-i18n="pricing_page.plans.start.cta">Essayer</button>
               </div>
               <div class="divider"></div>
-              <div class="feature-heading">LE PLAN GRATUIT INCLUT</div>
+              <div class="feature-heading" data-i18n="pricing_page.plans.start.heading">LE PLAN GRATUIT INCLUT</div>
               <ul class="feature-list feature-list--premium">
-                <li>1 utilisateur</li>
-                <li>Jusqu’à 5 clients</li>
-                <li>Avec gestion de TVA</li>
-                <li>Factures et devis illimités</li>
-                <li>Documents avec votre logo</li>
-                <li>Création de factures en PDF et envoi par email</li>
+                <li data-i18n="pricing_page.plans.start.features.0">1 utilisateur</li>
+                <li data-i18n="pricing_page.plans.start.features.1">Jusqu’à 5 clients</li>
+                <li data-i18n="pricing_page.plans.start.features.2">Avec gestion de TVA</li>
+                <li data-i18n="pricing_page.plans.start.features.3">Factures et devis illimités</li>
+                <li data-i18n="pricing_page.plans.start.features.4">Documents avec votre logo</li>
+                <li data-i18n="pricing_page.plans.start.features.5">Création de factures en PDF et envoi par email</li>
               </ul>
             </article>
 
@@ -1239,28 +1240,28 @@ margin-right: -20px;
               <div class="pricing-card__icon" style="background-color: #22c55e;">
                 <img src="2.svg" alt="Grow">
               </div>
-              <h3 style=" margin-top: -48px; padding-bottom: 30px; ">Grow<span class="pricing-card__tag"></span></h3>
+              <h3 style=" margin-top: -48px; padding-bottom: 30px; "><span data-i18n="pricing.plans.grow.name">Grow</span><span class="pricing-card__tag"></span></h3>
               <div class="pricing-card__price">
                 <div class="pricing-card__line">
                   <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4 990">Rs 499</span>
-                  <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+                  <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year" data-i18n-monthly="pricing.plans.grow.term.monthly" data-i18n-annual="pricing.plans.grow.term.annual">/ month</span>
                 </div>
                 <div class="pricing-card__line">
-                  <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)">(9,9€ / month)</span>
+                  <span class="pricing-card__equivalent" data-monthly="(9,9€ / month)" data-annual="(99€ / year)" data-i18n-monthly="pricing.plans.grow.equivalent.monthly" data-i18n-annual="pricing.plans.grow.equivalent.annual">(9,9€ / month)</span>
                 </div>
               </div>
               <div class="price-action">
-                <button class="signup-btn signup-btn--filled" type="button" data-register-cta>Essayer</button>
+                <button class="signup-btn signup-btn--filled" type="button" data-register-cta data-i18n="pricing_page.plans.grow.cta">Essayer</button>
               </div>
               <div class="divider"></div>
-              <div class="feature-heading">TOUTES LES FONCTIONNALITÉS GRATUITES +</div>
+              <div class="feature-heading" data-i18n="pricing_page.plans.grow.heading">TOUTES LES FONCTIONNALITÉS GRATUITES +</div>
               <ul class="feature-list feature-list--tight">
-                <li>1 utilisateur</li>
-                <li>Clients illimités</li>
-                <li>Export / import Excel</li>
-                <li>Relances automatiques</li>
-                <li>Modèles de facture illimités</li>
-                <li>Gestion et suivi de paiements</li>
+                <li data-i18n="pricing_page.plans.grow.features.0">1 utilisateur</li>
+                <li data-i18n="pricing_page.plans.grow.features.1">Clients illimités</li>
+                <li data-i18n="pricing_page.plans.grow.features.2">Export / import Excel</li>
+                <li data-i18n="pricing_page.plans.grow.features.3">Relances automatiques</li>
+                <li data-i18n="pricing_page.plans.grow.features.4">Modèles de facture illimités</li>
+                <li data-i18n="pricing_page.plans.grow.features.5">Gestion et suivi de paiements</li>
               </ul>
             </article>
 
@@ -1268,50 +1269,50 @@ margin-right: -20px;
               <div class="pricing-card__icon" style="background-color: #10a5e9;">
                 <img src="3.svg" alt="Scale">
               </div>
-              <h3 style=" margin-top: -48px; padding-bottom: 30px; ">Scale<span class="pricing-card__tag"></span></h3>
+              <h3 style=" margin-top: -48px; padding-bottom: 30px; "><span data-i18n="pricing.plans.scale.name">Scale</span><span class="pricing-card__tag"></span></h3>
               <div class="pricing-card__price">
                 <div class="pricing-card__line">
                   <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9 990">Rs 999</span>
-                  <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year">/ month</span>
+                  <span class="pricing-card__term" data-monthly="/ month" data-annual="/ year" data-i18n-monthly="pricing.plans.scale.term.monthly" data-i18n-annual="pricing.plans.scale.term.annual">/ month</span>
                 </div>
                 <div class="pricing-card__line">
-                  <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)">(19,9€ / month)</span>
+                  <span class="pricing-card__equivalent" data-monthly="(19,9€ / month)" data-annual="(199€ / year)" data-i18n-monthly="pricing.plans.scale.equivalent.monthly" data-i18n-annual="pricing.plans.scale.equivalent.annual">(19,9€ / month)</span>
                 </div>
               </div>
               <div class="price-action">
-                <button class="signup-btn" type="button" data-register-cta>Essayer</button>
+                <button class="signup-btn" type="button" data-register-cta data-i18n="pricing_page.plans.scale.cta">Essayer</button>
               </div>
               <div class="divider"></div>
-              <div class="feature-heading">TOUTES LES FONCTIONNALITÉS PRO+</div>
+              <div class="feature-heading" data-i18n="pricing_page.plans.scale.heading">TOUTES LES FONCTIONNALITÉS PRO+</div>
               <ul class="feature-list feature-list--cool">
-                <li>3 utilisateurs</li>
-                <li>Multi-devises</li>
-                <li>Gestion de stock</li>
-                <li>Factures récurrentes</li>
-                <li>Accès API</li>
+                <li data-i18n="pricing_page.plans.scale.features.0">3 utilisateurs</li>
+                <li data-i18n="pricing_page.plans.scale.features.1">Multi-devises</li>
+                <li data-i18n="pricing_page.plans.scale.features.2">Gestion de stock</li>
+                <li data-i18n="pricing_page.plans.scale.features.3">Factures récurrentes</li>
+                <li data-i18n="pricing_page.plans.scale.features.4">Accès API</li>
               </ul>
             </article>
 
           </div>
 
           <div class="payments-section">
-            <div class="payments-title">Paiements via</div>
+            <div class="payments-title" data-i18n="pricing_page.payments.title">Paiements via</div>
             <div class="payments-logos">
               <div class="payment-item">
                 <img src="mcb.png" alt="MCB">
-                <span>Virement bancaire</span>
+                <span data-i18n="pricing_page.payments.bank">Virement bancaire</span>
               </div>
               <div class="payment-item">
                 <img src="juice.png" alt="MCB Juice">
-                <span>App Juice</span>
+                <span data-i18n="pricing_page.payments.juice">App Juice</span>
               </div>
               <div class="payment-item">
                 <img src="money.png" alt="My.t Money">
-                <span>App My.t Money</span>
+                <span data-i18n="pricing_page.payments.money">App My.t Money</span>
               </div>
               <div class="payment-item">
                 <img src="stripe.png" alt="Stripe">
-                <span>Carte bancaire</span>
+                <span data-i18n="pricing_page.payments.card">Carte bancaire</span>
               </div>
             </div>
           </div>
@@ -1327,74 +1328,74 @@ margin-right: -20px;
               <thead>
                 <tr>
                   <th class="comparison-feature-head"></th>
-                  <th class="comparison-plan comparison-plan--free"><span class="plan-chip plan-chip--start">Start</span></th>
-                  <th class="comparison-plan comparison-plan--pro"><span class="plan-chip plan-chip--grow">Grow</span></th>
-                  <th class="comparison-plan comparison-plan--enterprise"><span class="plan-chip plan-chip--scale">Scale</span></th>
+                  <th class="comparison-plan comparison-plan--free"><span class="plan-chip plan-chip--start" data-i18n="pricing.plans.start.name">Start</span></th>
+                  <th class="comparison-plan comparison-plan--pro"><span class="plan-chip plan-chip--grow" data-i18n="pricing.plans.grow.name">Grow</span></th>
+                  <th class="comparison-plan comparison-plan--enterprise"><span class="plan-chip plan-chip--scale" data-i18n="pricing.plans.scale.name">Scale</span></th>
                 </tr>
               </thead>
               <tbody class="comparison-section">
                 <tr class="comparison-section-row">
-                  <th class="comparison-section-title">Fonctionnalités de base<div class="comparison-divider"></div></th>
+                  <th class="comparison-section-title"><span data-i18n="pricing_page.comparison.base">Fonctionnalités de base</span><div class="comparison-divider"></div></th>
                   <td class="comparison-plan comparison-plan--free"></td>
                   <td class="comparison-plan comparison-plan--pro"></td>
                   <td class="comparison-plan comparison-plan--enterprise"></td>
                 </tr>
                 <tr>
-                  <td class="comparison-feature">Suppression de la mention « Facture.mu »</td>
+                  <td class="comparison-feature" data-i18n="pricing_page.comparison.features.remove_branding">Suppression de la mention « Facture.mu »</td>
                   <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                   <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
                 </tr>
                 <tr>
-                  <td class="comparison-feature">Création de clients illimitée</td>
+                  <td class="comparison-feature" data-i18n="pricing_page.comparison.features.unlimited_clients">Création de clients illimitée</td>
                   <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                   <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
                 </tr>
                 <tr>
-                  <td class="comparison-feature">Acceptation des paiements en ligne</td>
+                  <td class="comparison-feature" data-i18n="pricing_page.comparison.features.online_payments">Acceptation des paiements en ligne</td>
                   <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
                 </tr>
                 <tr>
-                  <td class="comparison-feature">Ajout de votre logo sur les documents</td>
+                  <td class="comparison-feature" data-i18n="pricing_page.comparison.features.logo_documents">Ajout de votre logo sur les documents</td>
                   <td class="comparison-plan comparison-plan--free"><span class="comparison-value">1</span></td>
-                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-value">Illim.</span></td>
-                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-value">Illim.</span></td>
+                  <td class="comparison-plan comparison-plan--pro"><span class="comparison-value" data-i18n="pricing_page.comparison.values.unlimited">Illim.</span></td>
+                  <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-value" data-i18n="pricing_page.comparison.values.unlimited">Illim.</span></td>
                 </tr>
                 <tr>
-                  <td class="comparison-feature">Modèles de documents personnalisables</td>
+                  <td class="comparison-feature" data-i18n="pricing_page.comparison.features.customizable_templates">Modèles de documents personnalisables</td>
                   <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
                 </tr>
                 <tr>
-                  <td class="comparison-feature">Gestion des articles</td>
+                  <td class="comparison-feature" data-i18n="pricing_page.comparison.features.item_management">Gestion des articles</td>
                   <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                   <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
                 </tr>
               <tr>
-                <td class="comparison-feature">Gestion des stocks</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.stock_management">Gestion des stocks</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Paramétrage personnalisé des taxes</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.tax_settings">Paramétrage personnalisé des taxes</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Facturation récurrente</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.recurring_billing">Facturation récurrente</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Envoi des factures par e-mail et WhatsApp</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.invoice_delivery">Envoi des factures par e-mail et WhatsApp</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
@@ -1402,55 +1403,55 @@ margin-right: -20px;
             </tbody>
             <tbody class="comparison-section">
               <tr class="comparison-section-row">
-                <th class="comparison-section-title">Fonctionnalités avancées<div class="comparison-divider"></div></th>
+                <th class="comparison-section-title"><span data-i18n="pricing_page.comparison.advanced">Fonctionnalités avancées</span><div class="comparison-divider"></div></th>
                 <td class="comparison-plan comparison-plan--free"></td>
                 <td class="comparison-plan comparison-plan--pro"></td>
                 <td class="comparison-plan comparison-plan--enterprise"></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Personnalisation du design des factures</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.invoice_design">Personnalisation du design des factures</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Rapports et statistiques (factures, dépenses, etc.)</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.reports">Rapports et statistiques (factures, dépenses, etc.)</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Personnalisation des objets et modèles d’e-mails</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.email_templates">Personnalisation des objets et modèles d’e-mails</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Relances automatiques par e-mail</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.email_reminders">Relances automatiques par e-mail</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Ajout de pièces jointes aux e-mails (PDF, JPG, XLS)</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.attachments">Ajout de pièces jointes aux e-mails (PDF, JPG, XLS)</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Ajout d’utilisateurs supplémentaires au compte</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.extra_users">Ajout d’utilisateurs supplémentaires au compte</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-check">✓</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Facturation électronique (e-Invoicing)</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.einvoicing">Facturation électronique (e-Invoicing)</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
               </tr>
               <tr>
-                <td class="comparison-feature">Accès à l’API</td>
+                <td class="comparison-feature" data-i18n="pricing_page.comparison.features.api_access">Accès à l’API</td>
                 <td class="comparison-plan comparison-plan--free"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--pro"><span class="comparison-icon-cross">✕</span></td>
                 <td class="comparison-plan comparison-plan--enterprise"><span class="comparison-icon-check is-green">✓</span></td>
@@ -1468,28 +1469,28 @@ margin-right: -20px;
       <!-- LOGO -->
     <div class="footer-brand">
         <img src="logo.png" alt="Facture.mu" class="footer-logo">
-        <p class="footer-tagline">Eldorado de la facturation</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Eldorado de la facturation</p>
       </div>
 
       <!-- LINKS -->
       <div class="footer-links">
 
         <div class="footer-column">
-          <h4>Produit</h4>
-          <a href="#fonctionnalites">Fonctionnalités</a>
-          <a href="tarifs.html">Tarifs</a>
+          <h4 data-i18n="footer.product">Produit</h4>
+          <a href="#fonctionnalites" data-i18n="footer.links.features">Fonctionnalités</a>
+          <a href="tarifs.html" data-i18n="footer.links.pricing">Tarifs</a>
         </div>
 
         <div class="footer-column">
-          <h4>Société</h4>
-          <a href="conditions-generales-utilisation.html">Conditions</a>
-          <a href="donnees-personnelles.html">Données personnelles</a>
+          <h4 data-i18n="footer.company">Société</h4>
+          <a href="conditions-generales-utilisation.html" data-i18n="footer.links.conditions">Conditions</a>
+          <a href="donnees-personnelles.html" data-i18n="footer.links.privacy">Données personnelles</a>
         </div>
 
         <div class="footer-column">
-          <h4>Assistance</h4>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
+          <h4 data-i18n="footer.support">Assistance</h4>
+          <a href="#faq" data-i18n="footer.links.faq">FAQ</a>
+          <a href="#contact" data-i18n="footer.links.contact">Contact</a>
         </div>
 
       </div>
@@ -1497,8 +1498,8 @@ margin-right: -20px;
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <span>© Facture.mu - Tous droits réservés. @2026</span>
-        <span>Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
+        <span data-i18n="footer.bottom.rights">© Facture.mu - Tous droits réservés. @2026</span>
+        <span data-i18n="footer.bottom.legal">Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
       </div>
     </div>
   </footer>

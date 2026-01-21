@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Facture.mu – Eldorado de la facturation</title>
+  <title data-i18n="page.title.home">Facture.mu – Eldorado de la facturation</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2257,6 +2257,7 @@
 }
 
   </style>
+  <script src="i18n.js" defer></script>
 </head>
 
 
@@ -2267,45 +2268,45 @@
   <div class="container">
       <div class="topbar">
       <div class="brand">
-        <a href="index.html" aria-label="Accueil Facture.mu">
+        <a href="index.html" aria-label="Accueil Facture.mu" data-i18n-aria-label="nav.home">
           <div class="logo-animation" data-animation="2.json" role="img" aria-label="Facture.mu"></div>
         </a>
       </div>
 
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-i18n-aria-label="menu.toggle">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <nav aria-label="Navigation">
-        <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="#tarifs">Tarifs</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#fonctionnalites" data-i18n="nav.features">Fonctionnalités</a>
+        <a href="#tarifs" data-i18n="nav.pricing">Tarifs</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="actions">
-        <div class="lang" aria-label="Langue">
-          <button class="lang-toggle" type="button">
+        <div class="lang" aria-label="Langue" data-i18n-aria-label="lang.label">
+          <button class="lang-toggle" type="button" aria-label="Changer de langue" data-i18n-aria-label="lang.toggle">
             <span class="flag" aria-hidden="true">🇫🇷</span>
             <span class="caret" aria-hidden="true"></span>
           </button>
           <div class="lang-menu" role="menu">
-            <button class="lang-option is-active" type="button" role="menuitem">
+            <button class="lang-option is-active" type="button" role="menuitem" data-lang="fr">
               <span class="flag" aria-hidden="true">🇫🇷</span>
             </button>
-            <button class="lang-option" type="button" role="menuitem">
+            <button class="lang-option" type="button" role="menuitem" data-lang="en">
               <span class="flag" aria-hidden="true">🇬🇧</span>
             </button>
-            <button class="lang-option" type="button" role="menuitem">
+            <button class="lang-option" type="button" role="menuitem" data-lang="mfe">
               <span class="flag" aria-hidden="true">🇲🇺</span>
             </button>
           </div>
         </div>
 
-        <a class="link-btn" href="https://app.facture.mu/login" target="_blank" rel="noopener noreferrer">Se connecter</a>
-        <button class="cta" type="button" data-register-cta>Essai 15j gratuits</button>
+        <a class="link-btn" href="https://app.facture.mu/login" target="_blank" rel="noopener noreferrer" data-i18n="actions.login">Se connecter</a>
+        <button class="cta" type="button" data-register-cta data-i18n="actions.free_trial">Essai 15j gratuits</button>
       </div>
     </div>
   </div>
@@ -2316,11 +2317,11 @@
   <section class="hero hero--tall">
 
     <div class="hero-content">
-      <h1>
+      <h1 data-i18n="hero.title">
        La facturation simple et intelligente pour les entreprises à Maurice 🇲🇺
       </h1>
 
-      <p>
+      <p data-i18n="hero.subtitle">
         Passez moins de temps à facturer et plus de temps à développer votre activité grâce à une facturation professionnelle, multilingue et multi-devises.
       </p>
 
@@ -2365,11 +2366,11 @@
   <section class="below">
     <div class="container">
        <div class="pill-row">
-        <button class="pill pill-demo" type="button">Voir la démo</button>
-        <button class="cta" type="button" data-register-cta>Essai 15j gratuits</button>
-        <a class="pill" href="#fonctionnalites">Voir les fonctionnalités</a>
+        <button class="pill pill-demo" type="button" data-i18n="hero.demo">Voir la démo</button>
+        <button class="cta" type="button" data-register-cta data-i18n="actions.free_trial">Essai 15j gratuits</button>
+        <a class="pill" href="#fonctionnalites" data-i18n="hero.features_link">Voir les fonctionnalités</a>
       </div>
-      <p class="title" style=" margin-top: 50px; ">Conçu pour les entreprises qui opèrent à Maurice et au-delà</p>
+      <p class="title" style=" margin-top: 50px; " data-i18n="hero.tagline">Conçu pour les entreprises qui opèrent à Maurice et au-delà</p>
       <div class="rating">
 <div class="stars" style=" margin-top: 30px; ">
   <img src="Icon awesome-star.svg" alt="star">
@@ -2379,7 +2380,7 @@
   <img src="Icon awesome-star.svg" alt="star">
 </div>
 
-       <p class="title" style=" margin-top: 30px; ">« plus facile et rapide qu’Excel ! »</p>
+       <p class="title" style=" margin-top: 30px; " data-i18n="hero.quote">« plus facile et rapide qu’Excel ! »</p>
       </div>
     </div>
   </section>
@@ -2388,10 +2389,10 @@
   <div class="container">
           <img src="mechas.svg" alt="" class="activity-icon">
 
-    <h2 class="features-title">
+    <h2 class="features-title" data-i18n="features.title">
       Tout ce dont vous avez besoin pour facturer sereinement
     </h2>
-    <p class="features-subtitle">
+    <p class="features-subtitle" data-i18n="features.subtitle">
       Une plateforme moderne pensée pour l’écosystème business mauricien et international
     </p>
 
@@ -2400,32 +2401,32 @@
 
         <div class="feature-item">
           <img src="img-pincel.png" alt="">
-          <p>Devis & Factures<br>personnalisables</p>
+          <p data-i18n="features.items.quotes" data-i18n-html>Devis & Factures<br>personnalisables</p>
         </div>
 
         <div class="feature-item">
           <img src="img-export.png" alt="">
-          <p>Export & Import<br>de vos données</p>
+          <p data-i18n="features.items.export" data-i18n-html>Export & Import<br>de vos données</p>
         </div>
 
         <div class="feature-item">
           <img src="img-whatsapp.png" alt="">
-          <p>Envoi par email<br>et WhatsApp</p>
+          <p data-i18n="features.items.send" data-i18n-html>Envoi par email<br>et WhatsApp</p>
         </div>
 
         <div class="feature-item">
           <img src="img-devises.png" alt="">
-          <p>+160 devises</p>
+          <p data-i18n="features.items.currencies">+160 devises</p>
         </div>
 
         <div class="feature-item">
           <img src="img-langues.png" alt="">
-          <p>Multi-langue</p>
+          <p data-i18n="features.items.languages">Multi-langue</p>
         </div>
 
         <div class="feature-item">
           <img src="img-relances.png" alt="">
-          <p>Relances automatiques</p>
+          <p data-i18n="features.items.reminders">Relances automatiques</p>
         </div>
 
       </div>
@@ -2438,8 +2439,8 @@
 
     <div class="functionalities-header">
       <img src="mechas.svg" alt="" class="activity-icon">
-      <h2>Fonctionnalités</h2>
-      <p>
+      <h2 data-i18n="functionalities.title">Fonctionnalités</h2>
+      <p data-i18n="functionalities.subtitle">
         Une plateforme moderne avec les fonctionnalités clés pour gérer la facturation locale et internationale.
       </p>
     </div>
@@ -2448,13 +2449,13 @@
 
       <!-- COLUMNA IZQUIERDA -->
       <div class="func-list">
-        <button class="func-item active" data-image="func-1.png">Faites Devis, Factures et Reçus</button>
-        <button class="func-item" data-image="func-2.png">Transformez Devis en Factures</button>
-        <button class="func-item" data-image="func-3.png">Envoyez-les par email ou Whatsapp</button>
-        <button class="func-item" data-image="func-4.png">Suivez les paiement des factures</button>
-        <button class="func-item" data-image="func-5.png">Relancez les impayés automatiquement</button>
-        <button class="func-item" data-image="func-6.png">Peronnalisez le design des factures</button>
-        <button class="func-item" data-image="func-7.png">Donnez un accès à vos collaborateurs</button>
+        <button class="func-item active" data-image="func-1.png" data-i18n="functionalities.items.one">Faites Devis, Factures et Reçus</button>
+        <button class="func-item" data-image="func-2.png" data-i18n="functionalities.items.two">Transformez Devis en Factures</button>
+        <button class="func-item" data-image="func-3.png" data-i18n="functionalities.items.three">Envoyez-les par email ou Whatsapp</button>
+        <button class="func-item" data-image="func-4.png" data-i18n="functionalities.items.four">Suivez les paiement des factures</button>
+        <button class="func-item" data-image="func-5.png" data-i18n="functionalities.items.five">Relancez les impayés automatiquement</button>
+        <button class="func-item" data-image="func-6.png" data-i18n="functionalities.items.six">Peronnalisez le design des factures</button>
+        <button class="func-item" data-image="func-7.png" data-i18n="functionalities.items.seven">Donnez un accès à vos collaborateurs</button>
       <!-- <button class="func-item" data-image="func-8.png">Avec un support réactif</button> -->
 
       </div>
@@ -2473,8 +2474,8 @@
 
     <div class="activity-header">
       <img src="mechas.svg" alt="" class="activity-icon">
-      <h2>Pour votre activité</h2>
-      <p>
+      <h2 data-i18n="activity.title">Pour votre activité</h2>
+      <p data-i18n="activity.subtitle">
         Une plateforme pensée pour les entreprises, cabinets et indépendants opérant à Maurice et à l’international.
       </p>
     </div>
@@ -2483,18 +2484,18 @@
 
       <!-- TEXTO -->
       <div class="activity-content">
-        <h3>
+        <h3 data-i18n="activity.heading">
           Le logiciel de facturation gratuit conçu pour les freelances, consultants, indépendants et petites entreprises.
         </h3>
 
-        <p>
+        <p data-i18n="activity.body" data-i18n-html>
           Facturation pour freelances et entreprises de toutes tailles.<br><br>
 
           Projetez une image professionnelle avec des factures au design soigné et alignées à votre marque. Gagnez du temps grâce à l’envoi automatique, au suivi des paiements et aux rappels amicaux en cas de retard.
         </p>
 
         <button class="activity-cta" type="button" data-register-cta>
-          Essai 15j gratuits
+          <span data-i18n="activity.cta">Essai 15j gratuits</span>
         </button>
       </div>
 
@@ -2513,16 +2514,16 @@
 
     <!-- CASO 1 -->
     <div class="usecase-card">
-      <h3 class="usecase-title">Détaillant / Distributeur</h3>
+      <h3 class="usecase-title" data-i18n="usecases.retail.title">Détaillant / Distributeur</h3>
 
       <div class="usecase-grid">
         <div class="usecase-col">
-          <h4>Avant</h4>
+          <h4 data-i18n="usecases.retail.before">Avant</h4>
           <ul class="usecase-list negative">
-            <li>Rapports de vente à partir des factures</li>
-            <li>Gestion des stocks dans des feuilles de calcul</li>
-            <li>Serveur local, accessible uniquement au bureau</li>
-            <li>Impossible de cibler les groupes clients pour la publicité</li>
+            <li data-i18n="usecases.retail.before_items.0">Rapports de vente à partir des factures</li>
+            <li data-i18n="usecases.retail.before_items.1">Gestion des stocks dans des feuilles de calcul</li>
+            <li data-i18n="usecases.retail.before_items.2">Serveur local, accessible uniquement au bureau</li>
+            <li data-i18n="usecases.retail.before_items.3">Impossible de cibler les groupes clients pour la publicité</li>
           </ul>
         </div>
 
@@ -2532,16 +2533,16 @@
   <img class="usecase-logo" src="logo.png" alt="Facture.mu">
 </h4>
           <ul class="usecase-list positive">
-            <li>Données dans le cloud, accessibles partout</li>
-            <li>Analyses intelligentes pour exploiter les données</li>
-            <li>Identification des clients performants</li>
+            <li data-i18n="usecases.retail.after_items.0">Données dans le cloud, accessibles partout</li>
+            <li data-i18n="usecases.retail.after_items.1">Analyses intelligentes pour exploiter les données</li>
+            <li data-i18n="usecases.retail.after_items.2">Identification des clients performants</li>
           </ul>
         </div>
       </div>
 
 
       
-        <p class="usecase-result" style=" font-size: 20px; ">
+        <p class="usecase-result" style=" font-size: 20px; " data-i18n="usecases.retail.result" data-i18n-html>
         👉🏽  <strong>+20 % de chiffre d’affaires cette année</strong>
       </p>
       
@@ -2549,14 +2550,14 @@
 
     <!-- CASO 2 -->
     <div class="usecase-card">
-      <h3 class="usecase-title">Entreprise de services</h3>
+      <h3 class="usecase-title" data-i18n="usecases.services.title">Entreprise de services</h3>
 
       <div class="usecase-grid">
         <div class="usecase-col">
-          <h4>Avant</h4>
+          <h4 data-i18n="usecases.services.before">Avant</h4>
           <ul class="usecase-list negative">
-            <li>Facturation et dépenses dans des systèmes séparés</li>
-            <li>Retards constants de paiement</li>
+            <li data-i18n="usecases.services.before_items.0">Facturation et dépenses dans des systèmes séparés</li>
+            <li data-i18n="usecases.services.before_items.1">Retards constants de paiement</li>
           </ul>
         </div>
 
@@ -2566,28 +2567,28 @@
   <img class="usecase-logo" src="logo.png" alt="Facture.mu">
 </h4>
           <ul class="usecase-list positive">
-            <li>Facturation récurrente automatisée</li>
-            <li>Envoi par email ou WhatsApp</li>
-            <li>Relances automatiques = trésorerie améliorée</li>
+            <li data-i18n="usecases.services.after_items.0">Facturation récurrente automatisée</li>
+            <li data-i18n="usecases.services.after_items.1">Envoi par email ou WhatsApp</li>
+            <li data-i18n="usecases.services.after_items.2">Relances automatiques = trésorerie améliorée</li>
           </ul>
         </div>
       </div>
 
-      <p class="usecase-result" style=" font-size: 20px; ">
+      <p class="usecase-result" style=" font-size: 20px; " data-i18n="usecases.services.result" data-i18n-html>
         👉🏽  <strong> plus de soucis de trésorerie</strong>
       </p>
     </div>
 
     <!-- CASO 3  -->
     <div class="usecase-card">
-      <h3 class="usecase-title">PME</h3>
+      <h3 class="usecase-title" data-i18n="usecases.sme.title">PME</h3>
 
       <div class="usecase-grid">
         <div class="usecase-col">
-          <h4>Avant</h4>
+          <h4 data-i18n="usecases.sme.before">Avant</h4>
           <ul class="usecase-list negative">
-            <li>Expert-comptable coûteux</li>
-            <li>Retards TVA et paiements fournisseurs</li>
+            <li data-i18n="usecases.sme.before_items.0">Expert-comptable coûteux</li>
+            <li data-i18n="usecases.sme.before_items.1">Retards TVA et paiements fournisseurs</li>
           </ul>
         </div>
 
@@ -2597,19 +2598,19 @@
   <img class="usecase-logo" src="logo.png" alt="Facture.mu">
 </h4>
           <ul class="usecase-list positive">
-            <li>Accès partagé avec l’expert-comptable</li>
-            <li>Factures scannées et centralisées</li>
+            <li data-i18n="usecases.sme.after_items.0">Accès partagé avec l’expert-comptable</li>
+            <li data-i18n="usecases.sme.after_items.1">Factures scannées et centralisées</li>
           </ul>
         </div>
       </div>
 
-  <p class="usecase-result" style=" font-size: 20px; ">
+  <p class="usecase-result" style=" font-size: 20px; " data-i18n="usecases.sme.result" data-i18n-html>
         👉🏽  <strong>trésorerie assainie et paiements ponctuels</strong>
       </p>
    
     </div>
 
-    <p class="usecase-footer">
+    <p class="usecase-footer" data-i18n="usecases.footer" data-i18n-html>
       Facture.mu vous permet d’automatiser et de rationaliser la facturation,
       la gestion des dépenses et l’analyse commerciale.
       <br><strong>Résultat : une trésorerie plus saine et plus de revenus.</strong>
@@ -2624,8 +2625,8 @@
 
     <div class="testimonials-header">
       <img src="mechas.svg" alt="" class="testimonials-icon">
-      <h2>Témoignages</h2>
-      <p>Une solution de facturation de confiance pour les entreprises et les indépendants.</p>
+      <h2 data-i18n="testimonials.title">Témoignages</h2>
+      <p data-i18n="testimonials.subtitle">Une solution de facturation de confiance pour les entreprises et les indépendants.</p>
     </div>
 
     <div class="testimonials-card">
@@ -2643,10 +2644,10 @@
 </div>
 
 
-        <p class="testimonial-text">
+        <p class="testimonial-text" data-i18n="testimonials.items.one.text">
           Facture.mu a transformé notre manière de gérer le club. Tout est plus clair, plus organisé, et nous passons beaucoup moins de temps sur l’administratif.
         </p>
-</br>Stéphanie de
+<br><span data-i18n="testimonials.items.one.by">Stéphanie de</span>
        <a href="https://cavalia.mu/" target="_blank" rel="noopener noreferrer" style=" text-decoration: none; ">
  <div class="testimonial-site">cavalia.mu</div></a>
       </div>
@@ -2664,10 +2665,10 @@
 </div>
 
 
-        <p class="testimonial-text">
+        <p class="testimonial-text" data-i18n="testimonials.items.two.text">
           Grâce à Facture.mu, nous passons beaucoup moins de temps sur l’administratif et bien plus de temps à aider les animaux. La gestion est plus claire, plus organisée et beaucoup plus sereine. 
         </p>
-</br>Audrey de
+<br><span data-i18n="testimonials.items.two.by">Audrey de</span>
                <a href="https://www.nouzanimo.mu" target="_blank" rel="noopener noreferrer" style=" text-decoration: none; ">
  <div class="testimonial-site">nouzanimo.mu</div></a>
       </div>
@@ -2685,10 +2686,10 @@
 </div>
 
 
-        <p class="testimonial-text">
+        <p class="testimonial-text" data-i18n="testimonials.items.three.text">
           Grâce à Facture.mu, La Vanilleraie Vanillart peut désormais gérer des ventes en plusieurs devises en toute simplicité. La facturation est claire, structurée, et nous permet de nous concentrer pleinement sur notre cœur de métier : la vanille. 
         </p>
-</br>Dhareena de
+<br><span data-i18n="testimonials.items.three.by">Dhareena de</span>
                  <a href="https://vanillart.mu" target="_blank" rel="noopener noreferrer" style=" text-decoration: none; ">
  <div class="testimonial-site">vanillart.mu</div></a>
       </div>
@@ -2701,11 +2702,11 @@
   <div class="container">
     <div class="pricing-header">
       <img src="mechas.svg" alt="" class="pricing-icon">
-      <h2>Tarifs</h2>
-      <button class="pricing-toggle" type="button" aria-pressed="false" aria-label="Basculer la tarification annuelle">
-        <span>Mensuel</span>
+      <h2 data-i18n="pricing.title">Tarifs</h2>
+      <button class="pricing-toggle" type="button" aria-pressed="false" aria-label="Basculer la tarification annuelle" data-i18n-aria-label="pricing.toggle_label">
+        <span data-i18n="pricing.billing.monthly">Mensuel</span>
         <span class="pricing-switch"></span>
-        <span>Annuel</span>
+        <span data-i18n="pricing.billing.annual">Annuel</span>
       </button>
     </div>
 
@@ -2715,24 +2716,24 @@
           <div class="pricing-card__icon" style="background-color: #ffd256;">
             <img src="1.svg" alt="Start">
           </div>
-          <h3 style=" margin-top: -60px; padding-bottom: 40px; ">Start<span class="pricing-card__tag"></span></h3>
+          <h3 style=" margin-top: -60px; padding-bottom: 40px; "><span data-i18n="pricing.plans.start.name">Start</span><span class="pricing-card__tag"></span></h3>
         </div>
         <div class="pricing-card__price">
-          <span class="pricing-card__amount">Gratuit</span>
+          <span class="pricing-card__amount" data-i18n="pricing.plans.start.price">Gratuit</span>
         </div>
           <div class="pricing-card__line">
-            <span class="pricing-card__equivalent" data-monthly="Oui, gratuit" data-annual="Oui, gratuit">Oui, gratuit</span>
+            <span class="pricing-card__equivalent" data-monthly="Oui, gratuit" data-annual="Oui, gratuit" data-i18n-monthly="pricing.plans.start.equivalent" data-i18n-annual="pricing.plans.start.equivalent">Oui, gratuit</span>
           </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-    <li> 1 utilisateur</li>
-          <li>Jusqu’à 5 clients</li>
-          <li>Factures et devis sans limite</li>
-          <li>Documents avec votre logo</li>
+    <li data-i18n="pricing.plans.start.features.0"> 1 utilisateur</li>
+          <li data-i18n="pricing.plans.start.features.1">Jusqu’à 5 clients</li>
+          <li data-i18n="pricing.plans.start.features.2">Factures et devis sans limite</li>
+          <li data-i18n="pricing.plans.start.features.3">Documents avec votre logo</li>
           
       
         </ul>
-        <button class="pricing-card__cta" type="button" data-register-cta>S'inscrire</button>
+        <button class="pricing-card__cta" type="button" data-register-cta data-i18n="pricing.plans.start.cta">S'inscrire</button>
       </article>
 
       <article class="pricing-card pricing-card--pieter pricing-card--featured">
@@ -2740,27 +2741,27 @@
           <div class="pricing-card__icon" style="background-color: #22c55e;">
             <img src="2.svg" alt="Grow">
           </div>
-          <h3 style=" margin-top: -60px; padding-bottom: 40px; ">Grow<span class="pricing-card__tag"></span></h3>
+          <h3 style=" margin-top: -60px; padding-bottom: 40px; "><span data-i18n="pricing.plans.grow.name">Grow</span><span class="pricing-card__tag"></span></h3>
         </div>
         <div class="pricing-card__price">
           <div class="pricing-card__line">
             <span class="pricing-card__amount" data-monthly="Rs 499" data-annual="Rs 4990">Rs 499</span>
-            <span class="pricing-card__term" data-monthly="/ mois" data-annual="/ an">/ mois</span>
+            <span class="pricing-card__term" data-monthly="/ mois" data-annual="/ an" data-i18n-monthly="pricing.plans.grow.term.monthly" data-i18n-annual="pricing.plans.grow.term.annual">/ mois</span>
           </div>
           <div class="pricing-card__line">
-            <span class="pricing-card__equivalent" data-monthly="(9,9€ / mois)" data-annual="(99€ / an)">(9,9€ / mois)</span>
+            <span class="pricing-card__equivalent" data-monthly="(9,9€ / mois)" data-annual="(99€ / an)" data-i18n-monthly="pricing.plans.grow.equivalent.monthly" data-i18n-annual="pricing.plans.grow.equivalent.annual">(9,9€ / mois)</span>
           </div>
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-                <li> 1 utilisateur</li>
+                <li data-i18n="pricing.plans.grow.features.0"> 1 utilisateur</li>
 
-          <li>Clients sans limite</li>
-          <li>Gestion et suivi de paiements </li>
-          <li>Rappels automatiques</li>
+          <li data-i18n="pricing.plans.grow.features.1">Clients sans limite</li>
+          <li data-i18n="pricing.plans.grow.features.2">Gestion et suivi de paiements </li>
+          <li data-i18n="pricing.plans.grow.features.3">Rappels automatiques</li>
 
         </ul>
-        <button class="pricing-card__cta" type="button" data-register-cta>S'inscrire</button>
+        <button class="pricing-card__cta" type="button" data-register-cta data-i18n="pricing.plans.grow.cta">S'inscrire</button>
       </article>
 
       <article class="pricing-card pricing-card--morne">
@@ -2768,30 +2769,30 @@
           <div class="pricing-card__icon" style="background-color: #10a5e9;">
             <img src="3.svg" alt="Scale">
           </div>
-          <h3 style=" margin-top: -60px; padding-bottom: 40px; ">Scale<span class="pricing-card__tag"></span></h3>
+          <h3 style=" margin-top: -60px; padding-bottom: 40px; "><span data-i18n="pricing.plans.scale.name">Scale</span><span class="pricing-card__tag"></span></h3>
         </div>
         <div class="pricing-card__price">
           <div class="pricing-card__line">
             <span class="pricing-card__amount" data-monthly="Rs 999" data-annual="Rs 9990">Rs 999</span>
-            <span class="pricing-card__term" data-monthly="/ mois" data-annual="/ an">/ mois</span>
+            <span class="pricing-card__term" data-monthly="/ mois" data-annual="/ an" data-i18n-monthly="pricing.plans.scale.term.monthly" data-i18n-annual="pricing.plans.scale.term.annual">/ mois</span>
           </div>
           <div class="pricing-card__line">
-            <span class="pricing-card__equivalent" data-monthly="(19,9€ / mois)" data-annual="(199€ / an)">(19,9€ / mois)</span>
+            <span class="pricing-card__equivalent" data-monthly="(19,9€ / mois)" data-annual="(199€ / an)" data-i18n-monthly="pricing.plans.scale.equivalent.monthly" data-i18n-annual="pricing.plans.scale.equivalent.annual">(19,9€ / mois)</span>
           </div>
         </div>
         <div class="pricing-divider"></div>
         <ul class="pricing-features">
-                            <li> 3 utilisateur</li>
+                            <li data-i18n="pricing.plans.scale.features.0"> 3 utilisateur</li>
 
-          <li>Multi devises</li>
-          <li>Emails avec PJ</li>
-          <li>Accès API</li>
+          <li data-i18n="pricing.plans.scale.features.1">Multi devises</li>
+          <li data-i18n="pricing.plans.scale.features.2">Emails avec PJ</li>
+          <li data-i18n="pricing.plans.scale.features.3">Accès API</li>
         </ul>
-        <button class="pricing-card__cta" type="button" data-register-cta>S'inscrire</button>
+        <button class="pricing-card__cta" type="button" data-register-cta data-i18n="pricing.plans.scale.cta">S'inscrire</button>
       </article>
     </div>
     <div class="pricing-cta">
-      <a class="pricing-cta__button" href="tarifs.html">Voir tous les tarifs</a>
+      <a class="pricing-cta__button" href="tarifs.html" data-i18n="pricing.view_all">Voir tous les tarifs</a>
     </div>
   </div>
 </section>
@@ -2802,11 +2803,11 @@
 
       <img src="mechas.svg" alt="" class="final-cta-icon">
 
-      <h2>Commencez à facturer dès aujourd’hui&nbsp;!</h2>
-      <p>Facturez vos clients, soyez payé rapidement&nbsp;!</p>
+      <h2 data-i18n="final_cta.title">Commencez à facturer dès aujourd’hui&nbsp;!</h2>
+      <p data-i18n="final_cta.subtitle">Facturez vos clients, soyez payé rapidement&nbsp;!</p>
 
       <button class="final-cta-btn" type="button" data-register-cta>
-        Essai 15j gratuits
+        <span data-i18n="final_cta.cta">Essai 15j gratuits</span>
       </button>
 
     </div>
@@ -2818,68 +2819,68 @@
 
     <div class="faq-header">
       <img src="mechas.svg" alt="" class="faq-icon">
-      <h2>Questions fréquentes</h2>
-      <p>Posez-nous vos questions</p>
+      <h2 data-i18n="faq.title">Questions fréquentes</h2>
+      <p data-i18n="faq.subtitle">Posez-nous vos questions</p>
     </div>
 
     <div class="faq-list">
 
       <details class="faq-item">
-        <summary>Mon entreprise n’est pas enregistrée à Maurice, puis-je utiliser Facture.mu ?</summary>
-        <p>
+        <summary data-i18n="faq.items.one.question">Mon entreprise n’est pas enregistrée à Maurice, puis-je utiliser Facture.mu ?</summary>
+        <p data-i18n="faq.items.one.answer">
           Oui. Facture.mu peut être utilisé par des entreprises enregistrées à Maurice
           comme à l’international. Vous pouvez facturer en plusieurs devises et langues.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Puis-je facturer en différentes devises (USD, EUR, MUR, etc.) ?</summary>
-        <p>
+        <summary data-i18n="faq.items.two.question">Puis-je facturer en différentes devises (USD, EUR, MUR, etc.) ?</summary>
+        <p data-i18n="faq.items.two.answer">
           Oui. Facture.mu supporte plus de 160 devises avec choix d'affichage et taux, adaptés aux besoins locaux et internationaux.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Puis-je importer mes données depuis mon système actuel ?</summary>
-        <p>
+        <summary data-i18n="faq.items.three.question">Puis-je importer mes données depuis mon système actuel ?</summary>
+        <p data-i18n="faq.items.three.answer">
           Oui, vous pouvez importer vos clients et vos articles au format Excel.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Puis-je gérer la TVA avec Facture.mu</summary>
-        <p>
+        <summary data-i18n="faq.items.four.question">Puis-je gérer la TVA avec Facture.mu</summary>
+        <p data-i18n="faq.items.four.answer">
           Oui. Facture.mu vous permet de facturer avec ou sans TVA, définir plusieurs taux si nécessaire, ajouter des frais et des remises également.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Puis-je utiliser mon logo et ma charte de couleurs ?</summary>
-        <p>
+        <summary data-i18n="faq.items.five.question">Puis-je utiliser mon logo et ma charte de couleurs ?</summary>
+        <p data-i18n="faq.items.five.answer">
           Oui, vous pouvez personnaliser vos factures avec votre logo, vos couleurs
           et vous pouvez même modifier/ ajouter des informations à vos documents.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Puis-je exporter mes données ?</summary>
-        <p>
+        <summary data-i18n="faq.items.six.question">Puis-je exporter mes données ?</summary>
+        <p data-i18n="faq.items.six.answer">
           Bien sûr. Toutes vos données peuvent être exportées à tout moment
           en PDF ou Excel.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Est-ce adapté aux équipes ?</summary>
-        <p>
+        <summary data-i18n="faq.items.seven.question">Est-ce adapté aux équipes ?</summary>
+        <p data-i18n="faq.items.seven.answer">
           Oui. Facture.mu permet de gérer plusieurs utilisateurs avec des rôles
           et permissions que vous paraméterez.
         </p>
       </details>
 
       <details class="faq-item">
-        <summary>Y a-t-il un support ?</summary>
-        <p>
+        <summary data-i18n="faq.items.eight.question">Y a-t-il un support ?</summary>
+        <p data-i18n="faq.items.eight.answer">
           Oui, notre équipe support est disponible pour vous accompagner
           par chat, email et via le centre d’aide.
         </p>
@@ -2893,31 +2894,31 @@
   <div class="container">
     <div class="contact-section__header">
       <img src="mechas.svg" alt="" class="contact-section__icon">
-      <h2 class="contact-section__title">Contactez-nous</h2>
+      <h2 class="contact-section__title" data-i18n="contact.title">Contactez-nous</h2>
     </div>
     <div class="contact-card">
       <form class="contact-form" novalidate>
-        <div class="contact-success" role="status" aria-live="polite" hidden>
+        <div class="contact-success" role="status" aria-live="polite" hidden data-i18n="contact.success">
           Merci ! Votre message a été envoyé avec succès.
         </div>
         <div class="contact-error" role="alert" aria-live="polite" hidden></div>
         <div class="contact-field">
-          <label for="contact-name" class="sr-only">Nom complet</label>
-          <input type="text" id="contact-name" name="full-name" placeholder="Nom complet">
+          <label for="contact-name" class="sr-only" data-i18n="contact.fields.name.label">Nom complet</label>
+          <input type="text" id="contact-name" name="full-name" placeholder="Nom complet" data-i18n-placeholder="contact.fields.name.placeholder">
           <span class="field-error" data-error-for="contact-name" aria-live="polite"></span>
         </div>
         <div class="contact-field">
-          <label for="contact-email" class="sr-only">Adresse e-mail</label>
-          <input type="email" id="contact-email" name="email" placeholder="Adresse e-mail" autocomplete="email">
+          <label for="contact-email" class="sr-only" data-i18n="contact.fields.email.label">Adresse e-mail</label>
+          <input type="email" id="contact-email" name="email" placeholder="Adresse e-mail" autocomplete="email" data-i18n-placeholder="contact.fields.email.placeholder">
           <span class="field-error" data-error-for="contact-email" aria-live="polite"></span>
         </div>
         <div class="contact-field">
-          <label for="contact-message" class="sr-only">Message</label>
-          <textarea id="contact-message" name="message" placeholder="Écrivez votre message..."></textarea>
+          <label for="contact-message" class="sr-only" data-i18n="contact.fields.message.label">Message</label>
+          <textarea id="contact-message" name="message" placeholder="Écrivez votre message..." data-i18n-placeholder="contact.fields.message.placeholder"></textarea>
           <span class="field-error" data-error-for="contact-message" aria-live="polite"></span>
         </div>
         <div class="contact-submit">
-          <button type="submit">Envoyer</button>
+          <button type="submit" data-i18n="contact.submit">Envoyer</button>
         </div>
       </form>
     </div>
@@ -2927,8 +2928,8 @@
 </main>
 
 <div class="demo-modal" id="demo-modal" aria-hidden="true">
-  <div class="demo-modal__dialog" role="dialog" aria-modal="true" aria-label="Voir la démonstration vidéo">
-    <button class="demo-modal__close" type="button" aria-label="Fermer la vidéo">×</button>
+  <div class="demo-modal__dialog" role="dialog" aria-modal="true" aria-label="Voir la démonstration vidéo" data-i18n-aria-label="demo.modal.label">
+    <button class="demo-modal__close" type="button" aria-label="Fermer la vidéo" data-i18n-aria-label="demo.modal.close">×</button>
     <div class="demo-modal__body">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Dc-_L0mkiUE?si=2q2oP52ABmIcX-ZG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
@@ -3291,25 +3292,39 @@ animation.addEventListener('complete', () => {
       }
     });
 
+    const translate = key => window.getTranslation ? window.getTranslation(key) : key;
     const contactForm = document.querySelector('.contact-form');
     const contactSuccess = contactForm?.querySelector('.contact-success');
     const contactError = contactForm?.querySelector('.contact-error');
     const contactSubmitButton = contactForm?.querySelector('button[type="submit"]');
-    const contactSubmitLabel = contactSubmitButton?.textContent ?? 'Envoyer';
+    let contactSubmitLabel = contactSubmitButton?.textContent ?? translate('contact.submit');
     const contactFieldMap = {
       name: {
         input: contactForm?.querySelector('#contact-name'),
-        message: 'Veuillez indiquer votre nom complet.'
+        message: translate('contact.validation.name')
       },
       email: {
         input: contactForm?.querySelector('#contact-email'),
-        message: 'Veuillez indiquer une adresse e-mail valide.'
+        message: translate('contact.validation.email')
       },
       message: {
         input: contactForm?.querySelector('#contact-message'),
-        message: 'Veuillez écrire votre message.'
+        message: translate('contact.validation.message')
       }
     };
+
+    const updateContactMessages = () => {
+      contactFieldMap.name.message = translate('contact.validation.name');
+      contactFieldMap.email.message = translate('contact.validation.email');
+      contactFieldMap.message.message = translate('contact.validation.message');
+      contactSubmitLabel = translate('contact.submit');
+      if (contactSubmitButton && !contactSubmitButton.disabled) {
+        contactSubmitButton.textContent = contactSubmitLabel;
+      }
+    };
+
+    updateContactMessages();
+    window.addEventListener('languageChanged', updateContactMessages);
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -3360,7 +3375,7 @@ animation.addEventListener('complete', () => {
     const setContactSubmitState = isSending => {
       if (!contactSubmitButton) return;
       contactSubmitButton.disabled = isSending;
-      contactSubmitButton.textContent = isSending ? 'Envoi en cours...' : contactSubmitLabel;
+      contactSubmitButton.textContent = isSending ? translate('contact.status.sending') : contactSubmitLabel;
     };
 
     contactForm?.addEventListener('submit', async event => {
@@ -3394,7 +3409,7 @@ animation.addEventListener('complete', () => {
 
         const data = await response.json().catch(() => null);
         if (!response.ok || !data?.success) {
-          const errorMessage = data?.error || 'Une erreur est survenue. Veuillez réessayer.';
+          const errorMessage = data?.error || translate('contact.error.generic');
           throw new Error(errorMessage);
         }
 
@@ -3404,7 +3419,7 @@ animation.addEventListener('complete', () => {
         contactForm.reset();
       } catch (error) {
         if (contactError) {
-          contactError.textContent = error?.message || 'Une erreur est survenue. Veuillez réessayer.';
+          contactError.textContent = error?.message || translate('contact.error.generic');
           contactError.hidden = false;
         }
       } finally {
@@ -3420,28 +3435,28 @@ animation.addEventListener('complete', () => {
     <!-- LOGO -->
   <div class="footer-brand">
       <img src="logo.png" alt="Facture.mu" class="footer-logo">
-      <p class="footer-tagline">Eldorado de la facturation</p>
+      <p class="footer-tagline" data-i18n="footer.tagline">Eldorado de la facturation</p>
     </div>
 
     <!-- LINKS -->
     <div class="footer-links">
 
       <div class="footer-column">
-        <h4>Produit</h4>
-        <a href="#fonctionnalites">Fonctionnalités</a>
-        <a href="tarifs.html">Tarifs</a>
+        <h4 data-i18n="footer.product">Produit</h4>
+        <a href="#fonctionnalites" data-i18n="footer.links.features">Fonctionnalités</a>
+        <a href="tarifs.html" data-i18n="footer.links.pricing">Tarifs</a>
       </div>
 
       <div class="footer-column">
-        <h4>Société</h4>
-        <a href="conditions-generales-utilisation.html">Conditions</a>
-        <a href="donnees-personnelles.html">Données personnelles</a>
+        <h4 data-i18n="footer.company">Société</h4>
+        <a href="conditions-generales-utilisation.html" data-i18n="footer.links.conditions">Conditions</a>
+        <a href="donnees-personnelles.html" data-i18n="footer.links.privacy">Données personnelles</a>
       </div>
 
       <div class="footer-column">
-        <h4>Assistance</h4>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <h4 data-i18n="footer.support">Assistance</h4>
+        <a href="#faq" data-i18n="footer.links.faq">FAQ</a>
+        <a href="#contact" data-i18n="footer.links.contact">Contact</a>
       </div>
 
     </div>
@@ -3449,8 +3464,8 @@ animation.addEventListener('complete', () => {
 
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <span>© Facture.mu - Tous droits réservés. @2026</span>
-      <span>Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
+      <span data-i18n="footer.bottom.rights">© Facture.mu - Tous droits réservés. @2026</span>
+      <span data-i18n="footer.bottom.legal">Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
     </div>
   </div>
 </footer>
