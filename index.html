@@ -92,8 +92,8 @@
     .brand-block{
       display:flex;
       flex-direction:column;
-      align-items:center;
-      text-align:center;
+      align-items:flex-start;
+      text-align:left;
       gap:4px;
     }
 
@@ -106,7 +106,9 @@
     .logo-animation{
       height:52px;
       display:block;
+      margin-left:0;
       margin-bottom:-2px;
+      align-self:flex-start;
       opacity: 0;
       transform: translateX(-60px);
       animation: lottieEntrance 1.4s ease-out forwards;
