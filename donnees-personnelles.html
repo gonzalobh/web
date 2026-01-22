@@ -122,7 +122,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding: 18px 0;
+      padding: 16px 0;
       gap: 16px;
     }
 
@@ -131,6 +131,14 @@
       align-items:center;
       gap:12px;
       min-width: 170px;
+    }
+
+    .brand-block{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap:4px;
     }
 
     .brand .mark{
@@ -142,9 +150,18 @@
     .logo-animation{
       height:52px;
       display:block;
+      margin-bottom:-2px;
       opacity: 0;
       transform: translateX(-60px);
       animation: lottieEntrance 1.4s ease-out forwards;
+    }
+
+    .brand-baseline{
+      font-size:12.5px;
+      font-weight:500;
+      color:#6b7280;
+      letter-spacing:0.02em;
+      line-height:1.2;
     }
 
     @keyframes lottieEntrance{
@@ -270,6 +287,12 @@
       header.open .actions{display:flex;}
 
       .menu-toggle{display:inline-flex;}
+    }
+
+    @media (max-width: 520px){
+      .brand-baseline{
+        font-size:11.5px;
+      }
     }
 
     @media (max-width: 900px){
@@ -1627,8 +1650,9 @@
   <div class="container">
       <div class="topbar">
       <div class="brand">
-        <a href="index.html" aria-label="Accueil Facture.mu">
+        <a href="index.html" aria-label="Accueil Facture.mu" class="brand-block">
           <div class="logo-animation" data-animation="2.json" role="img" aria-label="Facture.mu"></div>
+          <div class="brand-baseline">Local at heart. International by design.</div>
         </a>
       </div>
 
