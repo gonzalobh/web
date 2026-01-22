@@ -1494,8 +1494,10 @@ margin-right: -20px;
 
       <!-- LOGO -->
     <div class="footer-brand">
-        <img src="logo.png" alt="Facture.mu" class="footer-logo">
-        <p class="footer-tagline" data-i18n="footer.tagline">Eldorado de la facturation</p>
+        <a href="index.html" aria-label="Accueil Facture.mu" data-i18n-aria-label="nav.home" class="brand-block">
+          <div class="logo-animation" data-animation="2.json" role="img" aria-label="Facture.mu"></div>
+          <div class="brand-baseline">Local at heart. International by design.</div>
+        </a>
       </div>
 
       <!-- LINKS -->
@@ -1534,42 +1536,44 @@ margin-right: -20px;
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       if (window.lottie) {
-        const container = document.querySelector('.logo-animation');
-        if (container) {
-          const animation = lottie.loadAnimation({
-            container,
-            renderer: 'svg',
-            loop: false,
-            autoplay: false,
-            path: container.dataset.animation || '2.json',
-            rendererSettings: {
-              preserveAspectRatio: 'xMidYMid meet'
-            }
-          });
-
+        const containers = document.querySelectorAll('.logo-animation');
+        if (containers.length) {
           const ARRIVAL_SPEED = 0.9;
           const RETURN_SPEED  = 0.7;
           const TURN_FRAME    = 118;
           const HOLD_TIME     = 400;
           const FINAL_FRAME   = 118;
 
-          animation.addEventListener('DOMLoaded', () => {
-            animation.setSpeed(ARRIVAL_SPEED);
-            animation.playSegments([0, TURN_FRAME], true);
-          });
+          containers.forEach((container) => {
+            const animation = lottie.loadAnimation({
+              container,
+              renderer: 'svg',
+              loop: false,
+              autoplay: false,
+              path: container.dataset.animation || '2.json',
+              rendererSettings: {
+                preserveAspectRatio: 'xMidYMid meet'
+              }
+            });
 
-          let hasPlayedReturn = false;
-          animation.addEventListener('complete', () => {
-            if (hasPlayedReturn) {
-              animation.goToAndStop(FINAL_FRAME, true);
-              return;
-            }
+            animation.addEventListener('DOMLoaded', () => {
+              animation.setSpeed(ARRIVAL_SPEED);
+              animation.playSegments([0, TURN_FRAME], true);
+            });
 
-            hasPlayedReturn = true;
-            setTimeout(() => {
-              animation.setSpeed(RETURN_SPEED);
-              animation.playSegments([TURN_FRAME, FINAL_FRAME], true);
-            }, HOLD_TIME);
+            let hasPlayedReturn = false;
+            animation.addEventListener('complete', () => {
+              if (hasPlayedReturn) {
+                animation.goToAndStop(FINAL_FRAME, true);
+                return;
+              }
+
+              hasPlayedReturn = true;
+              setTimeout(() => {
+                animation.setSpeed(RETURN_SPEED);
+                animation.playSegments([TURN_FRAME, FINAL_FRAME], true);
+              }, HOLD_TIME);
+            });
           });
         }
       }
