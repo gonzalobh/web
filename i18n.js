@@ -130,7 +130,7 @@ const translations = {
       },
       plans: {
         start: {
-          name: 'Démarrage',
+          name: 'Start',
           price: 'Gratuit',
           equivalent: 'Oui, gratuit',
           features: [
@@ -142,7 +142,7 @@ const translations = {
           cta: "S'inscrire"
         },
         grow: {
-          name: 'Croissance',
+          name: 'Grow',
           term: {
             monthly: '/ mois',
             annual: '/ an'
@@ -160,7 +160,7 @@ const translations = {
           cta: "S'inscrire"
         },
         scale: {
-          name: 'Expansion',
+          name: 'Scale',
           term: {
             monthly: '/ mois',
             annual: '/ an'
@@ -496,7 +496,7 @@ const translations = {
       },
       plans: {
         start: {
-          name: 'Starter',
+          name: 'Start',
           price: 'Free',
           equivalent: 'Yes, free',
           features: [
@@ -508,7 +508,7 @@ const translations = {
           cta: 'Sign up'
         },
         grow: {
-          name: 'Growth',
+          name: 'Grow',
           term: {
             monthly: '/ month',
             annual: '/ year'
