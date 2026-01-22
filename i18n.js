@@ -135,8 +135,8 @@ const translations = {
           equivalent: 'Oui, gratuit',
           features: [
             '1 utilisateur',
-            'Jusqu’à 5 clients',
-            'Factures et devis sans limite',
+            '5 clients',
+            'Factures et devis illimités',
             'Documents avec votre logo'
           ],
           cta: "S'inscrire"
@@ -153,9 +153,10 @@ const translations = {
           },
           features: [
             '1 utilisateur',
-            'Clients sans limite',
-            'Gestion et suivi de paiements',
-            'Rappels automatiques'
+            '3 devises',
+            'Clients illimités',
+            'Gestion et suivi des paiements',
+            'Relances automatiques'
           ],
           cta: "S'inscrire"
         },
@@ -171,8 +172,10 @@ const translations = {
           },
           features: [
             '3 utilisateurs',
-            'Multi devises',
-            'Emails avec PJ',
+            'Devises illimitées',
+            'Factures récurrentes',
+            'Modèles illimités',
+            'Emails avec pièces jointes',
             'Accès API'
           ],
           cta: "S'inscrire"
@@ -501,7 +504,7 @@ const translations = {
           equivalent: 'Yes, free',
           features: [
             '1 user',
-            'Up to 5 clients',
+            '5 clients',
             'Unlimited invoices and quotes',
             'Documents with your logo'
           ],
@@ -519,9 +522,10 @@ const translations = {
           },
           features: [
             '1 user',
+            '3 currencies',
             'Unlimited clients',
-            'Payment tracking and management',
-            'Automatic reminders'
+            'Payment management and tracking',
+            'Automatic payment reminders'
           ],
           cta: 'Sign up'
         },
@@ -537,8 +541,10 @@ const translations = {
           },
           features: [
             '3 users',
-            'Multi-currency',
-            'Email with attachments',
+            'Unlimited currencies',
+            'Recurring invoices',
+            'Unlimited templates',
+            'Emails with attachments',
             'API access'
           ],
           cta: 'Sign up'
