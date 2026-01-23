@@ -107,6 +107,13 @@
       border-bottom:none;
     }
 
+    .brand-baseline:hover,
+    .brand-baseline:focus{
+      text-decoration:none;
+      border-bottom:none;
+      color:#6b7280;
+    }
+
     @keyframes lottieEntrance{
       0%{opacity:0; transform: translateX(-60px);}
       70%{opacity:0.8; transform: translateX(12px);}
@@ -1080,80 +1087,94 @@ margin-right: -20px;
     }
 
     .site-footer{
-      border-top: 1px solid #e5e7eb;
-      padding-top: 50px;
+      padding-top: 70px;
+      color: #374151;
       background: #F3F3F3;
     }
 
     .footer-grid{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:40px;
-      padding-bottom: 40px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) 2fr;
+      gap: 60px;
+      align-items: center;
     }
 
     .footer-brand{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      max-width: 220px;
+      max-width: 300px;
     }
 
     .footer-logo{
-      width: 160px;
+      height: 44px;
+      margin-bottom: 8px;
     }
 
     .footer-tagline{
-      color:#6b7280;
-      font-size:14px;
-      margin:0;
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
     }
 
     .footer-links{
-      display:flex;
-      gap:60px;
-      flex-wrap:wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 44px;
+      justify-self: end;
     }
 
     .footer-column h4{
-      margin: 0 0 12px;
-      font-size:14px;
-      font-weight:700;
-      color:#111827;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .footer-column a{
-      display:block;
-      color:#6b7280;
-      text-decoration:none;
-      font-size:13px;
-      margin-bottom: 10px;
+      display: block;
+      font-size: 14px;
+      color: #6b7280;
+      text-decoration: none;
+      margin-bottom: 8px;
     }
 
     .footer-column a:hover{
-      color:#111827;
+      color: #111827;
     }
 
     .footer-bottom{
+      margin-top: 60px;
       border-top: 1px solid #e5e7eb;
-      padding: 16px 0;
-      font-size: 12px;
-      color:#6b7280;
+      padding: 20px 0;
+      font-size: 13px;
+      color: #6b7280;
     }
 
     .footer-bottom-inner{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    @media (max-width: 768px){
-      .footer-grid{flex-direction:column;}
-      .footer-links{gap:30px;}
-      .footer-bottom-inner{flex-direction:column;}
+    @media (max-width: 900px){
+      .footer-grid{
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-links{
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 520px){
+      .footer-links{
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom-inner{
+        text-align: center;
+        flex-direction: column;
+      }
     }
     
        .cta{
@@ -1499,50 +1520,50 @@ margin-right: -20px;
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
+<footer class="site-footer">
+  <div class="container footer-grid">
 
-      <!-- LOGO -->
-    <div class="footer-brand">
-        <div class="brand-block">
-          <a href="index.html" aria-label="Accueil Facture.mu" data-i18n-aria-label="nav.home" class="brand-link">
-            <div class="logo-animation" data-animation="2.json" role="img" aria-label="Facture.mu"></div>
-          </a>
-          <span class="brand-baseline">Local at heart. International by design.</span>
-        </div>
-      </div>
-
-      <!-- LINKS -->
-      <div class="footer-links">
-
-        <div class="footer-column">
-          <h4 data-i18n="footer.product">Produit</h4>
-          <a href="#fonctionnalites" data-i18n="footer.links.features">Fonctionnalités</a>
-          <a href="tarifs.html" data-i18n="footer.links.pricing">Tarifs</a>
-        </div>
-
-        <div class="footer-column">
-          <h4 data-i18n="footer.company">Société</h4>
-          <a href="conditions-generales-utilisation.html" data-i18n="footer.links.conditions">Conditions</a>
-          <a href="donnees-personnelles.html" data-i18n="footer.links.privacy">Données personnelles</a>
-        </div>
-
-        <div class="footer-column">
-          <h4 data-i18n="footer.support">Assistance</h4>
-          <a href="#faq" data-i18n="footer.links.faq">FAQ</a>
-          <a href="#contact" data-i18n="footer.links.contact">Contact</a>
-        </div>
-
+    <!-- LOGO -->
+  <div class="footer-brand">
+      <div class="brand-block">
+        <a href="index.html" aria-label="Accueil Facture.mu" data-i18n-aria-label="nav.home" class="brand-link">
+          <div class="logo-animation" data-animation="2.json" role="img" aria-label="Facture.mu"></div>
+        </a>
+        <span class="brand-baseline">Local at heart. International by design.</span>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <span data-i18n="footer.bottom.rights">© Facture.mu - Tous droits réservés. @2026</span>
-        <span data-i18n="footer.bottom.legal">Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
+    <!-- LINKS -->
+    <div class="footer-links">
+
+      <div class="footer-column">
+        <h4 data-i18n="footer.product">Produit</h4>
+        <a href="#fonctionnalites" data-i18n="footer.links.features">Fonctionnalités</a>
+        <a href="tarifs.html" data-i18n="footer.links.pricing">Tarifs</a>
       </div>
+
+      <div class="footer-column">
+        <h4 data-i18n="footer.company">Société</h4>
+        <a href="conditions-generales-utilisation.html" data-i18n="footer.links.conditions">Conditions</a>
+        <a href="donnees-personnelles.html" data-i18n="footer.links.privacy">Données personnelles</a>
+      </div>
+
+      <div class="footer-column">
+        <h4 data-i18n="footer.support">Assistance</h4>
+        <a href="#faq" data-i18n="footer.links.faq">FAQ</a>
+        <a href="#contact" data-i18n="footer.links.contact">Contact</a>
+      </div>
+
     </div>
-  </footer>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span data-i18n="footer.bottom.rights">© Facture.mu - Tous droits réservés. @2026</span>
+      <span data-i18n="footer.bottom.legal">Mentions légales &nbsp;-&nbsp; CGV &nbsp;-&nbsp; Cookies</span>
+    </div>
+  </div>
+</footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <script>
