@@ -301,11 +301,11 @@ const translations = {
           heading: 'LE PLAN GRATUIT INCLUT',
           features: [
             '1 utilisateur',
-            'Jusqu’à 5 clients',
-            'Avec gestion de TVA',
+            '5 clients',
             'Factures et devis illimités',
             'Documents avec votre logo',
-            'Création de factures en PDF et envoi par email'
+            'Gestion de TVA',
+            'Creation de Factures en PDF et envoi par email'
           ]
         },
         grow: {
@@ -313,11 +313,11 @@ const translations = {
           heading: 'TOUTES LES FONCTIONNALITÉS GRATUITES +',
           features: [
             '1 utilisateur',
+            '3 devises',
             'Clients illimités',
-            'Export / import Excel',
+            'Gestion et suivi des paiements',
             'Relances automatiques',
-            'Modèles de facture illimités',
-            'Gestion et suivi de paiements'
+            'Export / import Excel'
           ]
         },
         scale: {
@@ -325,9 +325,11 @@ const translations = {
           heading: 'TOUTES LES FONCTIONNALITÉS PRO+',
           features: [
             '3 utilisateurs',
-            'Multi-devises',
-            'Gestion de stock',
+            'Devises illimitées',
             'Factures récurrentes',
+            'Gestion de stock',
+            'Modèles illimités',
+            'Emails avec pièces jointes',
             'Accès API'
           ]
         }
@@ -670,10 +672,10 @@ const translations = {
           heading: 'THE FREE PLAN INCLUDES',
           features: [
             '1 user',
-            'Up to 5 clients',
-            'VAT management',
+            '5 clients',
             'Unlimited invoices and quotes',
             'Documents with your logo',
+            'VAT management',
             'Create PDF invoices and send by email'
           ]
         },
@@ -682,11 +684,11 @@ const translations = {
           heading: 'ALL FREE FEATURES +',
           features: [
             '1 user',
+            '3 currencies',
             'Unlimited clients',
-            'Excel export / import',
+            'Payment management and tracking',
             'Automatic reminders',
-            'Unlimited invoice templates',
-            'Payment tracking and management'
+            'Excel import / export'
           ]
         },
         scale: {
@@ -694,9 +696,11 @@ const translations = {
           heading: 'ALL PRO FEATURES+',
           features: [
             '3 users',
-            'Multi-currency',
-            'Stock management',
+            'Unlimited currencies',
             'Recurring invoices',
+            'Stock management',
+            'Unlimited templates',
+            'Emails with attachments',
             'API access'
           ]
         }
